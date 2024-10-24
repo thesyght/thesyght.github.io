@@ -263,8 +263,14 @@
             // Collect form data
             const formData = {
                 name: form.name.value,
-                email: form.email.value//,
-                //selectedSeats: Array.from(document.querySelectorAll('.seat.selected')).map(seat => seat.dataset.seat)
+                email: form.email.value,
+                ingredient: form.ingredient.value,
+                link: form.link.value,
+                homies: [
+                    form.homie1.value,
+                    form.homie2.value,
+                    form.homie3.value
+                ]
             };
 
             // Send data to Val.town
@@ -277,7 +283,24 @@
             });
 
             if (response.ok) {
-                alert('Form submitted successfully!');
+                // Show popup message
+                const message = document.createElement('div');
+                message.innerText = 'Submission successful! You will be forwarded to PayPal to complete your payment.';
+                message.style.position = 'fixed';
+                message.style.top = '50%';
+                message.style.left = '50%';
+                message.style.transform = 'translate(-50%, -50%)';
+                message.style.backgroundColor = '#ffffff';
+                message.style.padding = '20px';
+                message.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+                message.style.zIndex = '1000';
+                document.body.appendChild(message);
+
+                // Redirect to PayPal after 5 seconds
+                setTimeout(() => {
+                    window.open('https://www.paypal.com/tyslowde', '_blank'); // Replace with your PayPal link
+                    document.body.removeChild(message); // Remove the message after redirect
+                }, 5000);
             } else {
                 alert('There was a problem submitting the form.');
             }
