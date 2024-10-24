@@ -7,14 +7,35 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .scrapbook-item {
-            transform: rotate(-2deg);
-            transition: transform 0.3s ease;
+            position: relative;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+            border: 3px solid white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .scrapbook-item:nth-child(even) {
-            transform: rotate(3deg);
+
+        /* Randomised rotations and positions for a more organic feel */
+        .scrapbook-item:nth-child(1) {
+            transform: rotate(-4deg) translate(-10px, 5px);
+            z-index: 1;
         }
+        .scrapbook-item:nth-child(2) {
+            transform: rotate(3deg) translate(5px, -5px);
+            z-index: 2;
+        }
+        .scrapbook-item:nth-child(3) {
+            transform: rotate(-2deg) translate(10px, -15px);
+            z-index: 3;
+        }
+        .scrapbook-item:nth-child(4) {
+            transform: rotate(5deg) translate(-5px, 10px);
+            z-index: 1;
+        }
+
+        /* Hover effect to "lift" images slightly */
         .scrapbook-item:hover {
-            transform: rotate(0deg);
+            transform: translate(0, 0) rotate(0deg);
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 10;
         }
     </style>
 </head>
@@ -27,18 +48,18 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-white shadow-md rounded-lg p-4">
                 <h2 class="text-xl font-semibold mb-4 text-gray-700">Photo Scrapbook</h2>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="scrapbook-item border-4 border-white shadow-md rounded-md overflow-hidden">
-                        <img src="images/placeholder.jpeg" alt="Placeholder 1" class="w-full h-auto">
+                <div class="relative">
+                    <div class="scrapbook-item absolute w-40 h-32 rounded-md overflow-hidden">
+                        <img src="img.jpeg" alt="Placeholder 1" class="w-full h-full object-cover">
                     </div>
-                    <div class="scrapbook-item border-4 border-white shadow-md rounded-md overflow-hidden">
-                        <img src="images/placeholder.jpeg" alt="Placeholder 2" class="w-full h-auto">
+                    <div class="scrapbook-item absolute w-40 h-32 rounded-md overflow-hidden">
+                        <img src="img.jpeg" alt="Placeholder 2" class="w-full h-full object-cover">
                     </div>
-                    <div class="scrapbook-item border-4 border-white shadow-md rounded-md overflow-hidden">
-                        <img src="images/placeholder.jpeg" alt="Placeholder 3" class="w-full h-auto">
+                    <div class="scrapbook-item absolute w-40 h-32 rounded-md overflow-hidden">
+                        <img src="img.jpeg" alt="Placeholder 3" class="w-full h-full object-cover">
                     </div>
-                    <div class="scrapbook-item border-4 border-white shadow-md rounded-md overflow-hidden">
-                        <img src="images/placeholder.jpeg" alt="Placeholder 4" class="w-full h-auto">
+                    <div class="scrapbook-item absolute w-40 h-32 rounded-md overflow-hidden">
+                        <img src="img.jpeg" alt="Placeholder 4" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
