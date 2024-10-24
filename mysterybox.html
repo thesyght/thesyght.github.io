@@ -117,16 +117,16 @@
 
                 <div class="bg-white shadow-md rounded-lg p-4">
                     <h2 class="text-xl font-semibold mb-4 text-gray-700">Seat Selector</h2>
-                    <div class="grid grid-cols-5 gap-2">
-                        <button class="seat bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded">A1</button>
-                        <button class="seat bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded">A2</button>
-                        <button class="seat bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded">A3</button>
-                        <button class="seat bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded">A4</button>
-                        <button class="seat bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded">A5</button>
+                    <div id="seatSelector" class="grid grid-cols-5 gap-2">
+                        <button class="seat bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded" data-seat="A1">A1</button>
+                        <button class="seat bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded" data-seat="A2">A2</button>
+                        <button class="seat bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded" data-seat="A3">A3</button>
+                        <button class="seat bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded" data-seat="A4">A4</button>
+                        <button class="seat bg-gray-200 hover:bg-blue-500 hover:text-white text-gray-800 font-bold py-2 px-4 rounded" data-seat="A5">A5</button>
                     </div>
                 </div>
 
-                <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+                <button id="submitButton" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
             </div>
         </div>
     </div>
@@ -162,13 +162,16 @@
         });
 
         const form = document.getElementById('myForm');
-        form.addEventListener('submit', async (event) => {
+        const submitButton = document.getElementById('submitButton');
+        
+        submitButton.addEventListener('click', async (event) => {
             event.preventDefault();
             
             // Collect form data
             const formData = {
                 name: form.name.value,
-                email: form.email.value
+                email: form.email.value//,
+                //selectedSeats: Array.from(document.querySelectorAll('.seat.selected')).map(seat => seat.dataset.seat)
             };
 
             // Send data to Val.town
@@ -185,6 +188,14 @@
             } else {
                 alert('There was a problem submitting the form.');
             }
+        });
+
+        // Handle seat selection
+        const seatButtons = document.querySelectorAll('.seat');
+        seatButtons.forEach(seat => {
+            seat.addEventListener('click', () => {
+                seat.classList.toggle('selected');
+            });
         });
     </script>
 </body>
