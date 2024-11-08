@@ -336,6 +336,10 @@
                             <label for="ingredientLink" class="block text-gray-700 text-sm font-bold mb-2">Optional: Link to ingredient e.g. Woolies:</label>
                             <input type="text" id="ingredientLink" name="ingredientLink" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="https://woolworths.com.au/ingredient">
                         </div>
+                        <div class="mb-4">
+                            <label for="DietryRequirements" class="block text-gray-700 text-sm font-bold mb-2">Optional: Anything for us to be aware of when cooking e.g. V/VG/GF:</label>
+                            <input type="text" id="DietryRequirements" name="DietryRequirements" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="e.g. Halal">
+                        </div>
 
                         <!-- New section: Up to 3 homies -->
                         <div class="mb-4">
@@ -388,7 +392,7 @@
                         <span class="font-bold text-gray-800">Date:</span> 21st December 2024
                     </li>
                     <li class="mb-3">
-                        <span class="font-bold text-gray-800">Time:</span> 3:00 PM - 11:00 PM
+                        <span class="font-bold text-gray-800">Time:</span> 6:00 PM - 11:00 PM
                     </li>
                     <li class="mb-3">
                         <span class="font-bold text-gray-800">Location:</span> Sydney (Venue being secured!)
@@ -450,6 +454,7 @@
                 email: form.email.value,
                 ingredient: form.ingredient.value,
                 link: form.ingredientLink.value,
+                diet: form.DietryRequirements.value,
                 homies: [
                     form.homie1.value,
                     form.homie2.value,
