@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
     <style>
+        
         body {
             font-family: 'Roboto Flex', sans-serif;
             font-style: normal;
@@ -41,7 +42,10 @@
         }
         .scrapbook-container {
             position: relative;
-            height: 400px;
+            height: 75vh;
+            margin: 0 auto;
+            width: 95%;
+            overflow: hidden;
         }
 
         .scrapbook-item {
@@ -53,8 +57,8 @@
 
         .scrapbook-item:nth-child(1) {
             transform: rotate(-4deg);
-            top: 20px;
-            left: 20px;
+            top: 5%;
+            left: 3%;
             z-index: 1;
             width: auto;
             height: 45%;
@@ -62,8 +66,8 @@
 
         .scrapbook-item:nth-child(2) {
             transform: rotate(5deg);
-            top: 40px;
-            left: 160px;
+            top: 3%;
+            left: 25%;
             z-index: 2;
             width: auto;
             height: 60%;
@@ -71,8 +75,8 @@
 
         .scrapbook-item:nth-child(3) {
             transform: rotate(-8deg);
-            top: 30px;
-            left: 260px;
+            top: 1%;
+            left: 45%;
             z-index: 3;
             width: auto;
             height: 55%;
@@ -80,44 +84,44 @@
 
         .scrapbook-item:nth-child(4) {
             transform: rotate(7deg);
-            top: 10px;
-            left: 400px;
+            top: 3%;
+            left: 62%;
             z-index: 4;
             width: auto;
             height: 45%;
         }
 
         .scrapbook-item:nth-child(5) {
-            transform: rotate(-3deg);
-            top: 130px;
-            left: 50px;
+            transform: rotate(-10deg);
+            top: 2%;
+            left: 82%;
             z-index: 2;
+            width: 20%;
+            height: auto;
+        }
+
+        .scrapbook-item:nth-child(6) {
+            transform: rotate(-10deg);
+            top: 35%;
+            left: 3%;
+            z-index: 1;
             width: auto;
             height: 50%;
         }
 
-        .scrapbook-item:nth-child(6) {
-            transform: rotate(4deg);
-            top: 10px;
-            left: 550px;
-            z-index: 1;
-            width: auto;
-            height: 45%;
-        }
-
         .scrapbook-item:nth-child(7) {
             transform: rotate(-6deg);
-            top: 200px;
-            left: 400px;
-            z-index: 5;
-            width: auto;
-            height: 60%;
+            top: 40%;
+            left: 70%;
+            z-index: 4;
+            width: 30%;
+            height: auto;
         }
 
         .scrapbook-item:nth-child(8) {
             transform: rotate(5deg);
-            top: 200px;
-            left: 200px;
+            top: 50%;
+            left: 25%;
             z-index: 3;
             width: auto;
             height: 50%;
@@ -125,17 +129,17 @@
 
         .scrapbook-item:nth-child(9) {
             transform: rotate(-2deg);
-            top: 220px;
-            left: 35px;
-            z-index: 4;
+            top: 55%;
+            left: 1%;
+            z-index: 2;
             width: auto;
             height: 55%;
         }
 
         .scrapbook-item:nth-child(10) {
-            transform: rotate(-6deg);
-            top: 100px;
-            left: 400px;
+            transform: rotate(3deg);
+            top: 30%;
+            left: 60%;
             z-index: 3;
             width: 40%;
             height: auto;
@@ -143,8 +147,8 @@
 
         .scrapbook-item:nth-child(11) {
             transform: rotate(-4deg);
-            top: 330px;
-            left: 10px;
+            top: 95%;
+            left: 4%;
             z-index: 1;
             width: auto;
             height: 55%;
@@ -152,8 +156,8 @@
 
         .scrapbook-item:nth-child(12) {
             transform: rotate(8deg);
-            top: 320px;
-            left: 380px;
+            top: 80%;
+            left: 65%;
             z-index: 3;
             width: auto;
             height: 45%;
@@ -161,8 +165,8 @@
 
         .scrapbook-item:nth-child(13) {
             transform: rotate(-5deg);
-            top: 330px;
-            left: 150px;
+            top: 90%;
+            left: 25%;
             z-index: 1;
             width: auto;
             height: 50%;
@@ -170,26 +174,26 @@
 
         .scrapbook-item:nth-child(14) {
             transform: rotate(6deg);
-            top: 290px;
-            left: 310px;
-            z-index: 2;
+            top: 90%;
+            left: 50%;
+            z-index: 1;
             width: auto;
             height: 60%;
         }
 
         .scrapbook-item:nth-child(15) {
             transform: rotate(-7deg);
-            top: 200px;
-            left: 500px;
-            z-index: 3;
-            width: auto;
-            height: 65%;
+            top: 99%;
+            left: 70%;
+            z-index: 1;
+            width: 25%;
+            height: auto;
         }
 
         .scrapbook-item:nth-child(16) {
             transform: rotate(5deg);
-            top: 100px;
-            left: 240px;
+            top: 0%;
+            left: 20%;
             z-index: 1;
             width: auto;
             height: 50%;
@@ -197,20 +201,20 @@
 
         .scrapbook-item:nth-child(17) {
             transform: rotate(-3deg);
-            top: 340px;
-            left: 270px;
-            z-index: 1;
+            top: 80%;
+            left: 40%;
+            z-index: 2;
             width: auto;
             height: 55%;
         }
 
         .scrapbook-item:nth-child(18) {
             transform: rotate(2deg);
-            top: 330px;
-            left: 480px;
+            top: 80%;
+            left: 72%;
             z-index: 2;
-            width: auto;
-            height: 60%;
+            width: 30%;
+            height: auto;
         }
 
 
@@ -226,6 +230,15 @@
             height: 100%;
             object-fit: contain;
             cursor: pointer;
+        }
+
+        @media (max-width: 500px) {
+            .scrapbook-item {
+                width: 10%;
+                height: 10%;
+                object-fit: contain;
+                cursor: pointer;
+            }
         }
 
         .modal {
@@ -300,6 +313,7 @@
             width: 100%; /* Adjust as needed */
             height: 100vh; /* Full height of the viewport */
         }
+
 </style>
         
     </style>
