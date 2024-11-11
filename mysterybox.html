@@ -527,6 +527,7 @@
         
         submitButton.addEventListener('click', async (event) => {
             event.preventDefault();
+            window.open('https://www.paypal.me/EADann', '_blank'); // Replace with your PayPal link
             
             // Collect form data
             const formData = {
@@ -573,7 +574,6 @@
 
                 // Redirect to PayPal after 5 seconds
                 setTimeout(() => {
-                    window.open('https://www.paypal.me/EADann', '_blank'); // Replace with your PayPal link
                     document.body.removeChild(message); // Remove the message after redirect
                     submitButton.innerText = 'Submit'; // Reset button text on error
                     submitButton.disabled = false; // Re-enable the button
