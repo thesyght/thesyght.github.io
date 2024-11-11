@@ -435,6 +435,9 @@
                         </div>
                     </form>
                     <button id="submitButton" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+                
+                    <div id="submissionSuccess" class="hidden mt-4 text-center">
+                        <p class="text-gray-600 text-sm">Submitted Successfully! If you didnt get the redirect to the Paypal link - I'm sorry - Please go to: https://www.paypal.me/EADann</a>.</p>
                 </div>
             </div>
         </div>
@@ -572,12 +575,13 @@
                 message.style.zIndex = '1000';
                 document.body.appendChild(message);
 
-                // Redirect to PayPal after 5 seconds
-                setTimeout(() => {
+                sleep(5000).then(() => {
                     document.body.removeChild(message); // Remove the message after redirect
                     submitButton.innerText = 'Submit'; // Reset button text on error
                     submitButton.disabled = false; // Re-enable the button
-                }, 3000);
+                    submissionSuccess.style.display = 'block';
+                });
+                
             } else {
                 alert('There was a problem submitting the form.');
                 submitButton.innerText = 'Submit'; // Reset button text on error
