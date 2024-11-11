@@ -42,10 +42,7 @@
         }
         .scrapbook-container {
             position: relative;
-            height: 75vh;
-            margin: 0 auto;
-            width: 95%;
-            overflow: hidden;
+            height: 400px;
         }
 
         .scrapbook-item {
@@ -53,6 +50,18 @@
             box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
             border: 3px solid white;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        @media (max-width: 500px) {
+            .scrapbook-container{
+                overflow: hidden;
+            }
+            .scrapbook-item {
+                width: 10%;
+                height: 10%;
+                object-fit: contain;
+                cursor: pointer;
+            }
         }
 
         .scrapbook-item:nth-child(1) {
@@ -230,15 +239,6 @@
             height: 100%;
             object-fit: contain;
             cursor: pointer;
-        }
-
-        @media (max-width: 500px) {
-            .scrapbook-item {
-                width: 10%;
-                height: 10%;
-                object-fit: contain;
-                cursor: pointer;
-            }
         }
 
         .modal {
