@@ -501,6 +501,10 @@
     </div>
 
     <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
         // Script to handle modal behaviour
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("modalImage");
