@@ -441,7 +441,7 @@
                     <div id="submissionSuccess" class="hidden mt-4 text-center">
                         <p class="text-gray-600 text-sm">Submitted Successfully! If you didnt get the redirect to the Paypal link - I'm sorry - Please go to: https://www.paypal.me/EADann</a> .</p>
                     </div>
-                    
+
                     <div id="submissionFailure" class="hidden mt-4 text-center">
                         <p class="text-gray-600 text-sm">OH NO! The form failed to Submit and now WE DONT HAVE YOUR DETAILS?!??!, and what's worse I have NO IDEA WHY?!?!? Please reach out to Ann and/or Tys who will take your submission manually.</p>
                     </div>
@@ -557,6 +557,10 @@
 
             // Change button state to indicate loading
             submitButton.disabled = true; // Disable the button
+            submitButton.style.backgroundColor = '#d3d3d3'; // Change background to grey
+            submitButton.style.color = '#a0a0a0'; // Change text color to grey
+            submitButton.style.cursor = 'not-allowed'; // Change cursor to 'not-allowed'
+            submitButton.style.opacity = '0.6'; // Make it appear faded
             submitButton.innerText = 'Submitting...'; // Change button text
 
             // Send data to Val.town
@@ -594,6 +598,10 @@
             } else {
                 alert('There was a problem submitting the form!!!');
                 submitButton.innerText = 'Submit again? Previous Submission Failed?!?'; // Reset button text on error
+                submitButton.style.backgroundColor = '#ff4d4d'; // Set background to a reddish colour
+                submitButton.style.color = '#ffffff'; // Set text color to white for better contrast
+                submitButton.style.cursor = 'pointer'; // Change cursor back to pointer
+                submitButton.style.opacity = '1'; // Ensure full opacity
                 submitButton.disabled = false; // Re-enable the button
                 submissionFailure.style.display = 'block';
             }
