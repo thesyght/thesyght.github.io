@@ -440,6 +440,8 @@
                         <p class="text-gray-600 text-sm">Submitted Successfully! If you didnt get the redirect to the Paypal link - I'm sorry - Please go to: https://www.paypal.me/EADann</a> .</p>
                     </div>
 
+                    <button id="redirectButton" class="hidden w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Go to Paypal Link</button>
+
                     <div id="submissionFailure" class="hidden mt-4 text-center">
                         <p class="text-gray-600 text-sm">OH NO! The form failed to Submit and now WE DONT HAVE YOUR DETAILS?!??!, and what's worse I have NO IDEA WHY?!?!? Please reach out to Ann and/or Tys who will take your submission manually.</p>
                     </div>
@@ -538,7 +540,6 @@
         
         submitButton.addEventListener('click', async (event) => {
             event.preventDefault();
-            window.open('https://www.paypal.me/EADann', '_blank'); // Replace with your PayPal link
             
             // Collect form data
             const formData = {
@@ -572,7 +573,7 @@
             if (response.ok) {
                 // Show popup message
                 const message = document.createElement('div');
-                message.innerText = 'Submission successful! You will be forwarded to PayPal to complete your payment.';
+                message.innerText = 'Submission successful! Please now click new button to be forwarded to PayPal to complete your payment.';
                 message.style.position = 'fixed';
                 message.style.top = '50%';
                 message.style.left = '50%';
@@ -583,12 +584,12 @@
                 message.style.zIndex = '1000';
                 document.body.appendChild(message);
 
-                sleep(5000).then(() => {
+                sleep(3000).then(() => {
                     document.body.removeChild(message); // Remove the message after redirect
-                    submitButton.innerText = 'Submission was already Successful'; // Reset button text
-                    submitButton.disabled = false; // Re-enable the button
-                    submissionSuccess.style.display = 'block';
+                    submitButton.innerText = 'Submission was Successful'; // Reset button text
+                    redirectButton.style.display = 'block'; // Show the redirect button
                 });
+                
                 
             } else {
                 alert('There was a problem submitting the form!!!');
@@ -596,6 +597,11 @@
                 submitButton.disabled = false; // Re-enable the button
                 submissionFailure.style.display = 'block';
             }
+        });
+
+        redirectButton.addEventListener('click', async (event) => {
+            event.preventDefault();
+            window.open('https://www.paypal.me/EADann', '_blank'); // Replace with your PayPal link
         });
 
         // Handle seat selection
