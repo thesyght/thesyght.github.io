@@ -435,13 +435,13 @@
                         </div>
                     </form>
                     <button id="submitButton" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
-                
+                    <div style="height: 5px;"></div>
+                    <button id="redirectButton" class="hidden w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Go to Paypal Payment Page</button>
+                    
                     <div id="submissionSuccess" class="hidden mt-4 text-center">
                         <p class="text-gray-600 text-sm">Submitted Successfully! If you didnt get the redirect to the Paypal link - I'm sorry - Please go to: https://www.paypal.me/EADann</a> .</p>
                     </div>
-
-                    <button id="redirectButton" class="hidden w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Go to Paypal Link</button>
-
+                    
                     <div id="submissionFailure" class="hidden mt-4 text-center">
                         <p class="text-gray-600 text-sm">OH NO! The form failed to Submit and now WE DONT HAVE YOUR DETAILS?!??!, and what's worse I have NO IDEA WHY?!?!? Please reach out to Ann and/or Tys who will take your submission manually.</p>
                     </div>
@@ -602,6 +602,11 @@
         redirectButton.addEventListener('click', async (event) => {
             event.preventDefault();
             window.open('https://www.paypal.me/EADann', '_blank'); // Replace with your PayPal link
+            redirectButton.innerText = 'Opening Paypal in new tab...'; // Reset button text
+            sleep(3000).then(() => {
+                redirectButton.innerText = 'Go to Paypal Payment Page'; // Reset button text
+                submissionSuccess.style.display = 'block';
+            });
         });
 
         // Handle seat selection
