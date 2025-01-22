@@ -30,6 +30,10 @@ body {
     align-items: center;
 }
 
+.header-bar {
+    height: 10vh;
+}
+
 .header-background {
     background: linear-gradient(rgba(255, 254, 253, 0.7), rgba(255, 254, 253, 0.9)), 
                 url("images/backofvan.JPG") center center fixed;
