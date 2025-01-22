@@ -1,12 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Hosting my thesis</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Thesis - Tys Lowde</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            background: #004d40;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        object {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            background: #004d40;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #80cbc4;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <p>Tys Lowde's Undergraduate thesis.</p>
-    <object data="./assets/Thesis.pdf" width="1000" height="1000" type='application/pdf'></object>
+
+<header>
+    <h1>Tys Lowde's Undergraduate Thesis</h1>
+</header>
+
+<main>
+    <p>Please find my undergraduate thesis embedded below:</p>
+    <object data="./assets/Thesis.pdf" type="application/pdf">
+        <p>Your browser does not support PDF viewing. Please <a href="./assets/Thesis.pdf">click here to download</a>.</p>
+    </object>
+</main>
+
+<footer>
+    <p>&copy; 2025 Tys Lowde. All rights reserved. | <a href="mailto:example@example.com">Contact Me</a></p>
+</footer>
+
 </body>
 </html>
-
-
