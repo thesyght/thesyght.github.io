@@ -22,16 +22,19 @@ body {
     overflow-x: hidden;
 }
 
-.header-background {
-    background: linear-gradient(rgba(255, 254, 253, 0.7), rgba(255, 254, 253, 0.9)), 
-                url("images/backofvan.JPG") center center fixed;
-    background-size: cover;
+.header {
     text-align: center;
     height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.header-background {
+    background: linear-gradient(rgba(255, 254, 253, 0.7), rgba(255, 254, 253, 0.9)), 
+                url("images/backofvan.JPG") center center fixed;
+    background-size: cover;
 }
 
 nav {
