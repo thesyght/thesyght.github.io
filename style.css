@@ -80,6 +80,22 @@ nav ul li a {
 
 }
 
+.pdf-container {
+    display: flex;
+    justify-content: center; /* Centres horizontally */
+    align-items: center; /* Centres vertically */
+    min-height: 100vh; /* Optional: full viewport height */
+}
+
+object {
+    max-width: 100%; /* Prevents it from overflowing */
+    /*max-height: 100vh; /* Keeps it within view */
+    width: auto; /* Allows it to take its natural size */
+    height: auto; /* Prevents forced stretching */
+    border: 1px solid #ccc; /* Optional: border for better visibility */
+}
+
+
 #about {
     background-color: #ffffff; 
     padding-left: 40px;
@@ -159,19 +175,4 @@ a:hover {
         width: 50%; 
         margin: 0 auto; 
     }
-}
-
-.pdf-container {
-    display: flex;
-    justify-content: center; /* Centres horizontally */
-    align-items: center; /* Centres vertically */
-    min-height: 100vh; /* Optional: full viewport height */
-}
-
-object {
-    max-width: 100%; /* Prevents it from overflowing */
-    /*max-height: 100vh; /* Keeps it within view */
-    width: auto; /* Allows it to take its natural size */
-    height: auto; /* Prevents forced stretching */
-    border: 1px solid #ccc; /* Optional: border for better visibility */
 }
