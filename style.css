@@ -89,7 +89,7 @@ nav ul li a {
 
 object {
     max-width: 100%; /* Prevents it from overflowing */
-    /*max-height: 100vh; /* Keeps it within view */
+    max-height: 100vh; /* Keeps it within view */
     width: auto; /* Allows it to take its natural size */
     height: auto; /* Prevents forced stretching */
     border: 1px solid #ccc; /* Optional: border for better visibility */
