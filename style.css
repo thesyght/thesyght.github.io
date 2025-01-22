@@ -88,7 +88,7 @@ nav ul li a {
 }
 
 object {
-    width: 80vw;  /* Use 80% of the viewport width */
+    width: 100vw;  /* Use 80% of the viewport width */
     height: 90vh; /* Use 90% of the viewport height */
     border: 1px solid #ccc; /* Optional: border for better visibility */
 }
