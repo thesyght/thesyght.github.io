@@ -22,9 +22,8 @@ body {
     overflow-x: hidden;
 }
 
-.header {
+.header-core {
     text-align: center;
-    height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,6 +34,7 @@ body {
     background: linear-gradient(rgba(255, 254, 253, 0.7), rgba(255, 254, 253, 0.9)), 
                 url("images/backofvan.JPG") center center fixed;
     background-size: cover;
+    height: 100vh;
 }
 
 nav {
