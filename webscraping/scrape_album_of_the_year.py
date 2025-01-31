@@ -42,6 +42,7 @@ with open(fpath, 'w+', newline='') as csvfile:
     writer.writeheader()
 
 for month in months:
+    print(f"Loading albums from '{month.split('-')[0].title()}'")
     # Load the page
     time.sleep(1)  # Wait a bit before next call
     url = f"https://www.albumoftheyear.org/{year}/releases/{month}.php"
@@ -65,6 +66,7 @@ for month in months:
             time.sleep(1)  # Wait a bit for new content to load
             cant_find_count = 0
             found_too_many_count += 1
+            print(f"Loading page, section {found_too_many_count} of {limit_by_amount}")
         except TimeoutException:
             # If the button is not found, break the loop
             print("Show more button not findable.")
@@ -73,13 +75,16 @@ for month in months:
         except Exception as e:
             # Break the loop if the button is no longer found or clickable
             break
-
+    
+    print("All sections loaded. Attempting to parse HTML")
+    
     # Parse the page source with BeautifulSoup
     soup = BeautifulSoup(driver.page_source, 'html.parser')
 
     # Extract album data (update with the specific tags/classes you need)
     albums_raw = soup.find_all('div', class_='albumBlock five')  # Replace with the actual class
     albums = []
+    print(f"Will now parse {len(album_raw)} albums.")
     # Print album titles or relevant data
     for album_raw in albums_raw:
         album_title = album_raw.find('div', class_='albumTitle').text
@@ -130,7 +135,7 @@ for month in months:
         albums.append(album)
 
     # Save albums to CSV file
-
+    print(f"{len(albums)} albums parsed, now appending results to {fpath}.")
     with open(fpath, 'a', newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fields)
         writer.writerows(albums)

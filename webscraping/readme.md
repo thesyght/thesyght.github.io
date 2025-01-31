@@ -8,11 +8,13 @@ To install the required dependencies, follow these steps:
 
 1. Make sure you have Python installed on your system. You can download it from the official Python website.
 
-2. Open a terminal or command prompt.
+2. Make sure you have Chrome installed in your system. This code will use the Chromium drivers that are available with that.
 
-3. Navigate to the directory ('webscraping') where the `scrape_album_of_the_year.py` script and associated files are.
+3. Open a terminal or command prompt.
 
-4. Run the following command to install the required dependencies using pip:
+4. Navigate to the directory ('webscraping') where the `scrape_album_of_the_year.py` script and associated files are.
+
+5. Run the following command to install the required dependencies using pip:
 
     ```
     pip install -r requirements.txt
