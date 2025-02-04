@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Layout</title>
+    <style>
+        /* Slide Layout Container */
+        .slide-layout-container {
+            display: flex;
+            gap: 20px; /* Space between left and right columns */
+        }
+
+        /* Left Column - Photos */
+        .slide-layout-left-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Space between photo sections */
+        }
+
+        /* Photo Section */
+        .slide-layout-photo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Default alignment (left) */
+        }
+
+        /* Alternating Right Alignment */
+        .slide-layout-photo-section.right-align {
+            align-items: flex-end; /* Right alignment for alternating photos */
+        }
+
+        /* Photo Image */
+        .slide-layout-photo-section img {
+            width: 80%; /* Adjust photo width as needed */
+            height: auto;
+        }
+
+        /* Photo Heading */
+        .slide-layout-photo-heading {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Right Column - Text Content */
+        .slide-layout-right-column {
+            flex: 2;
+            padding-left: 20px;
+        }
+
+        /* Main Heading */
+        .slide-layout-heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Description */
+        .slide-layout-description {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* List Container (Core Technologies and Secondary Skills) */
+        .slide-layout-list-container {
+            display: flex;
+            gap: 20px; /* Space between the two columns */
+            margin-bottom: 20px;
+        }
+
+        /* List Column */
+        .slide-layout-list-column {
+            flex: 1;
+        }
+
+        /* List Heading */
+        .slide-layout-list-heading {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* List Items */
+        .slide-layout-list {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide Layout Container -->
+    <div class="slide-layout-container">
+        <!-- Left Column with Photos -->
+        <div class="slide-layout-left-column">
+            <!-- Photo 1: Left Aligned -->
+            <div class="slide-layout-photo-section">
+                <div class="slide-layout-photo-heading">Photo 1 Heading</div>
+                <img src="photo1.jpg" alt="Photo 1">
+            </div>
+
+            <!-- Photo 2: Right Aligned -->
+            <div class="slide-layout-photo-section right-align">
+                <div class="slide-layout-photo-heading">Photo 2 Heading</div>
+                <img src="photo2.jpg" alt="Photo 2">
+            </div>
+
+            <!-- Photo 3: Left Aligned -->
+            <div class="slide-layout-photo-section">
+                <div class="slide-layout-photo-heading">Photo 3 Heading</div>
+                <img src="photo3.jpg" alt="Photo 3">
+            </div>
+        </div>
+
+        <!-- Right Column with Text Content -->
+        <div class="slide-layout-right-column">
+            <!-- Main Heading -->
+            <div class="slide-layout-heading">Your Heading Here</div>
+
+            <!-- Description -->
+            <div class="slide-layout-description">
+                Your description text goes here. This is a smaller text that provides more details about the content of the slide.
+            </div>
+
+            <!-- Core Technologies and Secondary Skills in the same row -->
+            <div class="slide-layout-list-container">
+                <!-- Core Technologies Column -->
+                <div class="slide-layout-list-column">
+                    <div class="slide-layout-list-heading">Core Technologies</div>
+                    <ul class="slide-layout-list">
+                        <li>Technology 1</li>
+                        <li>Technology 2</li>
+                        <li>Technology 3</li>
+                    </ul>
+                </div>
+
+                <!-- Secondary Skills Column -->
+                <div class="slide-layout-list-column">
+                    <div class="slide-layout-list-heading">Secondary Skills</div>
+                    <ul class="slide-layout-list">
+                        <li>Skill 1</li>
+                        <li>Skill 2</li>
+                        <li>Skill 3</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Key Outcomes List -->
+            <div class="slide-layout-list-heading">Key Outcomes</div>
+            <ul class="slide-layout-list">
+                <li>Outcome 1</li>
+                <li>Outcome 2</li>
+                <li>Outcome 3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
