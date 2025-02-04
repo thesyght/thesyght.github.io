@@ -1,0 +1,96 @@
+/* Slide Layout Container */
+.slide-layout-container {
+    display: flex;
+    gap: 20px; /* Space between left and right columns */
+}
+
+/* Left Column - Photos */
+.slide-layout-left-column-photo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between photo sections */
+}
+
+/* Left Column - Photos */
+.slide-layout-right-column-photo {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between photo sections */
+}
+
+/* Photo Section */
+.slide-layout-photo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Default alignment (left) */
+}
+
+/* Alternating Right Alignment */
+.slide-layout-photo-section.right-align {
+    align-items: flex-end; /* Right alignment for alternating photos */
+}
+
+/* Photo Image */
+.slide-layout-photo-section img {
+    width: 80%; /* Adjust photo width as needed */
+    height: auto;
+}
+
+/* Photo Heading */
+.slide-layout-photo-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Right Column - Text Content */
+.slide-layout-right-column-text {
+    flex: 2;
+    padding-left: 20px;
+}
+
+/* Right Column - Text Content */
+.slide-layout-left-column-text {
+    flex: 1;
+    padding-left: 20px;
+}
+
+/* Main Heading */
+.slide-layout-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Description */
+.slide-layout-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* List Container (Core Technologies and Secondary Skills) */
+.slide-layout-list-container {
+    display: flex;
+    gap: 20px; /* Space between the two columns */
+    margin-bottom: 20px;
+}
+
+/* List Column */
+.slide-layout-list-column {
+    flex: 1;
+}
+
+/* List Heading */
+.slide-layout-list-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* List Items */
+.slide-layout-list {
+    list-style-type: disc;
+    margin-left: 20px;
+}
