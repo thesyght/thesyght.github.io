@@ -175,7 +175,7 @@ a:hover {
     }
 }
 
-.porfolio-image-text-block {
+.portfolio-image-text-block {
     display: flex;
     flex-direction: row;
     background-color: rgba(0, 0, 128, 0.1); /* light navy blue transparent background */
@@ -184,25 +184,25 @@ a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* optional subtle shadow */
   }
   
-  .porfolio-image-container {
+  .portfolio-image-container {
     width: 50%;
   }
   
-  .porfolio-text-container {
+  .portfolio-text-container {
     width: 50%;
   }
   
   /* To position image on the left */
-  .porfolio-image-container.left {
+  .portfolio-image-container.left {
     margin-right: 20px;
   }
   
   /* To position image on the right */
-  .porfolio-image-container.right {
+  .portfolio-image-container.right {
     margin-left: 20px;
     order: 1;
   }
   
-  .porfolio-text-container {
+  .portfolio-text-container {
     order: 0;
   }
