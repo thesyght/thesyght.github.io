@@ -174,3 +174,35 @@ a:hover {
         margin: 0 auto; 
     }
 }
+
+.porfolio-image-text-block {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 0, 128, 0.1); /* light navy blue transparent background */
+    padding: 20px; /* buffer above and below */
+    border-radius: 10px; /* optional rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* optional subtle shadow */
+  }
+  
+  .porfolio-image-container {
+    width: 50%;
+  }
+  
+  .porfolio-text-container {
+    width: 50%;
+  }
+  
+  /* To position image on the left */
+  .porfolio-image-container.left {
+    margin-right: 20px;
+  }
+  
+  /* To position image on the right */
+  .porfolio-image-container.right {
+    margin-left: 20px;
+    order: 1;
+  }
+  
+  .porfolio-text-container {
+    order: 0;
+  }
