@@ -36,7 +36,7 @@
 /* Photo Image */
 .slide-layout-photo-section img {
     width: auto; /* Adjust photo width as needed */
-    height: 80px;
+    height: 200px;
     max-height: 100%; /* Ensure the photo doesn't overflow */
 }
 
