@@ -6,6 +6,11 @@
     <title>Portfolio - Tys Lowde</title>
     <link rel="stylesheet" href="style.css">
     <html>
+    <script>
+        function resizeIframe(obj) {
+          obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+        }
+      </script>
 </head>
 <body>
 
@@ -24,10 +29,10 @@
 <main>
     <p>The below is a collection of selected projects that I have completed in both my professional and personal capacity.</p>
     <div class="portfolio-block">
-      <iframe src="portfolioSlides/bti.html" width="90%" height="500px" style="border: none; margin-bottom: 30px;"></iframe>
+      <iframe src="portfolioSlides/bti.html" width="90%" height="500px" style="border: none; margin-bottom: 30px;" onload="resizeIframe(this);"></iframe>
     </div>
     <div class="portfolio-block">
-      <iframe src="portfolioSlides/iwts.html" width="90%" height="500px" style="border: none; margin-bottom: 30px;"></iframe>
+      <iframe src="portfolioSlides/iwts.html" width="90%" height="500px" style="border: none; margin-bottom: 30px;" onload="resizeIframe(this);"></iframe>
     </div>
 </main>
 
