@@ -94,6 +94,10 @@ body {
     margin-bottom: 20px;
 }
 
+.slide-layout-vertical-container {
+    margin-bottom: 20px;
+}
+
 /* List Column */
 .slide-layout-list-column {
     flex: 1;
@@ -112,4 +116,6 @@ body {
     margin-left: 20px;
     margin-bottom: 0px;
 }
+
+
 
