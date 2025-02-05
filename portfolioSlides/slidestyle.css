@@ -1,3 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Helvetica, sans-serif;
+    color: #394c4a;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
 /* Slide Layout Container */
 .slide-layout-container {
     display: flex;
@@ -68,8 +77,17 @@
 
 /* Description */
 .slide-layout-description {
+    display: flex; /* Use flexbox to align description and image */
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Space between description and image */
     font-size: 16px;
     margin-bottom: 20px;
+}
+
+.slide-layout-description img {
+    width: 150px; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+    flex-shrink: 0; /* Prevent the image from shrinking */
 }
 
 /* List Container (Core Technologies and Secondary Skills) */
@@ -96,3 +114,4 @@
     list-style-type: disc;
     margin-left: 20px;
 }
+
