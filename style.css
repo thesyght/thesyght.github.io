@@ -179,7 +179,7 @@ a:hover {
     display: flex;
     flex-direction: row;
     background-color: rgba(0, 0, 128, 0.1); /* light navy blue transparent background */
-    padding: 20px; /* buffer above and below */
+    padding: 10px; /* buffer above and below */
     border-radius: 10px; /* optional rounded corners */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* optional subtle shadow */
     margin-bottom: 30px;
@@ -191,7 +191,7 @@ a:hover {
     display: flex;
     flex-direction: row;
     background-color: rgba(0, 0, 128, 0.1); /* light navy blue transparent background */
-    padding: 20px; /* buffer above and below */
+    padding: 10px; /* buffer above and below */
     border-radius: 10px; /* optional rounded corners */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* optional subtle shadow */
     margin-bottom: 30px;
@@ -221,3 +221,4 @@ a:hover {
   .portfolio-text-container {
     order: 0;
   }
+
