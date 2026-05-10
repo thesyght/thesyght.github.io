@@ -1,0 +1,596 @@
+{
+  "characters": [
+    {
+      "id": "SON",
+      "name": "Consultant Son",
+      "group": "family"
+    },
+    {
+      "id": "DAUGHTER",
+      "name": "International Daughter",
+      "group": "family"
+    },
+    {
+      "id": "WIDOW",
+      "name": "Widow",
+      "group": "family"
+    },
+    {
+      "id": "PUBLICIST",
+      "name": "Publicist / Family Brand Manager",
+      "group": "family"
+    },
+    {
+      "id": "BASTARD",
+      "name": "Unwanted Bastard Child",
+      "group": "family"
+    },
+    {
+      "id": "OPERA",
+      "name": "Famous Opera Singer",
+      "group": "compatriot"
+    },
+    {
+      "id": "ANTIQUE",
+      "name": "Antique Hunter",
+      "group": "compatriot"
+    },
+    {
+      "id": "MINISTER",
+      "name": "Minister of State Planning",
+      "group": "compatriot"
+    },
+    {
+      "id": "PHIL",
+      "name": "Philanthropist",
+      "group": "compatriot"
+    },
+    {
+      "id": "DIRECTOR",
+      "name": "Director / Best Friend",
+      "group": "compatriot"
+    }
+  ],
+  "relationships": [
+    {
+      "from": "SON",
+      "to": "DAUGHTER",
+      "category": "negative",
+      "text": "Resents her as unserious, expensive, and protected by J. Baroo."
+    },
+    {
+      "from": "SON",
+      "to": "WIDOW",
+      "category": "negative",
+      "text": "Sees her as a legal nuisance trying to dilute the estate."
+    },
+    {
+      "from": "SON",
+      "to": "PUBLICIST",
+      "category": "aware",
+      "text": "Needs their image work, but treats it as hired service rather than loyalty."
+    },
+    {
+      "from": "SON",
+      "to": "BASTARD",
+      "category": "negative",
+      "text": "Sees the claim as an attack on his legitimacy and inheritance."
+    },
+    {
+      "from": "SON",
+      "to": "OPERA",
+      "category": "aware",
+      "text": "Knows they were close to J. Baroo, but dismisses them as theatrical noise."
+    },
+    {
+      "from": "SON",
+      "to": "ANTIQUE",
+      "category": "negative",
+      "text": "Thinks the collection is an expensive distraction from the real business."
+    },
+    {
+      "from": "SON",
+      "to": "MINISTER",
+      "category": "aware",
+      "text": "Knows planning access matters for the company, but does not grasp the private deal."
+    },
+    {
+      "from": "SON",
+      "to": "PHIL",
+      "category": "aware",
+      "text": "Sees the foundation as reputational machinery, not a moral project."
+    },
+    {
+      "from": "SON",
+      "to": "DIRECTOR",
+      "category": "positive",
+      "text": "Believes the Director is his mentor and safest ally in succession."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "SON",
+      "category": "negative",
+      "text": "Sees him as brittle, joyless, and dangerously convinced the company is his."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "WIDOW",
+      "category": "negative",
+      "text": "Questions whether the Widow is genuinely grieving or guarding status."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "PUBLICIST",
+      "category": "negative",
+      "text": "Sees through the brand management and dislikes being packaged."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "BASTARD",
+      "category": "aware",
+      "text": "Is suspicious, but more curious than hostile."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "OPERA",
+      "category": "aware",
+      "text": "Suspects they mattered to J. Baroo more than the family admits."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "ANTIQUE",
+      "category": "aware",
+      "text": "Knows the archive or collection may contain things others want hidden."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "MINISTER",
+      "category": "unknown",
+      "text": "Has little direct knowledge of the Minister’s planning interest."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "PHIL",
+      "category": "negative",
+      "text": "Distrusts polished moral language around family money."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "DIRECTOR",
+      "category": "negative",
+      "text": "Does not fully trust his calm caretaker act."
+    },
+    {
+      "from": "WIDOW",
+      "to": "SON",
+      "category": "negative",
+      "text": "Thinks he is arrogant, socially useless, and too eager to push her out."
+    },
+    {
+      "from": "WIDOW",
+      "to": "DAUGHTER",
+      "category": "negative",
+      "text": "Resents her legitimacy, ease, and emotional claim on J. Baroo."
+    },
+    {
+      "from": "WIDOW",
+      "to": "PUBLICIST",
+      "category": "negative",
+      "text": "Competes with them over who controls the public story of the marriage."
+    },
+    {
+      "from": "WIDOW",
+      "to": "BASTARD",
+      "category": "aware",
+      "text": "Uses the claim as leverage against the legitimate heirs."
+    },
+    {
+      "from": "WIDOW",
+      "to": "OPERA",
+      "category": "negative",
+      "text": "Sees them as a rival for J. Baroo’s affection and memory."
+    },
+    {
+      "from": "WIDOW",
+      "to": "ANTIQUE",
+      "category": "aware",
+      "text": "Knows the collection holds value, but cares mainly if it affects her settlement."
+    },
+    {
+      "from": "WIDOW",
+      "to": "MINISTER",
+      "category": "aware",
+      "text": "Knows public respectability and political protection may be useful."
+    },
+    {
+      "from": "WIDOW",
+      "to": "PHIL",
+      "category": "positive",
+      "text": "May use charitable respectability to protect her status."
+    },
+    {
+      "from": "WIDOW",
+      "to": "DIRECTOR",
+      "category": "aware",
+      "text": "May rely on him to manage estate realities after J. Baroo."
+    },
+    {
+      "from": "PUBLICIST",
+      "to": "SON",
+      "category": "aware",
+      "text": "Uses him as the obvious public heir while quietly managing his damage."
+    },
+    {
+      "from": "PUBLICIST",
+      "to": "DAUGHTER",
+      "category": "negative",
+      "text": "Finds her hard to control because she performs indifference too well."
+    },
+    {
+      "from": "PUBLICIST",
+      "to": "WIDOW",
+      "category": "negative",
+      "text": "Needs her dignified, quiet, and predictable."
+    },
+    {
+      "from": "PUBLICIST",
+      "to": "BASTARD",
+      "category": "negative",
+      "text": "Wants to suppress, soften, or reframe the legitimacy claim."
+    },
+    {
+      "from": "PUBLICIST",
+      "to": "OPERA",
+      "category": "negative",
+      "text": "Wants to control rumours around private letters and patronage."
+    },
+    {
+      "from": "PUBLICIST",
+      "to": "ANTIQUE",
+      "category": "aware",
+      "text": "Has buried rumours about the Baroo Collection before."
+    },
+    {
+      "from": "PUBLICIST",
+      "to": "MINISTER",
+      "category": "positive",
+      "text": "Coordinates political messaging around land, legacy, and reputation."
+    },
+    {
+      "from": "PUBLICIST",
+      "to": "PHIL",
+      "category": "positive",
+      "text": "Turns charity work into clean public optics."
+    },
+    {
+      "from": "PUBLICIST",
+      "to": "DIRECTOR",
+      "category": "positive",
+      "text": "Works with him on crisis control and continuity messaging."
+    },
+    {
+      "from": "BASTARD",
+      "to": "SON",
+      "category": "negative",
+      "text": "Sees him as the symbol of everything they were denied."
+    },
+    {
+      "from": "BASTARD",
+      "to": "DAUGHTER",
+      "category": "positive",
+      "text": "Wants recognition from her, not just legal acknowledgement."
+    },
+    {
+      "from": "BASTARD",
+      "to": "WIDOW",
+      "category": "aware",
+      "text": "Knows the Widow’s support may be strategic rather than sincere."
+    },
+    {
+      "from": "BASTARD",
+      "to": "PUBLICIST",
+      "category": "negative",
+      "text": "Sees them as the person paid to erase inconvenient people."
+    },
+    {
+      "from": "BASTARD",
+      "to": "OPERA",
+      "category": "positive",
+      "text": "May believe they know the truth about parentage."
+    },
+    {
+      "from": "BASTARD",
+      "to": "ANTIQUE",
+      "category": "unknown",
+      "text": "Knows little about the Antique Hunter beyond estate gossip."
+    },
+    {
+      "from": "BASTARD",
+      "to": "MINISTER",
+      "category": "unknown",
+      "text": "Has no meaningful knowledge of the Minister’s role."
+    },
+    {
+      "from": "BASTARD",
+      "to": "PHIL",
+      "category": "aware",
+      "text": "May seek legitimacy through their public moral support."
+    },
+    {
+      "from": "BASTARD",
+      "to": "DIRECTOR",
+      "category": "negative",
+      "text": "Suspects the Director treats the claim as a tool against the heirs."
+    },
+    {
+      "from": "OPERA",
+      "to": "SON",
+      "category": "negative",
+      "text": "Finds him crude, emotionally empty, and blind to his father’s inner life."
+    },
+    {
+      "from": "OPERA",
+      "to": "DAUGHTER",
+      "category": "positive",
+      "text": "May see her as the only heir subtle enough to understand J. Baroo."
+    },
+    {
+      "from": "OPERA",
+      "to": "WIDOW",
+      "category": "negative",
+      "text": "Knows the marriage was not what the public saw."
+    },
+    {
+      "from": "OPERA",
+      "to": "PUBLICIST",
+      "category": "negative",
+      "text": "Knows image management is not the same as truth."
+    },
+    {
+      "from": "OPERA",
+      "to": "BASTARD",
+      "category": "aware",
+      "text": "May know the parentage story, but has reasons not to say it plainly."
+    },
+    {
+      "from": "OPERA",
+      "to": "ANTIQUE",
+      "category": "positive",
+      "text": "Shares elite patronage circles and old Baroo secrets."
+    },
+    {
+      "from": "OPERA",
+      "to": "MINISTER",
+      "category": "aware",
+      "text": "Knows scandal can damage the circles the Minister needs controlled."
+    },
+    {
+      "from": "OPERA",
+      "to": "PHIL",
+      "category": "positive",
+      "text": "Supplies celebrity and glamour for philanthropic theatre."
+    },
+    {
+      "from": "OPERA",
+      "to": "DIRECTOR",
+      "category": "negative",
+      "text": "Knows something personal that could undermine his version of J. Baroo."
+    },
+    {
+      "from": "ANTIQUE",
+      "to": "SON",
+      "category": "negative",
+      "text": "Sees him as a corporate vandal who would sell what he does not understand."
+    },
+    {
+      "from": "ANTIQUE",
+      "to": "DAUGHTER",
+      "category": "negative",
+      "text": "Fears she will ask provenance questions the family avoided."
+    },
+    {
+      "from": "ANTIQUE",
+      "to": "WIDOW",
+      "category": "aware",
+      "text": "May know she tried to extract value from the collection."
+    },
+    {
+      "from": "ANTIQUE",
+      "to": "PUBLICIST",
+      "category": "positive",
+      "text": "Needs them to keep provenance questions away from the press."
+    },
+    {
+      "from": "ANTIQUE",
+      "to": "BASTARD",
+      "category": "aware",
+      "text": "May have seen records or objects tied to old private arrangements."
+    },
+    {
+      "from": "ANTIQUE",
+      "to": "OPERA",
+      "category": "positive",
+      "text": "May know gifts or artefacts tied to their relationship with J. Baroo."
+    },
+    {
+      "from": "ANTIQUE",
+      "to": "MINISTER",
+      "category": "positive",
+      "text": "Needs permits, heritage discretion, or planning tolerance."
+    },
+    {
+      "from": "ANTIQUE",
+      "to": "PHIL",
+      "category": "negative",
+      "text": "Resists donation or audit of the collection."
+    },
+    {
+      "from": "ANTIQUE",
+      "to": "DIRECTOR",
+      "category": "positive",
+      "text": "May have helped him keep collection problems quiet during company transitions."
+    },
+    {
+      "from": "MINISTER",
+      "to": "SON",
+      "category": "aware",
+      "text": "Sees him as useful but unstable for delicate arrangements."
+    },
+    {
+      "from": "MINISTER",
+      "to": "DAUGHTER",
+      "category": "negative",
+      "text": "Sees her as a risk because she is not embedded in local arrangements."
+    },
+    {
+      "from": "MINISTER",
+      "to": "WIDOW",
+      "category": "aware",
+      "text": "Sees her as useful if she keeps the family respectable."
+    },
+    {
+      "from": "MINISTER",
+      "to": "PUBLICIST",
+      "category": "positive",
+      "text": "Uses them to keep public discussion disciplined."
+    },
+    {
+      "from": "MINISTER",
+      "to": "BASTARD",
+      "category": "negative",
+      "text": "Sees the claim as a destabilising inheritance problem."
+    },
+    {
+      "from": "MINISTER",
+      "to": "OPERA",
+      "category": "negative",
+      "text": "Wants scandal contained before it affects civic arrangements."
+    },
+    {
+      "from": "MINISTER",
+      "to": "ANTIQUE",
+      "category": "positive",
+      "text": "May need collection issues kept quiet to protect land negotiations."
+    },
+    {
+      "from": "MINISTER",
+      "to": "PHIL",
+      "category": "positive",
+      "text": "Uses charity and civic virtue as access."
+    },
+    {
+      "from": "MINISTER",
+      "to": "DIRECTOR",
+      "category": "positive",
+      "text": "Needs company continuity and land cooperation."
+    },
+    {
+      "from": "PHIL",
+      "to": "SON",
+      "category": "aware",
+      "text": "Sees him as a cheque book with poor manners."
+    },
+    {
+      "from": "PHIL",
+      "to": "DAUGHTER",
+      "category": "aware",
+      "text": "Wants her blessing for legacy and foundation work."
+    },
+    {
+      "from": "PHIL",
+      "to": "WIDOW",
+      "category": "positive",
+      "text": "Offers dignity in exchange for silence and public cooperation."
+    },
+    {
+      "from": "PHIL",
+      "to": "PUBLICIST",
+      "category": "positive",
+      "text": "Needs their polish to make money look virtuous."
+    },
+    {
+      "from": "PHIL",
+      "to": "BASTARD",
+      "category": "aware",
+      "text": "Can offer sympathy without giving real power."
+    },
+    {
+      "from": "PHIL",
+      "to": "OPERA",
+      "category": "positive",
+      "text": "Uses their glamour to make influence look like culture."
+    },
+    {
+      "from": "PHIL",
+      "to": "ANTIQUE",
+      "category": "negative",
+      "text": "Wants collection prestige without provenance trouble."
+    },
+    {
+      "from": "PHIL",
+      "to": "MINISTER",
+      "category": "positive",
+      "text": "Uses political access to keep the foundation powerful."
+    },
+    {
+      "from": "PHIL",
+      "to": "DIRECTOR",
+      "category": "positive",
+      "text": "Needs his control to keep foundation commitments protected."
+    },
+    {
+      "from": "DIRECTOR",
+      "to": "SON",
+      "category": "negative",
+      "text": "Pretends to mentor him, privately considers him unfit to lead."
+    },
+    {
+      "from": "DIRECTOR",
+      "to": "DAUGHTER",
+      "category": "negative",
+      "text": "Fears she may inherit records that expose the company history."
+    },
+    {
+      "from": "DIRECTOR",
+      "to": "WIDOW",
+      "category": "aware",
+      "text": "Uses her grievance to destabilise the children."
+    },
+    {
+      "from": "DIRECTOR",
+      "to": "PUBLICIST",
+      "category": "positive",
+      "text": "Uses them to shape the narrative after the will."
+    },
+    {
+      "from": "DIRECTOR",
+      "to": "BASTARD",
+      "category": "negative",
+      "text": "Treats the claim as a lever against the heirs."
+    },
+    {
+      "from": "DIRECTOR",
+      "to": "OPERA",
+      "category": "negative",
+      "text": "Considers them a loose end because of what they know."
+    },
+    {
+      "from": "DIRECTOR",
+      "to": "ANTIQUE",
+      "category": "positive",
+      "text": "Wants collection issues managed quietly during transition."
+    },
+    {
+      "from": "DIRECTOR",
+      "to": "MINISTER",
+      "category": "positive",
+      "text": "Needs planning arrangements to survive the will."
+    },
+    {
+      "from": "DIRECTOR",
+      "to": "PHIL",
+      "category": "positive",
+      "text": "Uses the foundation as reputation cover and influence channel."
+    }
+  ]
+}
