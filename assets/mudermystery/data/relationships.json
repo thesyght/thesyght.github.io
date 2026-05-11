@@ -26,9 +26,9 @@
     },
     {
       "from": "DIRECTOR",
-      "to": "CHEF",
-      "category": "aware",
-      "text": "Employs The Chef and thinks of them only as staff."
+      "to": "DIPLOMAT",
+      "category": "negative",
+      "text": "Was childhood friends with The Diplomat and J. Baroo, but has fallen out of touch with The Diplomat. The distance is mutual."
     },
     {
       "from": "DIRECTOR",
@@ -74,9 +74,9 @@
     },
     {
       "from": "SON",
-      "to": "CHEF",
-      "category": "unknown",
-      "text": "Barely thinks of The Chef at all."
+      "to": "DIPLOMAT",
+      "category": "positive",
+      "text": "Knows little about The Diplomat, but feels the urge to impress them because they were one of J. Baroo's old friends."
     },
     {
       "from": "SON",
@@ -122,9 +122,9 @@
     },
     {
       "from": "DAUGHTER",
-      "to": "CHEF",
+      "to": "DIPLOMAT",
       "category": "positive",
-      "text": "Likes The Chef and used to stay up late talking with them."
+      "text": "Is fond of The Diplomat because they have often caught up together overseas over the years."
     },
     {
       "from": "DAUGHTER",
@@ -170,9 +170,9 @@
     },
     {
       "from": "WIDOW",
-      "to": "CHEF",
-      "category": "positive",
-      "text": "Likes The Chef and has shared many late-night drinks and conversations with them."
+      "to": "DIPLOMAT",
+      "category": "negative",
+      "text": "Does not really like The Diplomat because they knew about the adultery with The Opera Singer and said nothing."
     },
     {
       "from": "WIDOW",
@@ -218,9 +218,9 @@
     },
     {
       "from": "BASTARD",
-      "to": "CHEF",
+      "to": "DIPLOMAT",
       "category": "unknown",
-      "text": "Does not know The Chef personally."
+      "text": "Does not know The Diplomat well and does not understand how much The Diplomat knows about the family situation."
     },
     {
       "from": "BASTARD",
@@ -241,52 +241,52 @@
       "text": "Does not know The Antique Collector."
     },
     {
-      "from": "CHEF",
+      "from": "DIPLOMAT",
       "to": "DIRECTOR",
       "category": "negative",
-      "text": "Is employed by The Director, but has overheard aggressive phone calls and knows a side of them many others have not seen."
+      "text": "Was once part of the same childhood circle as J. Baroo and The Director, but has fallen out of touch with The Director. The distance is mutual and slightly sour."
     },
     {
-      "from": "CHEF",
+      "from": "DIPLOMAT",
       "to": "SON",
       "category": "negative",
-      "text": "Thinks The Kissass Offspring is too pleased with themself and needs to be cut down a bit."
+      "text": "Is patronising towards The Kissass Offspring, seeing them as spoonfed, sheltered, and short on real experience."
     },
     {
-      "from": "CHEF",
+      "from": "DIPLOMAT",
       "to": "DAUGHTER",
       "category": "positive",
-      "text": "Is impressed by The Spoilt Offspring, but thinks they may be slightly over their head."
+      "text": "Is fond of The Spoilt Offspring because they often crossed paths overseas while growing up."
     },
     {
-      "from": "CHEF",
+      "from": "DIPLOMAT",
       "to": "WIDOW",
       "category": "positive",
-      "text": "Loves The Surviving Spouse."
+      "text": "Is fond of The Surviving Spouse, but feels ashamed for knowing about the adultery with The Opera Singer and saying nothing."
     },
     {
-      "from": "CHEF",
+      "from": "DIPLOMAT",
       "to": "BASTARD",
-      "category": "positive",
-      "text": "Has never met The Father's Bastard personally, but has heard of them from The Surviving Spouse and thinks kindly of both."
+      "category": "aware",
+      "text": "Knows about The Father's Bastard and is embarrassed by the whole situation on J. Baroo's behalf."
     },
     {
-      "from": "CHEF",
+      "from": "DIPLOMAT",
       "to": "OPERA",
-      "category": "positive",
-      "text": "Is a long-time friend of The Opera Singer and knows they cheated with J. Baroo, but does not know about The Father's Bastard."
+      "category": "negative",
+      "text": "Knows The Opera Singer and is embarrassed by the adultery, slightly blaming them for the scandal."
     },
     {
-      "from": "CHEF",
+      "from": "DIPLOMAT",
       "to": "PUBLICIST",
-      "category": "positive",
-      "text": "Is good friends with The Publicist / Journalist."
+      "category": "unknown",
+      "text": "Knows little of The Publicist / Journalist beyond their role around the Baroo brand."
     },
     {
-      "from": "CHEF",
+      "from": "DIPLOMAT",
       "to": "ANTIQUE",
-      "category": "positive",
-      "text": "Is impressed by The Antique Collector."
+      "category": "negative",
+      "text": "Is very suspicious of The Antique Collector because reports about the artefacts have crossed their desk."
     },
     {
       "from": "OPERA",
@@ -320,9 +320,9 @@
     },
     {
       "from": "OPERA",
-      "to": "CHEF",
+      "to": "DIPLOMAT",
       "category": "positive",
-      "text": "Is a long-time friend of The Chef."
+      "text": "Tries to ingratiate themself with The Diplomat, knowing The Diplomat is embarrassed by the adultery and may judge them for it."
     },
     {
       "from": "OPERA",
@@ -368,9 +368,9 @@
     },
     {
       "from": "PUBLICIST",
-      "to": "CHEF",
+      "to": "DIPLOMAT",
       "category": "positive",
-      "text": "Is good friends with The Chef."
+      "text": "Knows The Diplomat and constantly tries to use their association with the Baroo family for brand benefit."
     },
     {
       "from": "PUBLICIST",
@@ -416,9 +416,9 @@
     },
     {
       "from": "ANTIQUE",
-      "to": "CHEF",
-      "category": "aware",
-      "text": "Thinks little of The Chef except that they are a good cook."
+      "to": "DIPLOMAT",
+      "category": "negative",
+      "text": "Thinks The Diplomat knows more than they admit about the stolen works and keeps trying to bribe or soften them with trinkets."
     },
     {
       "from": "ANTIQUE",

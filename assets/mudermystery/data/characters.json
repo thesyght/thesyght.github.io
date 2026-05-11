@@ -123,28 +123,28 @@
       ]
     },
     {
-      "id": "CHEF",
-      "name": "The Chef",
-      "role": "Chef",
+      "id": "DIPLOMAT",
+      "name": "The Diplomat",
+      "role": "Diplomat",
       "group": "compatriot",
-      "publicRole": "The private chef for the evening and a familiar presence in the Baroo household.",
-      "publicBio": "The Chef is the private chef for the evening and a familiar figure in the Baroo household. They are not aristocratic, corporate, political, or theatrical, which makes them stand out in a room full of people trying to perform importance.\n\nPublicly, they are capable, composed, and practical. They are used to handling tension through logistics: food on time, glasses filled, kitchens kept moving, and difficult people kept away from open flames.\n\nTheir social presence is warmer than most of the Baroo circle, but not soft. They can be kind, especially in private, yet they are also capable of cutting through nonsense with one dry observation. To the guests, they may seem peripheral because they are staff. That is a mistake. In a house like Baroo Manor, the person serving dinner often knows more about the room than the people speaking at the table.",
-      "personality": "Capable, dry, practical, warm in private, and unimpressed by rich people performing importance.",
-      "privateBio": "The Chef is employed by the Director, but has overheard the Director’s aggressive phone calls and knows there is a side to the Director that many others have not seen. The Chef loves the Surviving Spouse and has often spoken with them late into the night. The Chef is impressed by the Spoilt Offspring, though they think the Spoilt Offspring may be slightly over their head in the current crisis.\n\nThe Chef thinks the Kissass Offspring is too pleased with themself and needs to be cut down a bit. The Chef has never personally met the Father’s Bastard, but has heard about them from the Surviving Spouse and thinks kindly of both.\n\nThe Chef is good friends with the Publicist / Journalist and is impressed by the Antique Collector. The Chef knows the Opera Singer cheated with J. Baroo, but does not know that the Father’s Bastard is the Opera Singer’s child.",
-      "secretPressure": "Close to the household’s emotional truth and physically close to the kitchen clues, but does not understand the full inheritance plot.",
-      "wants": "To protect the Surviving Spouse, avoid being scapegoated, and keep the evening from becoming uncontrolled.",
-      "fears": "Being treated as disposable staff because the murder touches the kitchen and service mechanics.",
-      "redHerring": "Kitchen access and knowledge of the house make the Chef suspicious, even if they do not know the whole plot.",
+      "publicRole": "A diplomatic figure and old childhood friend of J. Baroo, attending as part of the old Baroo circle.",
+      "publicBio": "The Diplomat belongs to the older, quieter world of J. Baroo’s life: school friendships, international postings, formal dinners, favours remembered over decades, and conversations where nothing direct is ever quite said.\n\nThey knew J. Baroo before the company became an institution and before the family name became something that needed constant management. Their public manner is composed, worldly, and precise. They are used to rooms where a pause can mean more than an accusation and where a polite phrase can end a career.\n\nTo the guests, The Diplomat seems like a figure from J. Baroo’s earlier life: respectable, connected, and difficult to place. They are not family, not company management, and not exactly a friend of the house in the present. Their presence suggests that J. Baroo’s will may touch matters beyond money, family, and business.",
+      "personality": "Worldly, formal, observant, diplomatic in public, and quietly judgemental beneath the manners.",
+      "privateBio": "The Diplomat was childhood friends with both J. Baroo and The Director, but has fallen out of touch with The Director. The feeling is mutual. Old familiarity has curdled into distance, and neither of them seems especially eager to repair it.\n\nThey are fond of The Spoilt Offspring because they often crossed paths overseas as The Spoilt Offspring grew up. They are patronising towards The Kissass Offspring, whom they see as spoonfed, sheltered, and lacking real experience. The Kissass Offspring, for their part, knows little about The Diplomat beyond the urge to impress them because they were J. Baroo’s friend.\n\nThe Diplomat is fond of The Surviving Spouse but ashamed that they knew about the adultery with The Opera Singer and said nothing. The Surviving Spouse does not really like them in return for exactly that reason. The Diplomat knows about The Father’s Bastard and is slightly embarrassed by the situation on J. Baroo’s behalf, though The Father’s Bastard does not know them well.\n\nThey know The Opera Singer and are embarrassed by the adultery, slightly blaming The Opera Singer for it. The Opera Singer is trying to ingratiate themself with The Diplomat in return. The Diplomat is very suspicious of The Antique Collector because reports about stolen works have crossed their desk. The Antique Collector thinks The Diplomat knows even more and keeps trying to soften or bribe them with trinkets.\n\nThe Diplomat knows little of The Publicist / Journalist, but The Publicist / Journalist knows them and constantly tries to use their association with the Baroo family for brand benefit.",
+      "secretPressure": "Knows enough about the family’s old adultery, the Father’s Bastard, and suspicious artefact reports to make several guests nervous, but is not fully embedded in the company fight.",
+      "wants": "To preserve dignity, avoid being dragged into old scandals, and understand why J. Baroo’s final arrangements required their presence.",
+      "fears": "Being forced to admit they knew about the adultery and said nothing, or being linked to reports about the Antique Collector’s stolen works.",
+      "redHerring": "Their diplomatic discretion, old family knowledge, and awareness of artefact reports make them seem like they know more than they say.",
       "actObjectives": {
-        "ACT1": "Navigate suspicion around the kitchen, clapper, food, and service areas.",
-        "ACT2": "Protect the Surviving Spouse and the Publicist / Journalist while working out what the Director has been hiding.",
-        "ACT3": "Reveal what they overheard without making themself the obvious scapegoat."
+        "ACT1": "Observe who panics, maintain composure, and avoid admitting how much they already know about the family.",
+        "ACT2": "Watch The Antique Collector closely and work out whether the fake envelope is part of a broader cover-up.",
+        "ACT3": "Decide whether to preserve old discretion or expose what they knew about adultery, parentage, and artefact reports."
       },
       "clues": [
-        "Cow bell clapper hidden in the kitchen.",
-        "Kitchen service notes explaining one bell and three bells.",
-        "Overheard phone-call clue showing the Director’s private aggression.",
-        "Late-night household references connecting the Chef and the Surviving Spouse."
+        "Reference to reports about stolen works crossing The Diplomat's desk.",
+        "Old correspondence showing The Diplomat, J. Baroo, and The Director were childhood friends.",
+        "Social notes linking The Diplomat to The Spoilt Offspring overseas.",
+        "Evidence that The Diplomat knew about the adultery with The Opera Singer and remained silent."
       ]
     },
     {
