@@ -1,203 +1,224 @@
 {
   "characters": [
     {
-      "id": "SON",
-      "name": "Consultant Son",
-      "group": "family",
-      "publicRole": "Arrogant, hardworking son running the family business.",
-      "personality": "Consultant‑core; no friends; poor social skills; sees himself as the obvious successor.",
-      "secretPressure": "The company is going public and he will not inherit operational control.",
-      "wants": "Control of Baroo Holdings and recognition as successor.",
-      "fears": "Being reduced to a mere board seat while the Director controls the transition.",
-      "redHerring": "Loudest apparent motive makes him an early suspect.",
+      "id": "DIRECTOR",
+      "name": "The Director",
+      "role": "Director / Best Friend",
+      "group": "compatriot",
+      "publicRole": "J. Baroo’s closest business confidant and long-serving Director of Baroo Holdings.",
+      "publicBio": "The Director was J. Baroo’s closest business confidant, long-serving senior figure at Baroo Holdings, and one of the few people outside the family who could speak with authority about both the company and the house.\n\nThey present as polished, controlled, and indispensable. In public, they seem like the stabilising force in the room: courteous to the family, respectful to staff, careful with language, and never openly ambitious. They speak about J. Baroo with the solemn familiarity of someone who sees friendship, company history, and institutional legacy as inseparable.\n\nTheir social style is calm, paternal, and slightly patronising. They rarely raise their voice. They ask measured questions, let others embarrass themselves, and then offer practical solutions. To the guests, they appear to be the obvious adult in the room: part family friend, part executive, part unofficial guardian of the Baroo legacy.",
+      "personality": "Polished, controlled, image-conscious, and publicly stabilising. They rarely appear openly ambitious.",
+      "privateBio": "The Director believes they built Baroo Holdings while the Baroo family merely inherited the name. They despise the Kissass Offspring, whom they consider a moron playing at leadership, but they hide this from everyone except J. Baroo. They are suspicious of the Spoilt Offspring because they know the Spoilt Offspring spoke often and privately with J. Baroo near the end.\n\nThey think the Surviving Spouse was sidelined long ago and has little useful to add. They employ the Chef and think of them only as staff. They were told to hide the Father’s Bastard inside the company, and they view that person as a nuisance to the business rather than as family.\n\nThe Director is deeply concerned with the image and brand of Baroo Holdings. They and the Publicist / Journalist both see the Antique Collector as a serious liability because the stolen artefacts risk dragging the company and the family name into scandal. They are also in cahoots with the Opera Singer, with whom they had an affair. Through that affair, they learned the truth about the Father’s Bastard.",
+      "secretPressure": "The real codicil blocks their path to control, while the fake codicil would make them Controller of the Board.",
+      "wants": "Control of Baroo Holdings, authority over the transition, and protection of the company brand.",
+      "fears": "Being excluded from control if the real codicil is read and authenticated.",
+      "redHerring": "Acts calm and helpful early, making them seem less obvious than the louder family suspects.",
       "actObjectives": {
-        "ACT1": "Assert his authority at dinner and ensure the reading proceeds on his terms.",
-        "ACT2": "Lead the search with an air of command while privately doubting others.",
-        "ACT3": "Defend his entitlement when the codicil threatens his control and deflect suspicion." 
+        "ACT1": "Play the mentor and stabiliser while the locked-room confusion unfolds.",
+        "ACT2": "Push everyone to accept the fake envelope and stop searching before the real envelope is found.",
+        "ACT3": "Defend the fake codicil as sensible company governance and avoid being tied to the real one."
       },
       "clues": [
-        "Succession briefing in the media room indicating his future role.",
-        "Director’s hostile email showing contempt for his consultancy background."
+        "Aggressive email in the media room revealing contempt for the Kissass Offspring.",
+        "Fake codicil granting transition control to the Director.",
+        "Brand-risk notes linking the Director and the Publicist / Journalist’s concern about the Antique Collector.",
+        "Evidence of prior contact with the Opera Singer about the Father’s Bastard.",
+        "Real envelope hidden at The Blind Judge statue."
+      ]
+    },
+    {
+      "id": "SON",
+      "name": "The Kissass Offspring",
+      "role": "Kissass Offspring",
+      "group": "family",
+      "publicRole": "The dutiful Baroo child who has stayed close to the company and expects succession.",
+      "publicBio": "The Kissass Offspring is the dutiful Baroo child, or at least that is the role they have spent years perfecting. They stayed close to the company, attended the meetings, learnt the language of consultants and investors, and made themself available whenever J. Baroo needed a loyal child in the room.\n\nThey are hardworking, precise, and deeply impressed by their own stamina. They speak in frameworks, priorities, deliverables, and strategic phases. They are not especially warm, not especially funny, and not naturally liked, but they believe respect is more important than charm.\n\nIn public, they behave as though succession is not a question but an administrative formality. They expect to be taken seriously and become visibly irritated when others treat the will as a family drama rather than a governance matter. Their most obvious flaw is that they confuse effort with entitlement. They are desperate to be seen as competent, useful, and loyal, but that need for approval makes them brittle.",
+      "personality": "Hardworking, brittle, status-conscious, consultant-coded, and desperate to be recognised as the competent heir.",
+      "privateBio": "The Kissass Offspring believes the Director is their mentor and safest ally in succession. They do not realise the Director privately despises them. They despise the Spoilt Offspring and see them as a brat, a family drain, and someone who never worked for anything.\n\nThey do not know the Father’s Bastard is J. Baroo’s child. They think the Father’s Bastard is a slightly irritating colleague whom J. Baroo inexplicably kept around both the company and the house. They love the Surviving Spouse and believe the Surviving Spouse needs protection from the world. They barely think of the Chef at all.\n\nThey have a crush on the Opera Singer but do not understand why the Opera Singer was so close to J. Baroo. They are charmed by the Antique Collector’s objects and stories. They look down on the Publicist / Journalist because that person is lower on the company payroll, despite depending on their image work.",
+      "secretPressure": "Expected operational control of Baroo Holdings, but both the fake and real succession paths threaten to reduce them.",
+      "wants": "Control of Baroo Holdings and recognition as the child who stayed and worked.",
+      "fears": "Being reduced to a board seat while the Director controls the transition.",
+      "redHerring": "Loudest apparent motive makes them an early suspect.",
+      "actObjectives": {
+        "ACT1": "Assert authority and treat the murder as a governance crisis.",
+        "ACT2": "Try to lead the search while becoming increasingly unsettled by the fake codicil.",
+        "ACT3": "Defend their entitlement and explain why their succession claims do not match the documents."
+      },
+      "clues": [
+        "Succession briefing in the media room indicating their expected future role.",
+        "The Director’s hostile email showing contempt for their consultancy background.",
+        "Fake codicil clause reducing them to an equal board partner."
       ]
     },
     {
       "id": "DAUGHTER",
-      "name": "International Daughter",
+      "name": "The Spoilt Offspring",
+      "role": "Spoilt Offspring",
       "group": "family",
-      "publicRole": "Boarding‑school graduate and golden‑spoon daughter from France.",
-      "personality": "Self‑sufficient and observant despite her pampered image.",
-      "secretPressure": "Uncertain why J. Baroo trusted her and wary of being dragged into company politics.",
-      "wants": "Truth about her father’s trust and a fair say in the estate.",
-      "fears": "Becoming trapped in corporate infighting.",
-      "redHerring": "Appears frivolous but may expose the Director.",
+      "publicRole": "The polished, internationally educated Baroo child who appears detached from the company.",
+      "publicBio": "The Spoilt Offspring is the internationally polished Baroo child: expensive education, time abroad, excellent taste, and the air of someone who has never had to enter a room before deciding whether it deserved them. They are charming when they choose to be, indifferent when they do not, and used to being underestimated.\n\nPublicly, they appear to have floated through the Baroo inheritance rather than worked for it. Boarding school in France, long absences overseas, and a lifestyle built around distance from the family business have made them seem ornamental to some and infuriating to others.\n\nTheir social personality is elegant, dry, and cutting. They do not compete for attention in the same obvious way as the Kissass Offspring. Instead, they observe, make small precise comments, and let other people reveal themselves. To the room, they are the spoilt Baroo child who may or may not care what is in the will. They look as if they are above the whole thing, but they also clearly expect to be treated as someone of consequence.",
+      "personality": "Elegant, dry, cutting, outwardly spoilt, and apparently detached from the company’s daily burdens.",
+      "privateBio": "The Spoilt Offspring is far more competent than they allow others to see. They think the Kissass Offspring is a fool and have little patience for their corporate theatre. They respect the Director and think of them as a mentor, though they do not understand the full danger the Director represents.\n\nThey have figured out that the Father’s Bastard is J. Baroo’s child and consider that person an embarrassment. They pity and love the Surviving Spouse, but also recognise how vulnerable the Surviving Spouse is. They like the Chef and used to stay up late talking with them.\n\nThey like the Publicist / Journalist and think that person has been good for the company, especially in hiding problems with the Historical Foundation. They know about the Antique Collector’s thefts because they have personally profited from some of them. They intensely dislike the Opera Singer, whom they consider a threat to the family’s dignity.",
+      "secretPressure": "May receive archive or estate access that threatens people hiding company, family, or collection records.",
+      "wants": "Control over their own position and access to J. Baroo’s private truth.",
+      "fears": "Being trapped in a company structure controlled by the Director.",
+      "redHerring": "Appears frivolous but has personally profited from the Antique Collector’s stolen artefacts.",
       "actObjectives": {
-        "ACT1": "Observe the dinner, test her brother’s arrogance, and quietly collect information.",
-        "ACT2": "Search thoroughly and question why the fake envelope exists.",
-        "ACT3": "Challenge the Director and push for a just reading of the codicil." 
+        "ACT1": "Observe the dinner, test the Kissass Offspring’s arrogance, and gather information without appearing too invested.",
+        "ACT2": "Question the fake envelope and the corporate language inside it.",
+        "ACT3": "Challenge the Director and use their knowledge of J. Baroo’s voice and archive habits."
       },
       "clues": [
-        "Archive transfer letter in the media room hinting at her father’s trust.",
-        "Note about the Baroo archive revealing hidden assets." 
+        "Archive transfer letter in the media room hinting at J. Baroo’s trust in them.",
+        "Historical Foundation notes tied to the Publicist / Journalist’s image management.",
+        "Provenance references linking the Spoilt Offspring and the Antique Collector."
       ]
     },
     {
       "id": "WIDOW",
-      "name": "Widow",
+      "name": "The Surviving Spouse",
+      "role": "Surviving Spouse",
       "group": "family",
-      "publicRole": "Grieving widow of J. Baroo.",
-      "personality": "Dignified on the surface but estranged from J. Baroo.",
-      "secretPressure": "Using the Bastard Child claim as leverage to secure status and settlement.",
-      "wants": "Legal recognition of her status, residence rights in Baroo Manor, and a generous settlement.",
-      "fears": "Revelation of her estranged marriage and loss of standing.",
-      "redHerring": "Anger at the Publicist and rivalry with the Opera Singer create suspicion.",
+      "publicRole": "J. Baroo’s surviving spouse and guardian of household dignity.",
+      "publicBio": "The Surviving Spouse behaves as though that position is both a grief and a social office. They are elegant, controlled, and intensely aware of what a family like the Baroos should look like in public.\n\nTheir public personality is formal but not cold. They can be gracious, especially when being gracious gives them the moral advantage. They have the gift of making a polite sentence feel like a warning.\n\nThey present themself as the guardian of household dignity. They dislike vulgar displays of ambition, family bickering in front of outsiders, and any suggestion that J. Baroo’s private life should be pulled apart for entertainment. To the other guests, they are not merely a grieving spouse. They are someone fighting to ensure the marriage, the household, and their own standing are treated with the respect they believe they deserve.",
+      "personality": "Formal, elegant, protective, morally forceful, and skilled at turning politeness into pressure.",
+      "privateBio": "The Surviving Spouse likes the Director but worries the Director is not good for the family in this moment. They love the Kissass Offspring but think they need protection from their own idiocy. They also love the Spoilt Offspring, though they are slightly frightened by the ruthlessness beneath the Spoilt Offspring’s charm.\n\nThey love the Father’s Bastard and have been their major support, helping bring them back into the family in line with J. Baroo’s wishes. They like the Chef and have shared many late-night drinks and conversations with them. They worry the Publicist / Journalist may have been responsible for making J. Baroo distance himself from the Father’s Bastard, though they cannot prove it.\n\nThey are charmed by the Antique Collector. They hate the Opera Singer, seeing them as an adulterer and terrible parent who let the Father’s Bastard be hidden.",
+      "secretPressure": "The marriage was estranged, but their support of the Father’s Bastard gives them moral leverage against the legitimate heirs.",
+      "wants": "Recognition as surviving spouse, residence rights, settlement, and protection of the Father’s Bastard.",
+      "fears": "The true state of the marriage being used to reduce their standing.",
+      "redHerring": "Strong emotions around the Father’s Bastard and the Opera Singer create apparent motive.",
       "actObjectives": {
-        "ACT1": "Display grief while subtly advancing her leverage through the Bastard claim.",
-        "ACT2": "Watch for opportunities to align with those who support her settlement.",
-        "ACT3": "Argue for her entitlement and conceal the true state of her marriage." 
+        "ACT1": "Display grief, maintain dignity, and protect the Father’s Bastard’s place in the room.",
+        "ACT2": "Look for evidence that supports the Father’s Bastard or protects their own settlement.",
+        "ACT3": "Argue for household dignity and formal recognition while concealing marital estrangement."
       },
       "clues": [
         "Estrangement papers in the media room detailing marital issues.",
-        "Statements aligning her with the Bastard Child."
-      ]
-    },
-    {
-      "id": "PUBLICIST",
-      "name": "Publicist / Family Brand Manager",
-      "group": "family",
-      "publicRole": "Controller of the Baroo family image and public statements.",
-      "personality": "Polished and calculating, always thinking in terms of narrative and optics.",
-      "secretPressure": "Letters, scandals, illegitimate child rumours, Opera Singer revelations, and a manufactured public image on the verge of collapse.",
-      "wants": "Tight control of the family narrative and no damaging leaks.",
-      "fears": "Exposure of crises that would ruin the family brand.",
-      "redHerring": "The pre‑written crisis statement suggests premeditated spin.",
-      "actObjectives": {
-        "ACT1": "Manage perceptions during dinner and deflect any questions about scandals.",
-        "ACT2": "Ensure the fake envelope narrative supports the brand and spin contradictions.",
-        "ACT3": "Craft statements that minimise reputational damage once the truth emerges." 
-      },
-      "clues": [
-        "Crisis statement in the media room addressing potential scandals.",
-        "Notes on illegitimate child rumours and Opera Singer correspondence."
+        "Statements or letters aligning the Surviving Spouse with the Father’s Bastard.",
+        "Late-night household references connecting the Surviving Spouse and the Chef."
       ]
     },
     {
       "id": "BASTARD",
-      "name": "Unwanted Bastard Child",
+      "name": "The Father’s Bastard",
+      "role": "Father’s Bastard",
       "group": "family",
-      "publicRole": "Possible illegitimate child of J. Baroo seeking recognition.",
-      "personality": "Defiant, determined to be acknowledged and compensated.",
-      "secretPressure": "Possesses paternity evidence and knows the Widow may be using them as a weapon.",
-      "wants": "Recognition and a share of the estate commensurate with their bloodline.",
-      "fears": "Being dismissed as a fraud and losing all influence.",
-      "redHerring": "May appear opportunistic but genuinely holds evidence.",
+      "publicRole": "The possible illegitimate child of J. Baroo, recently brought back into the family orbit.",
+      "publicBio": "The Father’s Bastard occupies the most uncomfortable position in the room: present often enough to be known, but not accepted enough to be safe. Around Baroo Holdings, they are treated by some as a colleague, by others as a dependant, and by the family as a question nobody quite wants answered out loud.\n\nPublicly, they are guarded, watchful, and quick to notice when conversations change as they enter the room. They are not naturally grand, and they lack the ease that comes from being raised inside the Baroo name.\n\nTheir personality combines defensiveness with a stubborn need to belong. They want to be treated normally, but the more people avoid saying why they are really there, the more obvious the tension becomes. To the room, they are either an embarrassment, an inconvenience, a possible claimant, or a person who should have been acknowledged long ago.",
+      "personality": "Guarded, watchful, defensive, and quietly desperate for normal treatment.",
+      "privateBio": "The Father’s Bastard does not know the Opera Singer is their real parent. That truth has been hidden from them. They like the Director because the Director arranged for them to have a job in the company, even though the Director privately sees them as a nuisance. They love the Surviving Spouse for protecting them and bringing them into the family.\n\nThey think the Kissass Offspring is an idiot, but broadly decent, and want to be friends despite the awkwardness. They also think the Spoilt Offspring is spoilt and try to placate them, though they are definitely not friends. They do not know the Chef personally and do not know the Antique Collector.\n\nThe Publicist / Journalist is cold to them at work, and they do not understand why. They are one of the least informed people in the room about their own life.",
+      "secretPressure": "Their parentage has been hidden from them, even as others use their existence as a legal, emotional, or strategic weapon.",
+      "wants": "Recognition, belonging, and an honest explanation of why J. Baroo kept them close.",
+      "fears": "Being bought off, dismissed, or erased again.",
+      "redHerring": "May appear opportunistic, but knows less than almost everyone else.",
       "actObjectives": {
-        "ACT1": "Present their claim and gauge who may support or oppose them.",
-        "ACT2": "Search for further evidence or allies.",
-        "ACT3": "Push for formal acknowledgement when the codicil is read." 
+        "ACT1": "Gauge who treats them as family, colleague, threat, or inconvenience.",
+        "ACT2": "Search for evidence of parentage or acknowledgement.",
+        "ACT3": "Demand recognition when the codicil is read."
       },
       "clues": [
         "Paternity file in the media room suggesting their lineage.",
-        "Letters hinting at secret meetings between J. Baroo and the Opera Singer." 
+        "Company employment record showing the Director placed them inside Baroo Holdings.",
+        "Letters hinting at J. Baroo’s relationship with the Opera Singer."
       ]
     },
     {
-      "id": "DIRECTOR",
-      "name": "Director / Best Friend",
+      "id": "CHEF",
+      "name": "The Chef",
+      "role": "Chef",
       "group": "compatriot",
-      "publicRole": "J. Baroo’s long‑time friend and senior director of Baroo Holdings, appearing calm and kind to the Son.",
-      "personality": "Calculating and ambitious; hides resentment behind a mentor facade.",
-      "secretPressure": "Privately despises the Son and wishes to seize control of the company. Drafts a fake codicil to achieve this.",
-      "wants": "Absolute control of Baroo Holdings and a guaranteed role as Controller of the Board.",
-      "fears": "Being excluded from control if the real codicil is read.",
-      "redHerring": "Acts supportive until Act 2, making his motive harder to detect early on.",
+      "publicRole": "The private chef for the evening and a familiar presence in the Baroo household.",
+      "publicBio": "The Chef is the private chef for the evening and a familiar figure in the Baroo household. They are not aristocratic, corporate, political, or theatrical, which makes them stand out in a room full of people trying to perform importance.\n\nPublicly, they are capable, composed, and practical. They are used to handling tension through logistics: food on time, glasses filled, kitchens kept moving, and difficult people kept away from open flames.\n\nTheir social presence is warmer than most of the Baroo circle, but not soft. They can be kind, especially in private, yet they are also capable of cutting through nonsense with one dry observation. To the guests, they may seem peripheral because they are staff. That is a mistake. In a house like Baroo Manor, the person serving dinner often knows more about the room than the people speaking at the table.",
+      "personality": "Capable, dry, practical, warm in private, and unimpressed by rich people performing importance.",
+      "privateBio": "The Chef is employed by the Director, but has overheard the Director’s aggressive phone calls and knows there is a side to the Director that many others have not seen. The Chef loves the Surviving Spouse and has often spoken with them late into the night. The Chef is impressed by the Spoilt Offspring, though they think the Spoilt Offspring may be slightly over their head in the current crisis.\n\nThe Chef thinks the Kissass Offspring is too pleased with themself and needs to be cut down a bit. The Chef has never personally met the Father’s Bastard, but has heard about them from the Surviving Spouse and thinks kindly of both.\n\nThe Chef is good friends with the Publicist / Journalist and is impressed by the Antique Collector. The Chef knows the Opera Singer cheated with J. Baroo, but does not know that the Father’s Bastard is the Opera Singer’s child.",
+      "secretPressure": "Close to the household’s emotional truth and physically close to the kitchen clues, but does not understand the full inheritance plot.",
+      "wants": "To protect the Surviving Spouse, avoid being scapegoated, and keep the evening from becoming uncontrolled.",
+      "fears": "Being treated as disposable staff because the murder touches the kitchen and service mechanics.",
+      "redHerring": "Kitchen access and knowledge of the house make the Chef suspicious, even if they do not know the whole plot.",
       "actObjectives": {
-        "ACT1": "Play the mentor while secretly plotting the blackout and envelope swap.",
-        "ACT2": "Misdirect search efforts towards the fake envelope and keep the real one hidden.",
-        "ACT3": "Defend the fake codicil as genuine and deflect accusations until exposed." 
+        "ACT1": "Navigate suspicion around the kitchen, clapper, food, and service areas.",
+        "ACT2": "Protect the Surviving Spouse and the Publicist / Journalist while working out what the Director has been hiding.",
+        "ACT3": "Reveal what they overheard without making themself the obvious scapegoat."
       },
       "clues": [
-        "Aggressive email in the media room revealing disdain for the Son.",
-        "Fake codicil granting him control.",
-        "Hidden real envelope in The Blind Judge statue."
-      ]
-    },
-    {
-      "id": "PHIL",
-      "name": "Philanthropist",
-      "group": "compatriot",
-      "publicRole": "Representative of the Baroo Foundation.",
-      "personality": "Smooth and morally persuasive, uses charitable language to mask financial interests.",
-      "secretPressure": "Worries about an audit or freeze of the foundation’s funds.",
-      "wants": "Pledges honoured and no scrutiny of the foundation’s accounts.",
-      "fears": "Suspension of the foundation or exposure of power‑broking."
-      ,
-      "redHerring": "Moral language hides genuine influence and money.",
-      "actObjectives": {
-        "ACT1": "Lobby for continued support to the foundation and downplay any audit concerns.",
-        "ACT2": "Search the grounds while ensuring the foundation’s image remains spotless.",
-        "ACT3": "Argue against freezing funds when the real codicil is read." 
-      },
-      "clues": [
-        "Foundation audit document in the media room suggesting irregularities." 
-      ]
-    },
-    {
-      "id": "MINISTER",
-      "name": "Minister of State Planning",
-      "group": "compatriot",
-      "publicRole": "Government official responsible for planning and infrastructure.",
-      "personality": "Reserved and strategic; attends under the pretext of paying respects but has vested interests.",
-      "secretPressure": "Land and planning arrangements with Baroo Holdings are at risk if exposed.",
-      "wants": "Continuation of development deals and protection of public‑private partnerships.",
-      "fears": "Suspension of the deals or public scandal over collusion.",
-      "redHerring": "Presence at the will reading seems out of place and raises questions.",
-      "actObjectives": {
-        "ACT1": "Maintain a low profile and avoid drawing attention to government ties.",
-        "ACT2": "Gather intelligence on what others know about planning deals.",
-        "ACT3": "Protect official interests when the codicil threatens to suspend arrangements." 
-      },
-      "clues": [
-        "Planning file in the media room indicating questionable arrangements." 
-      ]
-    },
-    {
-      "id": "ANTIQUE",
-      "name": "Antique Hunter",
-      "group": "compatriot",
-      "publicRole": "Eccentric collector and advisor on the Baroo Collection.",
-      "personality": "Old‑school tomb raider type, charming yet secretive.",
-      "secretPressure": "Fears a provenance review will expose stolen or fake artefacts.",
-      "wants": "No review of the Baroo Collection and continued access to rare objects.",
-      "fears": "Exposure of questionable provenance and loss of advisory role.",
-      "redHerring": "Known for carrying tools like a crowbar, making them a convenient suspect.",
-      "actObjectives": {
-        "ACT1": "Downplay the importance of the collection and keep the focus off the archives.",
-        "ACT2": "Search the grounds with an eye for hidden objects and defend possession of tools.",
-        "ACT3": "Argue against any provenance review when the codicil is read." 
-      },
-      "clues": [
-        "Provenance file in the media room detailing disputed artefacts.",
-        "Crowbar used in the attempted escape."
+        "Cow bell clapper hidden in the kitchen.",
+        "Kitchen service notes explaining one bell and three bells.",
+        "Overheard phone-call clue showing the Director’s private aggression.",
+        "Late-night household references connecting the Chef and the Surviving Spouse."
       ]
     },
     {
       "id": "OPERA",
-      "name": "Famous Opera Singer",
+      "name": "The Opera Singer",
+      "role": "Opera Singer",
       "group": "compatriot",
-      "publicRole": "Glamorous artist and beneficiary of Baroo patronage.",
-      "personality": "Charismatic and dramatic but protective of private correspondence.",
-      "secretPressure": "Fears personal letters and the truth about the Bastard Child’s parentage will become public.",
-      "wants": "A private bequest and discretion around personal affairs.",
-      "fears": "Exposure of correspondence that could damage reputation or implicate her.",
-      "redHerring": "Her rivalry with the Widow for J. Baroo’s affection gives her an apparent motive.",
+      "publicRole": "A famous opera singer and long-time artistic presence in J. Baroo’s world.",
+      "publicBio": "The Opera Singer is a famous performer and long-time artistic presence in J. Baroo’s world. They belong to the glamorous side of wealth: patronage dinners, private performances, foundation galas, European festivals, and rooms where culture and money pretend they are the same thing.\n\nPublicly, they are dramatic, elegant, and accustomed to being watched. They know how to make an entrance, how to hold silence, and how to make grief look beautiful without making it look false.\n\nTheir personality is theatrical but not foolish. They understand power, especially the kind disguised as admiration. They can flatter, wound, and redirect attention with practised ease. To the family, they are not just a singer J. Baroo admired. They are a reminder of the life J. Baroo had outside the house: patronage, intimacy, vanity, culture, and secrets wrapped in applause.",
+      "personality": "Dramatic, elegant, performative, and dangerous because they understand attention.",
+      "privateBio": "The Opera Singer is the Father’s Bastard’s real parent, though the Father’s Bastard does not know. The Opera Singer is ashamed of what the Father’s Bastard represents, but not in a simple or noble way. They secretly hate the Father’s Bastard because that person is living proof of their affair with J. Baroo and of everything they allowed to be hidden.\n\nThe Opera Singer believes they are in cahoots with the Director and is slightly enamoured with them. They have also had an affair with the Director. They often work internationally with the Antique Collector at functions and elite events. They are a long-time friend of the Chef.\n\nThey do not know the Publicist / Journalist personally. They are ashamed in front of the Surviving Spouse, but would make the same choices again. They hate the Spoilt Offspring and think the Kissass Offspring is an idiot.",
+      "secretPressure": "The Father’s Bastard is their child, and the Director knows. Revealing this would expose the affair, the silence, and their complicity.",
+      "wants": "A private bequest, protection of correspondence, and control over whether the Father’s Bastard’s parentage is revealed.",
+      "fears": "Exposure of correspondence that proves the affair and parentage.",
+      "redHerring": "Their affair with J. Baroo and hostility with the Surviving Spouse give them a strong apparent motive.",
       "actObjectives": {
         "ACT1": "Perform grief convincingly while keeping personal affairs hidden.",
-        "ACT2": "Look for letters or evidence that others may exploit.",
-        "ACT3": "Secure her bequest and protect her reputation when the codicil is read." 
+        "ACT2": "Look for letters or evidence linking them to the Father’s Bastard.",
+        "ACT3": "Secure discretion and decide whether to keep lying about parentage."
       },
       "clues": [
-        "Opera file in the media room containing correspondence.",
-        "Letters hinting at the Bastard Child’s parentage."
+        "Opera file in the media room containing private correspondence.",
+        "Letters hinting at the Father’s Bastard’s parentage.",
+        "Evidence of contact between the Opera Singer and the Director."
+      ]
+    },
+    {
+      "id": "PUBLICIST",
+      "name": "The Publicist / Journalist",
+      "role": "Publicist / Journalist",
+      "group": "family",
+      "publicRole": "The communications fixer who manages the Baroo family image.",
+      "publicBio": "The Publicist / Journalist is the person called when a scandal needs to become a misunderstanding, a family dispute needs to become a private matter, or a business embarrassment needs to become “legacy stewardship”. They operate between journalism, public relations, and reputation management, which makes them useful and faintly untrustworthy.\n\nPublicly, they are sharp, articulate, and difficult to fluster. They speak in statements, angles, timing, and exposure risk. They know which phrases calm a room, which details reporters will seize, and which truths can be buried under a better headline.\n\nTheir personality is brisk, observant, and controlled. They are more comfortable managing other people’s emotions than expressing their own. They have a habit of listening as though every sentence may later become evidence. To the guests, they are both necessary and resented. Everyone wants the family image protected, but no one likes being reminded that the image is being managed.",
+      "personality": "Sharp, controlled, reputation-focused, and more comfortable managing others than revealing themself.",
+      "privateBio": "The Director is their boss, but the Publicist / Journalist does not think much more of them than that. They are good friends with the Chef. They see the Opera Singer as a liability. They are deeply concerned about the Antique Collector because of recent bad press and repeated requests from both J. Baroo and the Director to smother stories about stolen artefacts.\n\nThey do not know the Surviving Spouse personally, but want them to avoid doing anything rash for the sake of the Baroo brand. They want to smother the existence of the Father’s Bastard at all costs and have been very successful so far.\n\nThey believe the Spoilt Offspring is exactly what the Spoilt Offspring appears to be and are not especially concerned unless they damage the brand. They think the Kissass Offspring is an idiot.",
+      "secretPressure": "Has hidden enough scandals that they may not know which one finally matters. Their instinct is always containment.",
+      "wants": "Control of the Baroo narrative, suppression of the Father’s Bastard’s existence, and containment of the Antique Collector’s bad press.",
+      "fears": "A public scandal linking the company, family, parentage secret, Opera Singer, and stolen artefacts.",
+      "redHerring": "Pre-written crisis statements and suppression instincts make them look guilty.",
+      "actObjectives": {
+        "ACT1": "Manage perceptions during dinner and deflect questions about scandals.",
+        "ACT2": "Contain the fake envelope narrative and suppress brand-damaging interpretations.",
+        "ACT3": "Minimise reputational damage and avoid being blamed for past concealment."
+      },
+      "clues": [
+        "Crisis statement in the media room addressing potential scandals.",
+        "Notes on the Father’s Bastard and suppression strategy.",
+        "Bad-press file on the Antique Collector and stolen artefacts.",
+        "Historical Foundation notes tied to the Spoilt Offspring."
+      ]
+    },
+    {
+      "id": "ANTIQUE",
+      "name": "The Antique Collector",
+      "role": "Antique Collector",
+      "group": "compatriot",
+      "publicRole": "J. Baroo’s antique collector and supplier of rare historical pieces.",
+      "publicBio": "The Antique Collector is J. Baroo’s long-time supplier of rare historical pieces and adviser on the Baroo Collection. They speak of civilisation, rarity, provenance, and beauty with the confidence of someone who has never been troubled by customs forms for very long.\n\nPublicly, they are charming, grand, and faintly absurd. They dress as though every room might contain a portrait of them. They can turn a spoon, a broken idol, or a cracked vase into a story about empire, genius, betrayal, and taste.\n\nTheir personality is arrogant but entertaining. They enjoy being the most colourful person in a dull room and the most cultured person in a rich one. They are excellent at making dubious objects sound important and important people feel briefly clever. To the Baroo circle, they represent J. Baroo’s appetite for history, possession, and spectacle. They are useful, amusing, and risky.",
+      "personality": "Grand, charming, arrogant, theatrical, and skilled at making dubious objects sound important.",
+      "privateBio": "The Antique Collector is frightened by how much the Opera Singer knows about stolen works. They assume the Director will be another rube they can charm or manipulate. They think little of the Chef, except that the Chef is a good cook.\n\nThey expect the Publicist / Journalist to do their job and keep the press quiet, and are arrogant in their view of that person. They think the Surviving Spouse is a rube and do not know the Father’s Bastard. They have worked with the Spoilt Offspring to sell some of the stolen artefacts, making the Spoilt Offspring far more dangerous than their public persona suggests. They also think the Kissass Offspring is a rube, easily charmed by shiny objects and grand stories.",
+      "secretPressure": "Part of an illicit artefact pipeline. A provenance review would expose stolen works and the Spoilt Offspring’s involvement.",
+      "wants": "No provenance review, continued access to the Baroo Collection, and suppression of bad press.",
+      "fears": "Exposure of stolen artefacts and the Opera Singer revealing how much they know.",
+      "redHerring": "Tool use, hidden-object knowledge, and crowbar proximity make them suspicious.",
+      "actObjectives": {
+        "ACT1": "Downplay the collection and avoid questions about tools, archives, or provenance.",
+        "ACT2": "Search like an expert while steering attention away from the real artefact scandal.",
+        "ACT3": "Argue against provenance review and minimise the Spoilt Offspring’s involvement."
+      },
+      "clues": [
+        "Provenance file in the media room detailing disputed artefacts.",
+        "Bad-press file linking the Antique Collector to stolen works.",
+        "Records connecting the Spoilt Offspring to sales of stolen artefacts.",
+        "Crowbar used in the attempted escape."
       ]
     }
   ]

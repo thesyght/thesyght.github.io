@@ -1,544 +1,436 @@
 {
   "relationships": [
     {
-      "from": "SON",
+      "from": "DIRECTOR",
+      "to": "SON",
+      "category": "negative",
+      "text": "Pretends to mentor The Kissass Offspring, but privately despises them and thinks they are a moron unfit to lead."
+    },
+    {
+      "from": "DIRECTOR",
       "to": "DAUGHTER",
       "category": "negative",
-      "text": "Resents her as unserious, expensive, and protected by J. Baroo."
+      "text": "Is suspicious of The Spoilt Offspring because they know The Spoilt Offspring spoke often and privately with J. Baroo near the end."
     },
     {
-      "from": "SON",
+      "from": "DIRECTOR",
       "to": "WIDOW",
       "category": "negative",
-      "text": "Sees her as a legal nuisance trying to dilute the estate."
+      "text": "Thinks The Surviving Spouse was sidelined long ago and has little useful to add."
     },
     {
-      "from": "SON",
-      "to": "PUBLICIST",
-      "category": "aware",
-      "text": "Needs their image work, but treats it as hired service rather than loyalty."
-    },
-    {
-      "from": "SON",
+      "from": "DIRECTOR",
       "to": "BASTARD",
       "category": "negative",
-      "text": "Sees the claim as an attack on his legitimacy and inheritance."
+      "text": "Was told to hide The Father's Bastard inside the company and views them as a nuisance to be managed."
     },
     {
-      "from": "SON",
-      "to": "OPERA",
+      "from": "DIRECTOR",
+      "to": "CHEF",
       "category": "aware",
-      "text": "Knows they were close to J. Baroo, but dismisses them as theatrical noise."
+      "text": "Employs The Chef and thinks of them only as staff."
     },
     {
-      "from": "SON",
+      "from": "DIRECTOR",
+      "to": "OPERA",
+      "category": "positive",
+      "text": "Is in cahoots with The Opera Singer, had an affair with them, and learned the truth about The Father's Bastard through them."
+    },
+    {
+      "from": "DIRECTOR",
+      "to": "PUBLICIST",
+      "category": "positive",
+      "text": "Sees The Publicist / Journalist as a useful ally in protecting the image and brand of Baroo Holdings."
+    },
+    {
+      "from": "DIRECTOR",
       "to": "ANTIQUE",
       "category": "negative",
-      "text": "Thinks the collection is an expensive distraction from the real business."
-    },
-    {
-      "from": "SON",
-      "to": "MINISTER",
-      "category": "aware",
-      "text": "Knows planning access matters for the company, but does not grasp the private deal."
-    },
-    {
-      "from": "SON",
-      "to": "PHIL",
-      "category": "aware",
-      "text": "Sees the foundation as reputational machinery, not a moral project."
+      "text": "Hates The Antique Collector for risking the company brand through stolen artefacts and provenance scandals."
     },
     {
       "from": "SON",
       "to": "DIRECTOR",
       "category": "positive",
-      "text": "Believes the Director is his mentor and safest ally in succession."
+      "text": "Believes The Director is their mentor and safest ally in succession."
     },
     {
-      "from": "DAUGHTER",
-      "to": "SON",
+      "from": "SON",
+      "to": "DAUGHTER",
       "category": "negative",
-      "text": "Sees him as brittle, joyless, and dangerously convinced the company is his."
+      "text": "Despises The Spoilt Offspring, seeing them as a brat, a drain, and someone who never worked for anything."
     },
     {
-      "from": "DAUGHTER",
+      "from": "SON",
       "to": "WIDOW",
-      "category": "negative",
-      "text": "Questions whether the Widow is genuinely grieving or guarding status."
+      "category": "positive",
+      "text": "Loves The Surviving Spouse and believes they need protection from the world."
     },
     {
-      "from": "DAUGHTER",
-      "to": "PUBLICIST",
-      "category": "negative",
-      "text": "Sees through the brand management and dislikes being packaged."
-    },
-    {
-      "from": "DAUGHTER",
+      "from": "SON",
       "to": "BASTARD",
       "category": "aware",
-      "text": "Is suspicious, but more curious than hostile."
+      "text": "Does not know The Father's Bastard is family; sees them as an irritating colleague whom J. Baroo inexplicably kept around the house and company."
     },
     {
-      "from": "DAUGHTER",
-      "to": "OPERA",
-      "category": "aware",
-      "text": "Suspects they mattered to J. Baroo more than the family admits."
-    },
-    {
-      "from": "DAUGHTER",
-      "to": "ANTIQUE",
-      "category": "aware",
-      "text": "Knows the archive or collection may contain things others want hidden."
-    },
-    {
-      "from": "DAUGHTER",
-      "to": "MINISTER",
+      "from": "SON",
+      "to": "CHEF",
       "category": "unknown",
-      "text": "Has little direct knowledge of the Minister’s planning interest."
+      "text": "Barely thinks of The Chef at all."
     },
     {
-      "from": "DAUGHTER",
-      "to": "PHIL",
+      "from": "SON",
+      "to": "OPERA",
+      "category": "positive",
+      "text": "Has a crush on The Opera Singer but does not understand why they were so close to J. Baroo."
+    },
+    {
+      "from": "SON",
+      "to": "PUBLICIST",
       "category": "negative",
-      "text": "Distrusts polished moral language around family money."
+      "text": "Looks down on The Publicist / Journalist because they are lower on the company payroll, despite relying on their image work."
+    },
+    {
+      "from": "SON",
+      "to": "ANTIQUE",
+      "category": "positive",
+      "text": "Is charmed by The Antique Collector and the impressive objects and stories they bring."
     },
     {
       "from": "DAUGHTER",
       "to": "DIRECTOR",
+      "category": "positive",
+      "text": "Respects The Director and thinks of them as a mentor."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "SON",
       "category": "negative",
-      "text": "Does not fully trust his calm caretaker act."
+      "text": "Thinks The Kissass Offspring is a fool, simple, and painfully over-serious."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "WIDOW",
+      "category": "positive",
+      "text": "Pities and loves The Surviving Spouse, while recognising their vulnerability."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "BASTARD",
+      "category": "negative",
+      "text": "Has figured out The Father's Bastard's identity and considers them an embarrassment."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "CHEF",
+      "category": "positive",
+      "text": "Likes The Chef and used to stay up late talking with them."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "OPERA",
+      "category": "negative",
+      "text": "Dislikes The Opera Singer intensely and sees them as a threat to the family's dignity."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "PUBLICIST",
+      "category": "positive",
+      "text": "Likes The Publicist / Journalist and thinks they are good for the company and useful in hiding problems with the Historical Foundation."
+    },
+    {
+      "from": "DAUGHTER",
+      "to": "ANTIQUE",
+      "category": "positive",
+      "text": "Knows about The Antique Collector's thefts and has personally profited from selling stolen artefacts with them."
+    },
+    {
+      "from": "WIDOW",
+      "to": "DIRECTOR",
+      "category": "aware",
+      "text": "Likes The Director, but worries they may not be good for the family in this moment."
     },
     {
       "from": "WIDOW",
       "to": "SON",
-      "category": "negative",
-      "text": "Thinks he is arrogant, socially useless, and too eager to push her out."
+      "category": "positive",
+      "text": "Loves The Kissass Offspring but thinks they need protection from their own idiocy."
     },
     {
       "from": "WIDOW",
       "to": "DAUGHTER",
+      "category": "positive",
+      "text": "Loves The Spoilt Offspring, but is slightly scared by the ruthlessness they have seen beneath the charm."
+    },
+    {
+      "from": "WIDOW",
+      "to": "BASTARD",
+      "category": "positive",
+      "text": "Loves The Father's Bastard and has been their major support, bringing them back into the family in line with J. Baroo's wishes."
+    },
+    {
+      "from": "WIDOW",
+      "to": "CHEF",
+      "category": "positive",
+      "text": "Likes The Chef and has shared many late-night drinks and conversations with them."
+    },
+    {
+      "from": "WIDOW",
+      "to": "OPERA",
       "category": "negative",
-      "text": "Resents her legitimacy, ease, and emotional claim on J. Baroo."
+      "text": "Hates The Opera Singer, seeing them as an adulterer and a terrible parent."
     },
     {
       "from": "WIDOW",
       "to": "PUBLICIST",
       "category": "negative",
-      "text": "Competes with them over who controls the public story of the marriage."
-    },
-    {
-      "from": "WIDOW",
-      "to": "BASTARD",
-      "category": "aware",
-      "text": "Uses the claim as leverage against the legitimate heirs."
-    },
-    {
-      "from": "WIDOW",
-      "to": "OPERA",
-      "category": "negative",
-      "text": "Sees them as a rival for J. Baroo’s affection and memory."
+      "text": "Worries The Publicist / Journalist helped make J. Baroo distance himself from The Father's Bastard, but has no proof."
     },
     {
       "from": "WIDOW",
       "to": "ANTIQUE",
-      "category": "aware",
-      "text": "Knows the collection holds value, but cares mainly if it affects her settlement."
-    },
-    {
-      "from": "WIDOW",
-      "to": "MINISTER",
-      "category": "aware",
-      "text": "Knows public respectability and political protection may be useful."
-    },
-    {
-      "from": "WIDOW",
-      "to": "PHIL",
       "category": "positive",
-      "text": "May use charitable respectability to protect her status."
+      "text": "Is charmed by The Antique Collector."
     },
     {
-      "from": "WIDOW",
+      "from": "BASTARD",
       "to": "DIRECTOR",
-      "category": "aware",
-      "text": "May rely on him to manage estate realities after J. Baroo."
+      "category": "positive",
+      "text": "Likes The Director because they arranged a job for them inside the company."
     },
     {
-      "from": "PUBLICIST",
+      "from": "BASTARD",
       "to": "SON",
-      "category": "aware",
-      "text": "Uses him as the obvious public heir while quietly managing his damage."
+      "category": "positive",
+      "text": "Thinks The Kissass Offspring is an idiot, but basically a good person, and wants to be friends despite the difficulty."
     },
     {
-      "from": "PUBLICIST",
+      "from": "BASTARD",
       "to": "DAUGHTER",
       "category": "negative",
-      "text": "Finds her hard to control because she performs indifference too well."
+      "text": "Thinks The Spoilt Offspring is spoilt and tries to placate them, but is definitely not their friend."
     },
     {
-      "from": "PUBLICIST",
+      "from": "BASTARD",
       "to": "WIDOW",
-      "category": "negative",
-      "text": "Needs her dignified, quiet, and predictable."
+      "category": "positive",
+      "text": "Loves The Surviving Spouse for protecting them and bringing them into the family."
     },
     {
-      "from": "PUBLICIST",
-      "to": "BASTARD",
-      "category": "negative",
-      "text": "Wants to suppress, soften, or reframe the legitimacy claim."
+      "from": "BASTARD",
+      "to": "CHEF",
+      "category": "unknown",
+      "text": "Does not know The Chef personally."
     },
     {
-      "from": "PUBLICIST",
+      "from": "BASTARD",
       "to": "OPERA",
-      "category": "negative",
-      "text": "Wants to control rumours around private letters and patronage."
-    },
-    {
-      "from": "PUBLICIST",
-      "to": "ANTIQUE",
-      "category": "aware",
-      "text": "Has buried rumours about the Baroo Collection before."
-    },
-    {
-      "from": "PUBLICIST",
-      "to": "MINISTER",
-      "category": "positive",
-      "text": "Coordinates political messaging around land, legacy, and reputation."
-    },
-    {
-      "from": "PUBLICIST",
-      "to": "PHIL",
-      "category": "positive",
-      "text": "Turns charity work into clean public optics."
-    },
-    {
-      "from": "PUBLICIST",
-      "to": "DIRECTOR",
-      "category": "positive",
-      "text": "Works with him on crisis control and continuity messaging."
-    },
-    {
-      "from": "BASTARD",
-      "to": "SON",
-      "category": "negative",
-      "text": "Sees him as the symbol of everything they were denied."
-    },
-    {
-      "from": "BASTARD",
-      "to": "DAUGHTER",
-      "category": "positive",
-      "text": "Wants recognition from her, not just legal acknowledgement."
-    },
-    {
-      "from": "BASTARD",
-      "to": "WIDOW",
-      "category": "aware",
-      "text": "Knows the Widow’s support may be strategic rather than sincere."
+      "category": "unknown",
+      "text": "Does not know The Opera Singer is their real parent; that truth has been hidden from them."
     },
     {
       "from": "BASTARD",
       "to": "PUBLICIST",
       "category": "negative",
-      "text": "Sees them as the person paid to erase inconvenient people."
-    },
-    {
-      "from": "BASTARD",
-      "to": "OPERA",
-      "category": "positive",
-      "text": "May believe they know the truth about parentage."
+      "text": "Finds The Publicist / Journalist cold to them at work and does not understand why."
     },
     {
       "from": "BASTARD",
       "to": "ANTIQUE",
       "category": "unknown",
-      "text": "Knows little about the Antique Hunter beyond estate gossip."
+      "text": "Does not know The Antique Collector."
     },
     {
-      "from": "BASTARD",
-      "to": "MINISTER",
+      "from": "CHEF",
+      "to": "DIRECTOR",
+      "category": "negative",
+      "text": "Is employed by The Director, but has overheard aggressive phone calls and knows a side of them many others have not seen."
+    },
+    {
+      "from": "CHEF",
+      "to": "SON",
+      "category": "negative",
+      "text": "Thinks The Kissass Offspring is too pleased with themself and needs to be cut down a bit."
+    },
+    {
+      "from": "CHEF",
+      "to": "DAUGHTER",
+      "category": "positive",
+      "text": "Is impressed by The Spoilt Offspring, but thinks they may be slightly over their head."
+    },
+    {
+      "from": "CHEF",
+      "to": "WIDOW",
+      "category": "positive",
+      "text": "Loves The Surviving Spouse."
+    },
+    {
+      "from": "CHEF",
+      "to": "BASTARD",
+      "category": "positive",
+      "text": "Has never met The Father's Bastard personally, but has heard of them from The Surviving Spouse and thinks kindly of both."
+    },
+    {
+      "from": "CHEF",
+      "to": "OPERA",
+      "category": "positive",
+      "text": "Is a long-time friend of The Opera Singer and knows they cheated with J. Baroo, but does not know about The Father's Bastard."
+    },
+    {
+      "from": "CHEF",
+      "to": "PUBLICIST",
+      "category": "positive",
+      "text": "Is good friends with The Publicist / Journalist."
+    },
+    {
+      "from": "CHEF",
+      "to": "ANTIQUE",
+      "category": "positive",
+      "text": "Is impressed by The Antique Collector."
+    },
+    {
+      "from": "OPERA",
+      "to": "DIRECTOR",
+      "category": "positive",
+      "text": "Believes they are in cahoots with The Director and is slightly enamoured with them."
+    },
+    {
+      "from": "OPERA",
+      "to": "SON",
+      "category": "negative",
+      "text": "Thinks The Kissass Offspring is an idiot."
+    },
+    {
+      "from": "OPERA",
+      "to": "DAUGHTER",
+      "category": "negative",
+      "text": "Hates The Spoilt Offspring."
+    },
+    {
+      "from": "OPERA",
+      "to": "WIDOW",
+      "category": "negative",
+      "text": "Is ashamed in front of The Surviving Spouse, but would make the same choices again."
+    },
+    {
+      "from": "OPERA",
+      "to": "BASTARD",
+      "category": "negative",
+      "text": "Secretly hates The Father's Bastard for what they represent, while being deeply ashamed of that feeling."
+    },
+    {
+      "from": "OPERA",
+      "to": "CHEF",
+      "category": "positive",
+      "text": "Is a long-time friend of The Chef."
+    },
+    {
+      "from": "OPERA",
+      "to": "PUBLICIST",
       "category": "unknown",
-      "text": "Has no meaningful knowledge of the Minister’s role."
-    },
-    {
-      "from": "BASTARD",
-      "to": "PHIL",
-      "category": "aware",
-      "text": "May seek legitimacy through their public moral support."
-    },
-    {
-      "from": "BASTARD",
-      "to": "DIRECTOR",
-      "category": "negative",
-      "text": "Suspects the Director treats the claim as a tool against the heirs."
-    },
-    {
-      "from": "OPERA",
-      "to": "SON",
-      "category": "negative",
-      "text": "Finds him crude, emotionally empty, and blind to his father’s inner life."
-    },
-    {
-      "from": "OPERA",
-      "to": "DAUGHTER",
-      "category": "positive",
-      "text": "May see her as the only heir subtle enough to understand J. Baroo."
-    },
-    {
-      "from": "OPERA",
-      "to": "WIDOW",
-      "category": "negative",
-      "text": "Knows the marriage was not what the public saw."
-    },
-    {
-      "from": "OPERA",
-      "to": "PUBLICIST",
-      "category": "negative",
-      "text": "Knows image management is not the same as truth."
-    },
-    {
-      "from": "OPERA",
-      "to": "BASTARD",
-      "category": "aware",
-      "text": "May know the parentage story, but has reasons not to say it plainly."
+      "text": "Does not know The Publicist / Journalist personally."
     },
     {
       "from": "OPERA",
       "to": "ANTIQUE",
       "category": "positive",
-      "text": "Shares elite patronage circles and old Baroo secrets."
+      "text": "Often works internationally with The Antique Collector at functions and elite events."
     },
     {
-      "from": "OPERA",
-      "to": "MINISTER",
-      "category": "aware",
-      "text": "Knows scandal can damage the circles the Minister needs controlled."
-    },
-    {
-      "from": "OPERA",
-      "to": "PHIL",
-      "category": "positive",
-      "text": "Supplies celebrity and glamour for philanthropic theatre."
-    },
-    {
-      "from": "OPERA",
+      "from": "PUBLICIST",
       "to": "DIRECTOR",
-      "category": "negative",
-      "text": "Knows something personal that could undermine his version of J. Baroo."
+      "category": "aware",
+      "text": "The Director is their boss, but they do not think much more of them than that."
     },
     {
-      "from": "ANTIQUE",
+      "from": "PUBLICIST",
       "to": "SON",
       "category": "negative",
-      "text": "Sees him as a corporate vandal who would sell what he does not understand."
+      "text": "Thinks The Kissass Offspring is an idiot."
     },
     {
-      "from": "ANTIQUE",
-      "to": "DAUGHTER",
-      "category": "negative",
-      "text": "Fears she will ask provenance questions the family avoided."
-    },
-    {
-      "from": "ANTIQUE",
-      "to": "WIDOW",
-      "category": "aware",
-      "text": "May know she tried to extract value from the collection."
-    },
-    {
-      "from": "ANTIQUE",
-      "to": "PUBLICIST",
-      "category": "positive",
-      "text": "Needs them to keep provenance questions away from the press."
-    },
-    {
-      "from": "ANTIQUE",
-      "to": "BASTARD",
-      "category": "aware",
-      "text": "May have seen records or objects tied to old private arrangements."
-    },
-    {
-      "from": "ANTIQUE",
-      "to": "OPERA",
-      "category": "positive",
-      "text": "May know gifts or artefacts tied to their relationship with J. Baroo."
-    },
-    {
-      "from": "ANTIQUE",
-      "to": "MINISTER",
-      "category": "positive",
-      "text": "Needs permits, heritage discretion, or planning tolerance."
-    },
-    {
-      "from": "ANTIQUE",
-      "to": "PHIL",
-      "category": "negative",
-      "text": "Resists donation or audit of the collection."
-    },
-    {
-      "from": "ANTIQUE",
-      "to": "DIRECTOR",
-      "category": "positive",
-      "text": "May have helped him keep collection problems quiet during company transitions."
-    },
-    {
-      "from": "MINISTER",
-      "to": "SON",
-      "category": "aware",
-      "text": "Sees him as useful but unstable for delicate arrangements."
-    },
-    {
-      "from": "MINISTER",
-      "to": "DAUGHTER",
-      "category": "negative",
-      "text": "Sees her as a risk because she is not embedded in local arrangements."
-    },
-    {
-      "from": "MINISTER",
-      "to": "WIDOW",
-      "category": "aware",
-      "text": "Sees her as useful if she keeps the family respectable."
-    },
-    {
-      "from": "MINISTER",
-      "to": "PUBLICIST",
-      "category": "positive",
-      "text": "Uses them to keep public discussion disciplined."
-    },
-    {
-      "from": "MINISTER",
-      "to": "BASTARD",
-      "category": "negative",
-      "text": "Sees the claim as a destabilising inheritance problem."
-    },
-    {
-      "from": "MINISTER",
-      "to": "OPERA",
-      "category": "negative",
-      "text": "Wants scandal contained before it affects civic arrangements."
-    },
-    {
-      "from": "MINISTER",
-      "to": "ANTIQUE",
-      "category": "positive",
-      "text": "May need collection issues kept quiet to protect land negotiations."
-    },
-    {
-      "from": "MINISTER",
-      "to": "PHIL",
-      "category": "positive",
-      "text": "Uses charity and civic virtue as access."
-    },
-    {
-      "from": "MINISTER",
-      "to": "DIRECTOR",
-      "category": "positive",
-      "text": "Needs company continuity and land cooperation."
-    },
-    {
-      "from": "PHIL",
-      "to": "SON",
-      "category": "aware",
-      "text": "Sees him as a cheque book with poor manners."
-    },
-    {
-      "from": "PHIL",
+      "from": "PUBLICIST",
       "to": "DAUGHTER",
       "category": "aware",
-      "text": "Wants her blessing for legacy and foundation work."
+      "text": "Believes The Spoilt Offspring is exactly what they appear to be and is not concerned unless they damage the brand."
     },
     {
-      "from": "PHIL",
+      "from": "PUBLICIST",
       "to": "WIDOW",
-      "category": "positive",
-      "text": "Offers dignity in exchange for silence and public cooperation."
-    },
-    {
-      "from": "PHIL",
-      "to": "PUBLICIST",
-      "category": "positive",
-      "text": "Needs their polish to make money look virtuous."
-    },
-    {
-      "from": "PHIL",
-      "to": "BASTARD",
       "category": "aware",
-      "text": "Can offer sympathy without giving real power."
+      "text": "Does not know The Surviving Spouse personally, but wants them to avoid doing anything rash for the sake of the Baroo brand."
     },
     {
-      "from": "PHIL",
-      "to": "OPERA",
+      "from": "PUBLICIST",
+      "to": "BASTARD",
+      "category": "negative",
+      "text": "Wants to smother the existence of The Father's Bastard at all costs and has been very successful so far."
+    },
+    {
+      "from": "PUBLICIST",
+      "to": "CHEF",
       "category": "positive",
-      "text": "Uses their glamour to make influence look like culture."
+      "text": "Is good friends with The Chef."
     },
     {
-      "from": "PHIL",
+      "from": "PUBLICIST",
+      "to": "OPERA",
+      "category": "negative",
+      "text": "Sees The Opera Singer as a liability."
+    },
+    {
+      "from": "PUBLICIST",
       "to": "ANTIQUE",
       "category": "negative",
-      "text": "Wants collection prestige without provenance trouble."
+      "text": "Is concerned about The Antique Collector due to recent bad press and repeated requests to suppress stories about stolen artefacts."
     },
     {
-      "from": "PHIL",
-      "to": "MINISTER",
-      "category": "positive",
-      "text": "Uses political access to keep the foundation powerful."
-    },
-    {
-      "from": "PHIL",
+      "from": "ANTIQUE",
       "to": "DIRECTOR",
-      "category": "positive",
-      "text": "Needs his control to keep foundation commitments protected."
+      "category": "negative",
+      "text": "Thinks The Director will be another rube to charm or manipulate."
     },
     {
-      "from": "DIRECTOR",
+      "from": "ANTIQUE",
       "to": "SON",
       "category": "negative",
-      "text": "Pretends to mentor him, privately considers him unfit to lead."
+      "text": "Thinks The Kissass Offspring is a rube, easily charmed by grand stories and impressive objects."
     },
     {
-      "from": "DIRECTOR",
+      "from": "ANTIQUE",
       "to": "DAUGHTER",
-      "category": "negative",
-      "text": "Fears she may inherit records that expose the company history."
-    },
-    {
-      "from": "DIRECTOR",
-      "to": "WIDOW",
-      "category": "aware",
-      "text": "Uses her grievance to destabilise the children."
-    },
-    {
-      "from": "DIRECTOR",
-      "to": "PUBLICIST",
       "category": "positive",
-      "text": "Uses them to shape the narrative after the will."
+      "text": "Has worked with The Spoilt Offspring to sell stolen artefacts."
     },
     {
-      "from": "DIRECTOR",
-      "to": "BASTARD",
+      "from": "ANTIQUE",
+      "to": "WIDOW",
       "category": "negative",
-      "text": "Treats the claim as a lever against the heirs."
+      "text": "Thinks The Surviving Spouse is a rube."
     },
     {
-      "from": "DIRECTOR",
+      "from": "ANTIQUE",
+      "to": "BASTARD",
+      "category": "unknown",
+      "text": "Does not know The Father's Bastard."
+    },
+    {
+      "from": "ANTIQUE",
+      "to": "CHEF",
+      "category": "aware",
+      "text": "Thinks little of The Chef except that they are a good cook."
+    },
+    {
+      "from": "ANTIQUE",
       "to": "OPERA",
       "category": "negative",
-      "text": "Considers them a loose end because of what they know."
+      "text": "Is scared by how much The Opera Singer knows about the stolen works."
     },
     {
-      "from": "DIRECTOR",
-      "to": "ANTIQUE",
-      "category": "positive",
-      "text": "Wants collection issues managed quietly during transition."
-    },
-    {
-      "from": "DIRECTOR",
-      "to": "MINISTER",
-      "category": "positive",
-      "text": "Needs planning arrangements to survive the will."
-    },
-    {
-      "from": "DIRECTOR",
-      "to": "PHIL",
-      "category": "positive",
-      "text": "Uses the foundation as reputation cover and influence channel."
+      "from": "ANTIQUE",
+      "to": "PUBLICIST",
+      "category": "aware",
+      "text": "Expects The Publicist / Journalist to do their job and keep the press quiet, and is arrogant towards them."
     }
   ]
 }
