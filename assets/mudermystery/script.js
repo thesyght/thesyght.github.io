@@ -165,10 +165,10 @@
         const p = document.createElement('p');
         if (currentTab === 0) {
           // Public Profile
-          p.innerHTML = `<strong>Role:</strong> ${char.publicRole}<br><strong>Personality:</strong> ${char.personality}`;
+          p.innerHTML = `<strong>Role:</strong> ${char.publicRole}<br><strong>Bio:</strong> ${char.publicBio}<br><strong>Personality:</strong> ${char.personality}`;
         } else if (currentTab === 1) {
           // Private Motives
-          p.innerHTML = `<strong>Secret pressure:</strong> ${char.secretPressure}<br><strong>Wants:</strong> ${char.wants}<br><strong>Fears:</strong> ${char.fears}<br><strong>Red herring:</strong> ${char.redHerring}`;
+          p.innerHTML = `<strong>Bio:</strong> ${char.privateBio}<br><strong>Secret pressure:</strong> ${char.secretPressure}<br><strong>Wants:</strong> ${char.wants}<br><strong>Fears:</strong> ${char.fears}<br><strong>Red herring:</strong> ${char.redHerring}`;
         } else if (currentTab === 2) {
           // Relationships
           const out = data.relationships.filter(r => r.from === char.id);
