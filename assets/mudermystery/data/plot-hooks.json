@@ -1,0 +1,36 @@
+{
+  "plotHooks": [
+    {
+      "id": "BLACK_ENVELOPE",
+      "title": "Black Envelope Mystery",
+      "description": "The Executor passes around a sealed black envelope containing J. Baroo’s codicil. During the blackout the envelope disappears. A fake envelope is later discovered in the garden. The real envelope is hidden in a statue.",
+      "acts": ["ACT1", "ACT2"],
+      "spoiler": true,
+      "resolution": "The Director stole the real envelope during the blackout and hid it inside The Blind Judge statue. He used a fake envelope to mislead the guests."
+    },
+    {
+      "id": "COW_BELL_CODE",
+      "title": "Cow Bell Code",
+      "description": "Baroo Manor operates with an old cow bell service code. The host rings once for drinks before dinner. Players must deduce that two rings will unlock the dining wing.",
+      "acts": ["ACT1"],
+      "spoiler": false,
+      "resolution": "The clapper hidden in the kitchen must be attached to the bell. Ringing twice summons The Maid to unlock the wing."
+    },
+    {
+      "id": "DIRECTOR_MOTIVE",
+      "title": "Director’s Hidden Motive",
+      "description": "The Director appears calm and supportive but privately despises the Son and wants control of Baroo Holdings. He drafted a fake codicil that creates deadlock and elevates him to board controller.",
+      "acts": ["ACT1", "ACT2", "ACT3"],
+      "spoiler": true,
+      "resolution": "Emails and the fake codicil reveal the Director’s scheme. The real codicil bars him from control, which is why he killed the Executor and hid the document."
+    },
+    {
+      "id": "BASTARD_CHILD",
+      "title": "Illegitimate Heir",
+      "description": "A possible child of J. Baroo claims recognition and threatens the legitimacy of the family. Letters and evidence suggest there may be truth to the claim.",
+      "acts": ["ACT1", "ACT3"],
+      "spoiler": false,
+      "resolution": "The real codicil acknowledges the Bastard Child with a settlement but preserves the principal inheritance for the legitimate heirs."
+    }
+  ]
+}

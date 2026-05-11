@@ -1,0 +1,157 @@
+{
+  "locations": [
+    {
+      "id": "DINING",
+      "name": "Dining Room",
+      "acts": ["ACT1"],
+      "description": "The formal dining room where dinner takes place and the Executor’s body is later discovered.",
+      "clues": [
+        "Body of the Executor.",
+        "Original Black Envelope passed around before the blackout.",
+        "Cow bell mounted on the wall with the missing clapper.",
+        "Wax smear or ribbon near the terrace window."
+      ],
+      "actor": "The Maid",
+      "relatedCharacters": ["SON", "DAUGHTER", "WIDOW", "PUBLICIST", "BASTARD", "DIRECTOR", "PHIL", "MINISTER", "ANTIQUE", "OPERA"]
+    },
+    {
+      "id": "MEDIA",
+      "name": "Media Room",
+      "acts": ["ACT1"],
+      "description": "An adjacent room filled with legal briefs, files, and personal documents. It is the motive vault.",
+      "clues": [
+        "Succession briefing for the Son.",
+        "Hostile email from the Director about the Son.",
+        "Estrangement papers for the Widow.",
+        "Crisis statement from the Publicist.",
+        "Paternity file for the Bastard Child.",
+        "Foundation audit for the Philanthropist.",
+        "Planning file for the Minister.",
+        "Provenance file for the Antique Hunter.",
+        "Opera file for the Opera Singer.",
+        "Archive transfer letter for the Daughter."
+      ],
+      "actor": "The Maid",
+      "relatedCharacters": ["SON", "DIRECTOR", "WIDOW", "PUBLICIST", "BASTARD", "PHIL", "MINISTER", "ANTIQUE", "OPERA", "DAUGHTER"]
+    },
+    {
+      "id": "KITCHEN",
+      "name": "Kitchen",
+      "acts": ["ACT1"],
+      "description": "Service area where the house staff prepare and clean. Contains clues to the bell code.",
+      "clues": [
+        "Bell clapper hidden under a tea towel or in the sink.",
+        "Draft note with misspelled 'rign' crossed out, hinting at the ring signal.",
+        "Written instruction to The Maid not to open the wing until the correct signal.",
+        "Tea service items indicating one ring for drinks."
+      ],
+      "actor": "The Maid",
+      "relatedCharacters": ["SON", "DAUGHTER", "DIRECTOR", "WIDOW"]
+    },
+    {
+      "id": "TERRACE",
+      "name": "Terrace",
+      "acts": ["ACT2"],
+      "description": "The patio outside the dining wing. It has a cracked window and access to the garden paths.",
+      "clues": [
+        "Cracked terrace window with glass fragments.",
+        "Marks on the doorframe where a crowbar was used.",
+        "Fake black envelope thrown into the dining room.",
+        "Footprints leading toward the rose bed."
+      ],
+      "actor": "The Groundskeeper",
+      "relatedCharacters": ["DIRECTOR", "ANTIQUE"]
+    },
+    {
+      "id": "ROSEGARDEN",
+      "name": "Rose Garden",
+      "acts": ["ACT2"],
+      "description": "A formal rose garden adjacent to the terrace. Has neat beds, gravel paths, and hedges.",
+      "clues": [
+        "Fake black envelope may be found among the roses or gravel.",
+        "Broken stem or trampled area indicating someone retrieved or threw something.",
+        "Subtle drag marks leading toward the statue walk."
+      ],
+      "actor": "The Groundskeeper",
+      "relatedCharacters": ["DIRECTOR", "PHIL"]
+    },
+    {
+      "id": "SHED",
+      "name": "Garden Shed",
+      "acts": ["ACT2"],
+      "description": "Storage for tools, pots, and supplies. Could hide implements or clues.",
+      "clues": [
+        "Crowbar storage area showing one tool missing.",
+        "Mud on the floor suggesting recent use.",
+        "Gardening gloves with traces of wax."
+      ],
+      "actor": "The Groundskeeper",
+      "relatedCharacters": ["ANTIQUE", "MINISTER"]
+    },
+    {
+      "id": "GREENHOUSE",
+      "name": "Greenhouse",
+      "acts": ["ACT2"],
+      "description": "Glasshouse full of exotic plants. Ventilation ducts link to the manor.",
+      "clues": [
+        "Disturbed vent covers indicating attempted access to the dining wing.",
+        "Soil disturbance and broken pots where someone hid or crawled.",
+        "Unusual footprints leading back to the statue walk."
+      ],
+      "actor": "The Groundskeeper",
+      "relatedCharacters": ["DIRECTOR"]
+    },
+    {
+      "id": "PONDS",
+      "name": "Pond/Fountains",
+      "acts": ["ACT2"],
+      "description": "Small ponds and fountains providing tranquil ambience.",
+      "clues": [
+        "Water disturbed recently as if someone waded through.",
+        "A torn piece of ribbon floating near the edge.",
+        "Reflection of the Blind Judge statue reveals a loose plaque."
+      ],
+      "actor": "The Groundskeeper",
+      "relatedCharacters": ["PHIL", "OPERA"]
+    },
+    {
+      "id": "STATUES",
+      "name": "Statue Walk",
+      "acts": ["ACT2"],
+      "description": "Walk lined with historical statues and plaques detailing Baroo heritage.",
+      "clues": [
+        "One plaque misaligned, pointing toward The Blind Judge.",
+        "Scrapes on the ground where something was dragged.",
+        "Garden soil disturbed at the base of several statues."
+      ],
+      "actor": "The Groundskeeper",
+      "relatedCharacters": ["ANTIQUE", "DIRECTOR"]
+    },
+    {
+      "id": "JUDGE",
+      "name": "The Blind Judge Statue",
+      "acts": ["ACT2"],
+      "description": "Eighteenth‑century statue with a blindfold and scales. A loose plaque covers a hollow space.",
+      "clues": [
+        "Hidden compartment behind the plaque containing the real Black Envelope.",
+        "Fingerprints or wax residue around the edge of the plaque.",
+        "Marks where someone prised the plaque open."
+      ],
+      "actor": "The Groundskeeper",
+      "relatedCharacters": ["DIRECTOR"]
+    },
+    {
+      "id": "LIVING",
+      "name": "Living Room",
+      "acts": ["ACT3"],
+      "description": "Comfortable drawing room where the Police gather everyone to summarise events and read the codicil.",
+      "clues": [
+        "Comparison of fake and real codicils.",
+        "Statements from each character detailing motives and accusations.",
+        "Police report consolidating evidence from Acts 1 and 2."
+      ],
+      "actor": "The Police",
+      "relatedCharacters": ["SON", "DAUGHTER", "WIDOW", "PUBLICIST", "BASTARD", "DIRECTOR", "PHIL", "MINISTER", "ANTIQUE", "OPERA"]
+    }
+  ]
+}

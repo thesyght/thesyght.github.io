@@ -1,0 +1,19 @@
+{
+  "notes": [
+    {
+      "id": "KILLER",
+      "title": "Killer Identity",
+      "content": "The Director is the murderer. He kills the Executor during the blackout, steals the real Black Envelope, hides it in The Blind Judge statue, and plants a fake envelope outside to misdirect the guests. The host should ensure that no player discovers this prematurely but should provide enough clues to expose him during Act 3."
+    },
+    {
+      "id": "ENVELOPE_SWITCH",
+      "title": "Envelope Switch Mechanics",
+      "content": "During Act 1, the Black Envelope is circulated. When the blackout occurs, the Director removes the real envelope and leaves behind only wax residue. He later throws a fake envelope through the cracked terrace window. The fake envelope has a seal with an incorrect Baroo stamp so attentive players can spot the discrepancy. The real envelope remains hidden in The Blind Judge statue until Act 2."
+    },
+    {
+      "id": "RUNNING_TIME",
+      "title": "Suggested Timing",
+      "content": "Act 1 should last approximately 45 minutes, allowing time for dinner, the blackout, and initial investigation. Act 2 should run for 30–45 minutes as players search the grounds. Act 3 should take 30 minutes for the Police summary, codicil reading, accusations, and reveal. Adjust pacing based on player engagement."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "speeches": [
+    {
+      "id": "PREGAME",
+      "title": "Pre‑game Practical Note",
+      "role": "Host",
+      "text": "Tonight is set at Baroo Manor, shortly after the death of J. Baroo. You are here for dinner before the formal reading of the will. Once dinner begins, stay in character unless something practical needs to be clarified. You can lie, bargain, accuse, conceal information, and form alliances. Do not physically restrain anyone, search anyone’s real belongings, or damage props unless they are clearly marked for use. There will be a staged blackout and fictional gas effect later in the game. Nothing real is being released. Treat it as part of the scene. The Maid, the Groundskeeper, the Executor, and the Police are not suspects. The murderer is one of the 10 invited guests."
+    },
+    {
+      "id": "BELL",
+      "title": "Bell Setup During Dinner",
+      "role": "Host",
+      "text": "One bell for service. Old Baroo house rules. Whatever happens tonight, you can rely on one civilised constant: ring once, and the house will see that no glass stays empty."
+    },
+    {
+      "id": "EXECUTOR_INTRO",
+      "title": "Executor’s Introduction",
+      "role": "Executor",
+      "text": "Thank you all for remaining after dinner. I appreciate that this is not an ordinary evening, and I do not intend to make it longer than necessary. We are gathered for the formal reading of the last will and testament of J. Baroo. Before I begin, I will explain the procedure, since there are several people present who may not have attended such a reading before. A will reading is not a debate. It is not a negotiation. It is not an opportunity to correct old grievances, reopen family disputes, or make personal appeals to the deceased through me. My role tonight is administrative. I hold the documents. I confirm their order. I read the relevant clauses. I record that the reading has taken place."
+    },
+    {
+      "id": "EXECUTOR_ENVELOPE",
+      "title": "Executor’s Envelope Explanation",
+      "role": "Executor",
+      "text": "No decision will be changed in this room tonight. J. Baroo executed a formal will some years ago. That will remains the primary testamentary document. However, shortly before his death, he also executed a codicil. A codicil is a legal amendment to a will. It does not necessarily replace the will in full. It may alter one clause, remove one beneficiary, add a condition, clarify an instruction, or create an entirely new direction. It must be read together with the will, because the two documents operate as one instrument. The codicil in this case was placed in my custody by J. Baroo himself. It is contained in this black envelope. The envelope remains sealed. The seal is intact. The signature across the flap is his. The document has not been copied, circulated, summarised, or privately disclosed to any person in this room. That was his instruction. I will now pass it around the table. You are not being asked to read it. You are not being asked to approve it. You are simply being given the opportunity to verify three things: that the envelope is black, that the wax seal is unbroken, and that the impression in the wax is the Baroo family stamp. Please handle it carefully and return it to me exactly as it was received. Thank you. The seal has been witnessed. I will now begin with the principal clauses."
+    },
+    {
+      "id": "MAID_ONE",
+      "title": "Maid – One Bell Response",
+      "role": "The Maid",
+      "text": "One bell? At a time like this? I can bring tea, but I cannot open the door."
+    },
+    {
+      "id": "MAID_TWO",
+      "title": "Maid – Two Bells Response",
+      "role": "The Maid",
+      "text": "That is the house signal. Stand back from the door."
+    },
+    {
+      "id": "MAID_THREE",
+      "title": "Maid – Three Bells Response",
+      "role": "The Maid",
+      "text": "Three bells. Very well. I will wait until summoned properly."
+    },
+    {
+      "id": "GROUNDSKEEPER_FAKE",
+      "title": "Groundskeeper After Fake Envelope",
+      "role": "The Groundskeeper",
+      "text": "Then someone wanted us looking out here. That is different."
+    },
+    {
+      "id": "GROUNDSKEEPER_STATUE",
+      "title": "Groundskeeper at Statue",
+      "role": "The Groundskeeper",
+      "text": "That plaque was sitting flush earlier. Someone has moved it."
+    },
+    {
+      "id": "POLICE_INTRO",
+      "title": "Police Introduction",
+      "role": "The Police",
+      "text": "Right, everyone back to the living room. We need to summarise what we know and hear the codicil properly."
+    }
+  ]
+}

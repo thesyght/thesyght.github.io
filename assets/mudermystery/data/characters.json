@@ -1,0 +1,204 @@
+{
+  "characters": [
+    {
+      "id": "SON",
+      "name": "Consultant Son",
+      "group": "family",
+      "publicRole": "Arrogant, hardworking son running the family business.",
+      "personality": "Consultant‑core; no friends; poor social skills; sees himself as the obvious successor.",
+      "secretPressure": "The company is going public and he will not inherit operational control.",
+      "wants": "Control of Baroo Holdings and recognition as successor.",
+      "fears": "Being reduced to a mere board seat while the Director controls the transition.",
+      "redHerring": "Loudest apparent motive makes him an early suspect.",
+      "actObjectives": {
+        "ACT1": "Assert his authority at dinner and ensure the reading proceeds on his terms.",
+        "ACT2": "Lead the search with an air of command while privately doubting others.",
+        "ACT3": "Defend his entitlement when the codicil threatens his control and deflect suspicion." 
+      },
+      "clues": [
+        "Succession briefing in the media room indicating his future role.",
+        "Director’s hostile email showing contempt for his consultancy background."
+      ]
+    },
+    {
+      "id": "DAUGHTER",
+      "name": "International Daughter",
+      "group": "family",
+      "publicRole": "Boarding‑school graduate and golden‑spoon daughter from France.",
+      "personality": "Self‑sufficient and observant despite her pampered image.",
+      "secretPressure": "Uncertain why J. Baroo trusted her and wary of being dragged into company politics.",
+      "wants": "Truth about her father’s trust and a fair say in the estate.",
+      "fears": "Becoming trapped in corporate infighting.",
+      "redHerring": "Appears frivolous but may expose the Director.",
+      "actObjectives": {
+        "ACT1": "Observe the dinner, test her brother’s arrogance, and quietly collect information.",
+        "ACT2": "Search thoroughly and question why the fake envelope exists.",
+        "ACT3": "Challenge the Director and push for a just reading of the codicil." 
+      },
+      "clues": [
+        "Archive transfer letter in the media room hinting at her father’s trust.",
+        "Note about the Baroo archive revealing hidden assets." 
+      ]
+    },
+    {
+      "id": "WIDOW",
+      "name": "Widow",
+      "group": "family",
+      "publicRole": "Grieving widow of J. Baroo.",
+      "personality": "Dignified on the surface but estranged from J. Baroo.",
+      "secretPressure": "Using the Bastard Child claim as leverage to secure status and settlement.",
+      "wants": "Legal recognition of her status, residence rights in Baroo Manor, and a generous settlement.",
+      "fears": "Revelation of her estranged marriage and loss of standing.",
+      "redHerring": "Anger at the Publicist and rivalry with the Opera Singer create suspicion.",
+      "actObjectives": {
+        "ACT1": "Display grief while subtly advancing her leverage through the Bastard claim.",
+        "ACT2": "Watch for opportunities to align with those who support her settlement.",
+        "ACT3": "Argue for her entitlement and conceal the true state of her marriage." 
+      },
+      "clues": [
+        "Estrangement papers in the media room detailing marital issues.",
+        "Statements aligning her with the Bastard Child."
+      ]
+    },
+    {
+      "id": "PUBLICIST",
+      "name": "Publicist / Family Brand Manager",
+      "group": "family",
+      "publicRole": "Controller of the Baroo family image and public statements.",
+      "personality": "Polished and calculating, always thinking in terms of narrative and optics.",
+      "secretPressure": "Letters, scandals, illegitimate child rumours, Opera Singer revelations, and a manufactured public image on the verge of collapse.",
+      "wants": "Tight control of the family narrative and no damaging leaks.",
+      "fears": "Exposure of crises that would ruin the family brand.",
+      "redHerring": "The pre‑written crisis statement suggests premeditated spin.",
+      "actObjectives": {
+        "ACT1": "Manage perceptions during dinner and deflect any questions about scandals.",
+        "ACT2": "Ensure the fake envelope narrative supports the brand and spin contradictions.",
+        "ACT3": "Craft statements that minimise reputational damage once the truth emerges." 
+      },
+      "clues": [
+        "Crisis statement in the media room addressing potential scandals.",
+        "Notes on illegitimate child rumours and Opera Singer correspondence."
+      ]
+    },
+    {
+      "id": "BASTARD",
+      "name": "Unwanted Bastard Child",
+      "group": "family",
+      "publicRole": "Possible illegitimate child of J. Baroo seeking recognition.",
+      "personality": "Defiant, determined to be acknowledged and compensated.",
+      "secretPressure": "Possesses paternity evidence and knows the Widow may be using them as a weapon.",
+      "wants": "Recognition and a share of the estate commensurate with their bloodline.",
+      "fears": "Being dismissed as a fraud and losing all influence.",
+      "redHerring": "May appear opportunistic but genuinely holds evidence.",
+      "actObjectives": {
+        "ACT1": "Present their claim and gauge who may support or oppose them.",
+        "ACT2": "Search for further evidence or allies.",
+        "ACT3": "Push for formal acknowledgement when the codicil is read." 
+      },
+      "clues": [
+        "Paternity file in the media room suggesting their lineage.",
+        "Letters hinting at secret meetings between J. Baroo and the Opera Singer." 
+      ]
+    },
+    {
+      "id": "DIRECTOR",
+      "name": "Director / Best Friend",
+      "group": "compatriot",
+      "publicRole": "J. Baroo’s long‑time friend and senior director of Baroo Holdings, appearing calm and kind to the Son.",
+      "personality": "Calculating and ambitious; hides resentment behind a mentor facade.",
+      "secretPressure": "Privately despises the Son and wishes to seize control of the company. Drafts a fake codicil to achieve this.",
+      "wants": "Absolute control of Baroo Holdings and a guaranteed role as Controller of the Board.",
+      "fears": "Being excluded from control if the real codicil is read.",
+      "redHerring": "Acts supportive until Act 2, making his motive harder to detect early on.",
+      "actObjectives": {
+        "ACT1": "Play the mentor while secretly plotting the blackout and envelope swap.",
+        "ACT2": "Misdirect search efforts towards the fake envelope and keep the real one hidden.",
+        "ACT3": "Defend the fake codicil as genuine and deflect accusations until exposed." 
+      },
+      "clues": [
+        "Aggressive email in the media room revealing disdain for the Son.",
+        "Fake codicil granting him control.",
+        "Hidden real envelope in The Blind Judge statue."
+      ]
+    },
+    {
+      "id": "PHIL",
+      "name": "Philanthropist",
+      "group": "compatriot",
+      "publicRole": "Representative of the Baroo Foundation.",
+      "personality": "Smooth and morally persuasive, uses charitable language to mask financial interests.",
+      "secretPressure": "Worries about an audit or freeze of the foundation’s funds.",
+      "wants": "Pledges honoured and no scrutiny of the foundation’s accounts.",
+      "fears": "Suspension of the foundation or exposure of power‑broking."
+      ,
+      "redHerring": "Moral language hides genuine influence and money.",
+      "actObjectives": {
+        "ACT1": "Lobby for continued support to the foundation and downplay any audit concerns.",
+        "ACT2": "Search the grounds while ensuring the foundation’s image remains spotless.",
+        "ACT3": "Argue against freezing funds when the real codicil is read." 
+      },
+      "clues": [
+        "Foundation audit document in the media room suggesting irregularities." 
+      ]
+    },
+    {
+      "id": "MINISTER",
+      "name": "Minister of State Planning",
+      "group": "compatriot",
+      "publicRole": "Government official responsible for planning and infrastructure.",
+      "personality": "Reserved and strategic; attends under the pretext of paying respects but has vested interests.",
+      "secretPressure": "Land and planning arrangements with Baroo Holdings are at risk if exposed.",
+      "wants": "Continuation of development deals and protection of public‑private partnerships.",
+      "fears": "Suspension of the deals or public scandal over collusion.",
+      "redHerring": "Presence at the will reading seems out of place and raises questions.",
+      "actObjectives": {
+        "ACT1": "Maintain a low profile and avoid drawing attention to government ties.",
+        "ACT2": "Gather intelligence on what others know about planning deals.",
+        "ACT3": "Protect official interests when the codicil threatens to suspend arrangements." 
+      },
+      "clues": [
+        "Planning file in the media room indicating questionable arrangements." 
+      ]
+    },
+    {
+      "id": "ANTIQUE",
+      "name": "Antique Hunter",
+      "group": "compatriot",
+      "publicRole": "Eccentric collector and advisor on the Baroo Collection.",
+      "personality": "Old‑school tomb raider type, charming yet secretive.",
+      "secretPressure": "Fears a provenance review will expose stolen or fake artefacts.",
+      "wants": "No review of the Baroo Collection and continued access to rare objects.",
+      "fears": "Exposure of questionable provenance and loss of advisory role.",
+      "redHerring": "Known for carrying tools like a crowbar, making them a convenient suspect.",
+      "actObjectives": {
+        "ACT1": "Downplay the importance of the collection and keep the focus off the archives.",
+        "ACT2": "Search the grounds with an eye for hidden objects and defend possession of tools.",
+        "ACT3": "Argue against any provenance review when the codicil is read." 
+      },
+      "clues": [
+        "Provenance file in the media room detailing disputed artefacts.",
+        "Crowbar used in the attempted escape."
+      ]
+    },
+    {
+      "id": "OPERA",
+      "name": "Famous Opera Singer",
+      "group": "compatriot",
+      "publicRole": "Glamorous artist and beneficiary of Baroo patronage.",
+      "personality": "Charismatic and dramatic but protective of private correspondence.",
+      "secretPressure": "Fears personal letters and the truth about the Bastard Child’s parentage will become public.",
+      "wants": "A private bequest and discretion around personal affairs.",
+      "fears": "Exposure of correspondence that could damage reputation or implicate her.",
+      "redHerring": "Her rivalry with the Widow for J. Baroo’s affection gives her an apparent motive.",
+      "actObjectives": {
+        "ACT1": "Perform grief convincingly while keeping personal affairs hidden.",
+        "ACT2": "Look for letters or evidence that others may exploit.",
+        "ACT3": "Secure her bequest and protect her reputation when the codicil is read." 
+      },
+      "clues": [
+        "Opera file in the media room containing correspondence.",
+        "Letters hinting at the Bastard Child’s parentage."
+      ]
+    }
+  ]
+}

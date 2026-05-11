@@ -1,0 +1,290 @@
+/*
+ * Styles for The Black Codicil murder mystery dashboard.
+ * The palette draws on parchment tones and dark ink for readability.
+ */
+
+:root {
+  --bg: #f7f4ef;
+  --fg: #222;
+  --accent: #556b77;
+  --positive: #1f8f4d;
+  --negative: #c7372f;
+  --aware: #c49a13;
+  --unknown: #8a8a8a;
+  --family: #f6ddff;
+  --compatriot: #ddffe6;
+  --spoiler: #ffefc2;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  border-bottom: 1px solid #ddd;
+  padding: 12px 16px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+}
+.header .subtitle {
+  margin: 2px 0 8px;
+  font-size: 14px;
+  color: #555;
+}
+.mode-btn {
+  align-self: flex-end;
+  margin-top: -32px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 72px;
+  bottom: 0;
+  left: 0;
+  width: 220px;
+  background: #f2efe4;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+  padding: 10px 0;
+}
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar li {
+  margin: 0;
+}
+.sidebar a {
+  display: block;
+  padding: 8px 16px;
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 14px;
+}
+.sidebar a:hover,
+.sidebar a.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Main content */
+.content {
+  margin-top: 72px;
+  margin-left: 220px;
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+  min-height: calc(100vh - 72px);
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section.hidden {
+  display: none;
+}
+
+/* Character list and details */
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.character-card {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 12px;
+  cursor: pointer;
+  width: calc(50% - 8px);
+}
+.character-card:hover {
+  background: #f0f0f0;
+}
+
+.character-details {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+.character-details h3 {
+  margin-top: 0;
+}
+.tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.tab-btn {
+  padding: 6px 10px;
+  border: 1px solid #aaa;
+  background: #eee;
+  cursor: pointer;
+  font-size: 13px;
+}
+.tab-btn.active {
+  background: var(--accent);
+  color: white;
+}
+.tab-content {
+  border: 1px solid #ccc;
+  padding: 12px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+/* Relationship graph */
+.graph-container {
+  margin-bottom: 24px;
+}
+.graph-info {
+  margin-top: 8px;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 8px;
+  max-width: 100%;
+}
+.graph-controls {
+  margin-top: 8px;
+  display: flex;
+  gap: 6px;
+}
+.control-btn {
+  padding: 5px 10px;
+  border: 1px solid #777;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+}
+.control-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Matrix */
+.matrix-container {
+  overflow-x: auto;
+}
+.relation-matrix {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+}
+.relation-matrix th,
+.relation-matrix td {
+  border: 1px solid #ddd;
+  padding: 4px 6px;
+  text-align: center;
+  font-size: 12px;
+}
+.relation-matrix th {
+  background: #f3f3f3;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.relation-matrix td.positive { background: #e7f4ea; }
+.relation-matrix td.negative { background: #f9e7e6; }
+.relation-matrix td.aware { background: #f9f2e3; }
+.relation-matrix td.unknown { background: #f1f1f1; }
+
+/* Cards for acts, locations, props, plot hooks, speeches, actors */
+.card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+.card h3 {
+  margin-top: 0;
+}
+.card ul {
+  margin: 4px 0 0;
+  padding-left: 20px;
+}
+
+/* Spoiler elements */
+.spoiler {
+  background: var(--spoiler);
+  padding: 6px;
+  margin-top: 6px;
+  border: 1px dashed #cc9;
+  display: none;
+}
+.host-mode .spoiler {
+  display: block;
+}
+
+/* Hide host‑only sections in player mode */
+.host-only {
+  display: none;
+}
+.host-mode .host-only {
+  display: block;
+}
+.host-mode .player-only {
+  display: none;
+}
+
+/* Handouts styling */
+.handout {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    overflow-x: auto;
+  }
+  .sidebar ul {
+    display: flex;
+    gap: 4px;
+  }
+  .sidebar a {
+    padding: 10px;
+    white-space: nowrap;
+  }
+  .content {
+    margin-left: 0;
+  }
+}

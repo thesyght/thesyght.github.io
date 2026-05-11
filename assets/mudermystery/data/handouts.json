@@ -1,0 +1,19 @@
+{
+  "handouts": [
+    {
+      "id": "RULES",
+      "title": "General Rules for Players",
+      "content": "Stay in character once dinner begins. You may invent minor details consistent with your role, but do not invent new relationships or secrets that contradict the provided backstory. You may lie, bargain, accuse, or conceal information. Do not physically restrain anyone, search personal belongings, or damage props unless indicated. The Maid, Groundskeeper, Executor, and Police are not suspects. One of the ten invited guests is the murderer."
+    },
+    {
+      "id": "BELL_CLUE",
+      "title": "Service Bell",
+      "content": "There is a cow bell mounted in the dining room. The host rings once for service at the start of dinner. You may discover the bell’s other uses through investigation."
+    },
+    {
+      "id": "ACT_STRUCTURE",
+      "title": "Act Structure Overview",
+      "content": "The mystery unfolds in three acts: Act 1 – dinner in the locked dining wing; Act 2 – search of the grounds; Act 3 – Police intervention and accusations. Focus on examining your surroundings and interacting with others to gather clues."
+    }
+  ]
+}

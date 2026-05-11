@@ -1,0 +1,53 @@
+{
+  "props": [
+    {
+      "id": "BLACK_ENVELOPE",
+      "name": "Black Envelope",
+      "description": "Sealed envelope containing J. Baroo’s codicil. Passed around the dinner table to verify its integrity. Disappears during the blackout.",
+      "location": "Dining Room (Act 1)",
+      "spoilerDetail": "Hidden by the Director in The Blind Judge statue in Act 2."
+    },
+    {
+      "id": "FAKE_ENVELOPE",
+      "name": "Fake Envelope",
+      "description": "Replica envelope with an incorrect wax stamp planted outside the terrace to mislead the guests.",
+      "location": "Rose Garden or Terrace (Act 2)",
+      "spoilerDetail": "Thrown through the cracked window by the Director during the blackout. Contains a fake codicil granting him control."
+    },
+    {
+      "id": "COW_BELL",
+      "name": "Cow Bell",
+      "description": "Old service bell mounted in the dining room. One ring summons service; two rings unlock the dining wing; three rings instructs the staff to wait.",
+      "location": "Dining Room (Act 1)",
+      "spoilerDetail": "Players must find and attach the clapper hidden in the kitchen to ring properly."
+    },
+    {
+      "id": "CLAPPER",
+      "name": "Bell Clapper",
+      "description": "Detachable striker for the cow bell. Without it the bell makes no sound.",
+      "location": "Kitchen (Act 1)",
+      "spoilerDetail": "Hidden under a tea towel or in the sink; players must search the kitchen to find it."
+    },
+    {
+      "id": "CROWBAR",
+      "name": "Crowbar",
+      "description": "Heavy iron bar used to pry open doors or windows. Found wedged in the terrace doorframe.",
+      "location": "Dining Room/Terrace (Act 1)",
+      "spoilerDetail": "Used by the Director in an attempted escape before discovering the wing was locked from outside."
+    },
+    {
+      "id": "HOSTILE_EMAIL",
+      "name": "Director’s Email",
+      "description": "Aggressive email from the Director expressing contempt for the Son and his consulting background.",
+      "location": "Media Room (Act 1)",
+      "spoilerDetail": "Reveals the Director’s true feelings and motive for blocking the Son."
+    },
+    {
+      "id": "PARCHMENT_FILES",
+      "name": "Media Room Files",
+      "description": "Collection of documents in the media room outlining motives and secrets of every character.",
+      "location": "Media Room (Act 1)",
+      "spoilerDetail": "Each file provides a clue about personal pressures, red herrings, and potential motives."
+    }
+  ]
+}

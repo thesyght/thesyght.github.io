@@ -1,0 +1,54 @@
+{
+  "actors": [
+    {
+      "id": "MAID",
+      "role": "The Maid",
+      "description": "House servant with no personal name. Not a suspect.",
+      "instructions": [
+        "Lock the dining wing from the outside once dinner begins. Do this discreetly so the guests do not notice.",
+        "Do not explain the bell code directly. Only respond to the appropriate number of rings:",
+        " • One bell: deliver drinks or tea, but do not open the wing.",
+        " • Two bells: this is the house signal to unlock the wing. Open the door after hearing two clear rings.",
+        " • Three bells: acknowledge, but do not act until summoned properly.",
+        "Use the scripted lines for each bell response from the speeches bank.",
+        "Avoid giving personal motives or becoming involved in accusations." 
+      ]
+    },
+    {
+      "id": "GROUNDSKEEPER",
+      "role": "The Groundskeeper",
+      "description": "Caretaker of the gardens. Not a suspect.",
+      "instructions": [
+        "During Act 2, guide guests through the grounds in a methodical search.",
+        "Find the fake envelope near the terrace, rose bed, or gravel. Show that the wax stamp is wrong.",
+        "Observe facts but avoid solving the mystery. Use the scripted lines when the fake is exposed and at The Blind Judge statue.",
+        "Note the disturbed plaque and encourage the players to investigate the statue themselves.",
+        "Do not reveal the true hiding place of the real envelope until the players discover it."
+      ]
+    },
+    {
+      "id": "EXECUTOR",
+      "role": "The Executor",
+      "description": "Legal representative reading the will. Dies before the codicil is read.",
+      "instructions": [
+        "Give the legalistic speech explaining the purpose and procedure of the reading, using the provided script.",
+        "Pass the Black Envelope around the table and instruct the guests to verify its appearance without opening it.",
+        "After the blackout effect, lie on the dining room floor to simulate your murder.",
+        "Do not speak or move after Act 1 begins; you are not a suspect."
+      ]
+    },
+    {
+      "id": "POLICE",
+      "role": "The Police",
+      "description": "Officer or pair of officers arriving in Act 3 to summarise evidence and lead accusations.",
+      "instructions": [
+        "Enter at the beginning of Act 3 and call everyone back to the living room.",
+        "Summarise all discovered facts in a concise manner.",
+        "Facilitate the reading of the real codicil and comparison with the fake.",
+        "Encourage each guest to voice their motive and accusation.",
+        "Guide the group toward identifying the Director as the killer based on the evidence.",
+        "Ensure the pacing remains tight and prevents players from going off‑script for too long."
+      ]
+    }
+  ]
+}

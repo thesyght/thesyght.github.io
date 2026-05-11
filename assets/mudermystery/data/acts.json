@@ -1,0 +1,64 @@
+{
+  "acts": [
+    {
+      "id": "ACT1",
+      "title": "Act 1: The Locked Dining Wing",
+      "description": "Dinner at Baroo Manor takes place in the dining wing. After the Executor circulates the sealed Black Envelope, a blackout and gas effect occur. When the guests awake, the Executor is dead, the Black Envelope is missing, and the wing is locked from the outside.",
+      "rooms": ["Dining Room", "Media Room", "Kitchen"],
+      "keyClues": [
+        "Body of the Executor on the dining table.",
+        "Black Envelope missing and signs of disturbance.",
+        "Crowbar wedged in the terrace doorframe and cracked window.",
+        "Cow bell with missing clapper and clapper hidden in kitchen.",
+        "Files in media room detailing motives for each character."
+      ],
+      "objectives": [
+        "Examine the Executor’s body without disturbing evidence.",
+        "Verify the missing Black Envelope and any wax residue.",
+        "Search the media room for files on each character.",
+        "Find and assemble the cow bell and infer the two‑ring signal.",
+        "Piece together who could have orchestrated the blackout."
+      ]
+    },
+    {
+      "id": "ACT2",
+      "title": "Act 2: The Grounds",
+      "description": "After the dining wing is unlocked using the correct bell code, everyone moves outside. The Groundskeeper supervises the search. A fake black envelope is discovered near the terrace and gardens. The real envelope remains hidden.",
+      "rooms": ["Terrace", "Rose Garden", "Garden Shed", "Greenhouse", "Ponds", "Statue Walk", "The Blind Judge Statue"],
+      "keyClues": [
+        "Fake black envelope thrown through the cracked window during the blackout, found among plants or gravel.",
+        "Fake codicil text that grants control to the Director and creates deadlock between heirs.",
+        "Planted clue at the Blind Judge statue hinting at a secret compartment where the real envelope is hidden.",
+        "Marks near the greenhouse and ventilation indicating someone tried to tamper with the vents.",
+        "Statements from the Groundskeeper observing the plaque at the Blind Judge was disturbed."
+      ],
+      "objectives": [
+        "Locate and examine the fake black envelope; compare its seal to the original memory.",
+        "Search the grounds and note any disturbed statues or garden objects.",
+        "Observe the vent and greenhouse for any sign of someone crawling through.",
+        "Track footprints, broken branches, and clues that point toward the killer’s path.",
+        "Begin to question why someone would mislead everyone with a fake codicil."
+      ]
+    },
+    {
+      "id": "ACT3",
+      "title": "Act 3: Police and Accusations",
+      "description": "The Police arrive and take control of the investigation. Everyone returns to the living room. The real codicil is found and compared with the fake. Each guest explains their motives and accusations, leading to the exposure of the Director.",
+      "rooms": ["Living Room"],
+      "keyClues": [
+        "The real Black Envelope discovered inside The Blind Judge statue during Act 2.",
+        "The real codicil outlines a public listing, independent trust, and bars the Director from control.",
+        "Aggressive email from the Director about the Son, showing disdain for the heir apparent.",
+        "Comparison between fake and real codicils reveals the Director’s attempt to seize control.",
+        "Timing of the blackout and the Director’s knowledge of the cow bell code raise suspicion."
+      ],
+      "objectives": [
+        "Listen to the Police summary of facts gathered so far.",
+        "Compare the clauses of the fake codicil with the real codicil.",
+        "Encourage each character to articulate their motives and suspicions.",
+        "Reveal the Director’s scheme through evidence, email, and codicil comparison.",
+        "Reach a consensus on the murderer while allowing dramatic accusations."
+      ]
+    }
+  ]
+}

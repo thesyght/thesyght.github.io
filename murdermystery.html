@@ -1,344 +1,87 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Baroo Separated Two-Way Relationship Circle</title>
-<style>
-  :root {
-    --positive: #1f8f4d;
-    --negative: #c7372f;
-    --aware: #c49a13;
-    --unknown: #8a8a8a;
-    --family: #f6ddff;
-    --compatriot: #ddffe6;
-  }
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #fafafa;
-    color: #111;
-  }
-  .wrap {
-    max-width: 1800px;
-    margin: 0 auto;
-    padding: 22px;
-  }
-  h1 { font-size: 24px; margin: 0 0 8px 0; }
-  p { margin: 0 0 10px 0; max-width: 1250px; line-height: 1.35; }
-  .legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    margin: 10px 0 14px 0;
-    font-size: 14px;
-  }
-  .key {
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 6px;
-    border: 1px solid #333;
-  }
-  .kpos { background: var(--positive); }
-  .kneg { background: var(--negative); }
-  .kaware { background: var(--aware); }
-  .kunknown { background: var(--unknown); }
-  .kfamily { background: var(--family); }
-  .kcomp { background: var(--compatriot); }
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 10px 0 14px 0;
-    align-items: center;
-  }
-  button {
-    padding: 7px 10px;
-    border: 1px solid #777;
-    background: white;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  button.active { background: #222; color: white; }
-  svg {
-    width: 100%;
-    height: auto;
-    background: white;
-    border: 1px solid #ddd;
-  }
-  .edge {
-    fill: none;
-    stroke-width: 2.3;
-    opacity: 0.62;
-    pointer-events: stroke;
-  }
-  .edge.positive { stroke: var(--positive); }
-  .edge.negative { stroke: var(--negative); }
-  .edge.aware { stroke: var(--aware); }
-  .edge.unknown { stroke: var(--unknown); }
-  .edge.dimmed { opacity: 0.06; }
-  .edge.highlight {
-    opacity: 1;
-    stroke-width: 5.4;
-  }
-  .node {
-    stroke: #222;
-    stroke-width: 2;
-    cursor: pointer;
-  }
-  .node.family { fill: var(--family); }
-  .node.compatriot { fill: var(--compatriot); }
-  .node.selected { stroke-width: 6; }
-  .nodeText {
-    font-size: 16px;
-    text-anchor: middle;
-    dominant-baseline: middle;
-    pointer-events: none;
-  }
-  .nodeSub {
-    font-size: 12px;
-    text-anchor: middle;
-    dominant-baseline: middle;
-    pointer-events: none;
-  }
-  #info {
-    margin-top: 12px;
-    background: white;
-    border: 1px solid #ddd;
-    padding: 12px;
-    min-height: 44px;
-    line-height: 1.35;
-  }
-  .note {
-    font-size: 13px;
-    color: #333;
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Black Codicil - Murder Mystery Dashboard</title>
+  <link rel="stylesheet" href="assets/mudermystery/styles.css">
 </head>
 <body>
-<div class="wrap">
-  <h1>Baroo separated two-way relationship circle</h1>
-  <p>Every character has an arrow to every other character. Every pair has two separate curved arrows, one each way. Reciprocal arrows are now forced onto opposite sides of their shared chord so they do not sit on top of each other. Crossings between unrelated links remain unavoidable for a complete 10-person directed graph.</p>
-
-  <div class="legend">
-    <span><span class="key kpos"></span>Positive</span>
-    <span><span class="key kneg"></span>Negative</span>
-    <span><span class="key kaware"></span>Knows about, does not care / transactional</span>
-    <span><span class="key kunknown"></span>Knows nothing meaningful</span>
-    <span><span class="key kfamily"></span>Family side</span>
-    <span><span class="key kcomp"></span>Compatriot side</span>
-  </div>
-
-  <div class="controls">
-    <button id="showAll" class="active">Show all 90 arrows</button>
-    <button id="focusNone">Clear focus</button>
-    <span class="note">Click a character to highlight that character’s 9 outgoing arrows while keeping the full graph faintly visible.</span>
-  </div>
-
-  <svg id="diagram" viewBox="0 0 1800 1800" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <marker id="arrowPositive" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
-        <path d="M0,0 L0,8 L11,4 z" fill="#1f8f4d"></path>
-      </marker>
-      <marker id="arrowNegative" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
-        <path d="M0,0 L0,8 L11,4 z" fill="#c7372f"></path>
-      </marker>
-      <marker id="arrowAware" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
-        <path d="M0,0 L0,8 L11,4 z" fill="#c49a13"></path>
-      </marker>
-      <marker id="arrowUnknown" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
-        <path d="M0,0 L0,8 L11,4 z" fill="#8a8a8a"></path>
-      </marker>
-    </defs>
-  </svg>
-
-  <div id="info">Hover over a line to read the directional relationship. Click a character to focus its outgoing arrows.</div>
-</div>
-
-<script>
-const svg = document.getElementById("diagram");
-const info = document.getElementById("info");
-const showAllBtn = document.getElementById("showAll");
-const focusNoneBtn = document.getElementById("focusNone");
-
-const W = 1800, H = 1800;
-const cx = W / 2, cy = H / 2;
-const ringR = 675;
-const nodeR = 88;
-const dataUrl = new URL("./murdermystery-data.json", window.location.href);
-let data;
-let chars = [];
-const pos = {};
-let focus = null;
-
-const marker = {
-  positive: "url(#arrowPositive)",
-  negative: "url(#arrowNegative)",
-  aware: "url(#arrowAware)",
-  unknown: "url(#arrowUnknown)"
-};
-const label = {
-  positive: "Positive",
-  negative: "Negative",
-  aware: "Knows about, does not care / transactional",
-  unknown: "Knows nothing meaningful"
-};
-
-function addSvg(tag, attrs, parent = svg) {
-  const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
-  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
-  parent.appendChild(el);
-  return el;
-}
-
-function polarPoint(i, n) {
-  const angle = -Math.PI / 2 + i * 2 * Math.PI / n;
-  return { x: cx + ringR * Math.cos(angle), y: cy + ringR * Math.sin(angle), angle };
-}
-
-function nameOf(id) {
-  return chars.find(c => c.id === id).name;
-}
-
-function edgePath(from, to) {
-  const a = pos[from], b = pos[to];
-  const i = chars.findIndex(c => c.id === from);
-  const j = chars.findIndex(c => c.id === to);
-
-  const dx = b.x - a.x;
-  const dy = b.y - a.y;
-  const d = Math.hypot(dx, dy);
-  const ux = dx / d;
-  const uy = dy / d;
-
-  const start = { x: a.x + ux * (nodeR + 14), y: a.y + uy * (nodeR + 14) };
-  const end = { x: b.x - ux * (nodeR + 22), y: b.y - uy * (nodeR + 22) };
-
-  // This is the corrected part:
-  // Use the local normal only. Since the direction vector reverses for the reciprocal edge,
-  // the normal reverses too. That forces A→B and B→A to opposite sides.
-  const nx = -uy;
-  const ny = ux;
-
-  const rawGap = Math.abs(i - j);
-  const span = Math.min(rawGap, chars.length - rawGap);
-  const baseBySpan = {1: 92, 2: 128, 3: 164, 4: 200, 5: 236};
-  const base = baseBySpan[span] || 150;
-
-  // Add a stable unordered-pair nudge to avoid exact visual stacking with unrelated edges.
-  const low = Math.min(i, j);
-  const high = Math.max(i, j);
-  const nudge = ((low * 37 + high * 19) % 31) - 15;
-  const curve = base + nudge;
-
-  const mx = (start.x + end.x) / 2;
-  const my = (start.y + end.y) / 2;
-  const qx = mx + nx * curve;
-  const qy = my + ny * curve;
-
-  return `M ${start.x.toFixed(1)} ${start.y.toFixed(1)} Q ${qx.toFixed(1)} ${qy.toFixed(1)} ${end.x.toFixed(1)} ${end.y.toFixed(1)}`;
-}
-
-function splitLabel(name) {
-  const parts = name.split(" / ");
-  if (parts.length > 1) return [parts[0], parts[1]];
-  const words = name.split(" ");
-  if (words.length <= 2) return [name];
-  const mid = Math.ceil(words.length / 2);
-  return [words.slice(0, mid).join(" "), words.slice(mid).join(" ")];
-}
-
-function draw() {
-  [...svg.querySelectorAll(".edge,.node,.nodeText,.nodeSub")].forEach(el => el.remove());
-
-  data.relationships.forEach(rel => {
-    const edge = addSvg("path", {
-      d: edgePath(rel.from, rel.to),
-      class: `edge ${rel.category}${focus && rel.from !== focus ? " dimmed" : ""}${focus && rel.from === focus ? " highlight" : ""}`,
-      "marker-end": marker[rel.category],
-      "data-from": rel.from,
-      "data-to": rel.to
-    });
-    const title = addSvg("title", {}, edge);
-    title.textContent = rel.text;
-    edge.addEventListener("mouseenter", () => {
-      edge.classList.add("highlight");
-      info.innerHTML = `<strong>${nameOf(rel.from)} → ${nameOf(rel.to)}: ${label[rel.category]}</strong><br>${rel.text}`;
-    });
-    edge.addEventListener("mouseleave", () => {
-      edge.classList.remove("highlight");
-      info.textContent = focus ? `Focused on ${nameOf(focus)} outgoing relationships.` : "Hover over a line to read the directional relationship. Click a character to focus its outgoing arrows.";
-    });
-  });
-
-  chars.forEach(c => {
-    const p = pos[c.id];
-    const node = addSvg("circle", {
-      cx: p.x,
-      cy: p.y,
-      r: nodeR,
-      class: `node ${c.group}${focus === c.id ? " selected" : ""}`
-    });
-    node.addEventListener("click", () => {
-      focus = c.id;
-      showAllBtn.classList.remove("active");
-      draw();
-      info.textContent = `Focused on ${nameOf(focus)} outgoing relationships. The other arrows remain faint.`;
-    });
-
-    const lines = splitLabel(c.name);
-    if (lines.length === 1) {
-      addSvg("text", { x: p.x, y: p.y, class: "nodeText" }).textContent = lines[0];
-    } else {
-      addSvg("text", { x: p.x, y: p.y - 12, class: "nodeText" }).textContent = lines[0];
-      addSvg("text", { x: p.x, y: p.y + 16, class: "nodeSub" }).textContent = lines[1];
-    }
-  });
-}
-
-showAllBtn.addEventListener("click", () => {
-  focus = null;
-  showAllBtn.classList.add("active");
-  draw();
-  info.textContent = "Showing all 90 directed arrows.";
-});
-focusNoneBtn.addEventListener("click", () => {
-  focus = null;
-  showAllBtn.classList.add("active");
-  draw();
-  info.textContent = "Showing all 90 directed arrows.";
-});
-
-async function loadData() {
-  const response = await fetch(dataUrl);
-  if (!response.ok) {
-    throw new Error(`Failed to load relationship data: ${response.status} ${response.statusText}`);
-  }
-  return response.json();
-}
-
-async function init() {
-  info.textContent = "Loading relationship data...";
-
-  try {
-    data = await loadData();
-    chars = data.characters;
-
-    Object.keys(pos).forEach(key => delete pos[key]);
-    chars.forEach((c, i) => {
-      pos[c.id] = polarPoint(i, chars.length);
-    });
-
-    draw();
-  } catch (error) {
-    console.error(error);
-    info.textContent = "Unable to load relationship data. Serve this page over HTTP so the JSON file can be fetched.";
-  }
-}
-
-init();
-</script>
+  <header class="header">
+    <h1>The Black Codicil</h1>
+    <p class="subtitle">Murder mystery planner and reference dashboard</p>
+    <button id="toggleMode" class="mode-btn" title="Switch between player-safe and host modes">Switch to Host Mode</button>
+  </header>
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="#overview" class="nav-link active">Overview</a></li>
+      <li><a href="#characters" class="nav-link">Characters</a></li>
+      <li><a href="#relationships" class="nav-link">Relationships</a></li>
+      <li><a href="#acts" class="nav-link">Act Structure</a></li>
+      <li><a href="#locations" class="nav-link">Locations</a></li>
+      <li><a href="#plot" class="nav-link">Plot Hooks & Clues</a></li>
+      <li><a href="#props" class="nav-link">Props</a></li>
+      <li><a href="#speeches" class="nav-link">Speeches</a></li>
+      <li><a href="#actors" class="nav-link">Actor Instructions</a></li>
+      <li><a href="#handouts" class="nav-link">Player Handouts</a></li>
+      <li><a href="#hostnotes" class="nav-link">Host Notes</a></li>
+    </ul>
+  </nav>
+  <main class="content">
+    <section id="overview" class="section">
+      <h2>Overview</h2>
+      <div id="overviewContent">Loading...</div>
+    </section>
+    <section id="characters" class="section hidden">
+      <h2>Characters</h2>
+      <div id="characterList" class="character-list"></div>
+      <div id="characterDetails" class="character-details"></div>
+    </section>
+    <section id="relationships" class="section hidden">
+      <h2>Relationship Graph & Matrix</h2>
+      <div id="graphContainer" class="graph-container">
+        <svg id="relationshipGraph" viewBox="0 0 1800 1800" xmlns="http://www.w3.org/2000/svg"></svg>
+        <div id="graphInfo" class="graph-info">Hover over a line to read the directional relationship. Click a character to focus its outgoing arrows.</div>
+        <div class="graph-controls">
+          <button id="showAllRelations" class="control-btn active">Show all</button>
+          <button id="clearFocus" class="control-btn">Clear focus</button>
+        </div>
+      </div>
+      <div id="matrixContainer" class="matrix-container"></div>
+    </section>
+    <section id="acts" class="section hidden">
+      <h2>Act Structure</h2>
+      <div id="actsList"></div>
+    </section>
+    <section id="locations" class="section hidden">
+      <h2>Locations & Rooms</h2>
+      <div id="locationsList"></div>
+    </section>
+    <section id="plot" class="section hidden">
+      <h2>Plot Hooks & Clues</h2>
+      <div id="plotHooks"></div>
+    </section>
+    <section id="props" class="section hidden">
+      <h2>Props</h2>
+      <div id="propsList"></div>
+    </section>
+    <section id="speeches" class="section hidden">
+      <h2>Speeches & Scripts</h2>
+      <div id="speechesList"></div>
+    </section>
+    <section id="actors" class="section hidden">
+      <h2>Actor Instructions</h2>
+      <div id="actorsList"></div>
+    </section>
+    <section id="handouts" class="section hidden">
+      <h2>Player-Safe Handouts</h2>
+      <div id="handoutsList"></div>
+    </section>
+    <section id="hostnotes" class="section hidden">
+      <h2>Host Notes</h2>
+      <div id="hostNotesList"></div>
+    </section>
+  </main>
+  <script src="assets/mudermystery/script.js"></script>
 </body>
 </html>
