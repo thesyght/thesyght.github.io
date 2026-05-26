@@ -1,0 +1,85 @@
+{
+  "characters": [
+    {
+      "id": "SON",
+      "name": "The Kissass Offspring",
+      "role": "Kissass Offspring",
+      "group": "family",
+      "publicRole": "The dutiful Baroo child who has stayed close to the company and expects succession.",
+      "publicBio": "The Kissass Offspring is the dutiful Baroo child, or at least that is the role they have spent years perfecting. They stayed close to the company, attended the meetings, learnt the language of consultants and investors, and made themself available whenever J. Baroo needed a loyal child in the room.\n\nThey are hardworking, precise, and deeply impressed by their own stamina. They speak in frameworks, priorities, deliverables, and strategic phases. They are not especially warm, not especially funny, and not naturally liked, but they believe respect is more important than charm.\n\nIn public, they behave as though succession is not a question but an administrative formality. They expect to be taken seriously and become visibly irritated when others treat the will as a family drama rather than a governance matter. Their most obvious flaw is that they confuse effort with entitlement. They are desperate to be seen as competent, useful, and loyal, but that need for approval makes them brittle.",
+      "personality": "Hardworking, brittle, status-conscious, consultant-coded, and desperate to be recognised as the competent heir."
+    },
+    {
+      "id": "DAUGHTER",
+      "name": "The Spoilt Offspring",
+      "role": "Spoilt Offspring",
+      "group": "family",
+      "publicRole": "The polished, internationally educated Baroo child who appears detached from the company.",
+      "publicBio": "The Spoilt Offspring is the internationally polished Baroo child: expensive education, time abroad, excellent taste, and the air of someone who has never had to enter a room before deciding whether it deserved them. They are charming when they choose to be, indifferent when they do not, and used to being underestimated.\n\nPublicly, they appear to have floated through the Baroo inheritance rather than worked for it. Boarding school in France, long absences overseas, and a lifestyle built around distance from the family business have made them seem ornamental to some and infuriating to others.\n\nTheir social personality is elegant, dry, and cutting. They do not compete for attention in the same obvious way as the Kissass Offspring. Instead, they observe, make small precise comments, and let other people reveal themselves. To the room, they are the spoilt Baroo child who may or may not care what is in the will. They look as if they are above the whole thing, but they also clearly expect to be treated as someone of consequence.",
+      "personality": "Elegant, dry, cutting, outwardly spoilt, and apparently detached from the company’s daily burdens."
+    },
+    {
+      "id": "WIDOW",
+      "name": "The Surviving Spouse",
+      "role": "Surviving Spouse",
+      "group": "family",
+      "publicRole": "J. Baroo’s surviving spouse and guardian of household dignity.",
+      "publicBio": "The Surviving Spouse behaves as though that position is both a grief and a social office. They are elegant, controlled, and intensely aware of what a family like the Baroos should look like in public.\n\nTheir public personality is formal but not cold. They can be gracious, especially when being gracious gives them the moral advantage. They have the gift of making a polite sentence feel like a warning.\n\nThey present themself as the guardian of household dignity. They dislike vulgar displays of ambition, family bickering in front of outsiders, and any suggestion that J. Baroo’s private life should be pulled apart for entertainment. To the other guests, they are not merely a grieving spouse. They are someone fighting to ensure the marriage, the household, and their own standing are treated with the respect they believe they deserve.",
+      "personality": "Formal, elegant, protective, morally forceful, and skilled at turning politeness into pressure."
+    },
+    {
+      "id": "BASTARD",
+      "name": "The Father’s Bastard",
+      "role": "Father’s Bastard",
+      "group": "family",
+      "publicRole": "The possible illegitimate child of J. Baroo, recently brought back into the family orbit.",
+      "publicBio": "The Father’s Bastard occupies the most uncomfortable position in the room: present often enough to be known, but not accepted enough to be safe. Around Baroo Holdings, they are treated by some as a colleague, by others as a dependant, and by the family as a question nobody quite wants answered out loud.\n\nPublicly, they are guarded, watchful, and quick to notice when conversations change as they enter the room. They are not naturally grand, and they lack the ease that comes from being raised inside the Baroo name.\n\nTheir personality combines defensiveness with a stubborn need to belong. They want to be treated normally, but the more people avoid saying why they are really there, the more obvious the tension becomes. To the room, they are either an embarrassment, an inconvenience, a possible claimant, or a person who should have been acknowledged long ago.",
+      "personality": "Guarded, watchful, defensive, and quietly desperate for normal treatment."
+    },
+    {
+      "id": "DIPLOMAT",
+      "name": "The Diplomat",
+      "role": "Diplomat",
+      "group": "compatriot",
+      "publicRole": "A diplomatic figure and old childhood friend of J. Baroo, attending as part of the old Baroo circle.",
+      "publicBio": "The Diplomat belongs to the older, quieter world of J. Baroo’s life: school friendships, international postings, formal dinners, favours remembered over decades, and conversations where nothing direct is ever quite said.\n\nThey knew J. Baroo before the company became an institution and before the family name became something that needed constant management. Their public manner is composed, worldly, and precise. They are used to rooms where a pause can mean more than an accusation and where a polite phrase can end a career.\n\nTo the guests, The Diplomat seems like a figure from J. Baroo’s earlier life: respectable, connected, and difficult to place. They are not family, not company management, and not exactly a friend of the house in the present. Their presence suggests that J. Baroo’s will may touch matters beyond money, family, and business.",
+      "personality": "Worldly, formal, observant, diplomatic in public, and quietly judgemental beneath the manners."
+    },
+    {
+      "id": "OPERA",
+      "name": "The Opera Singer",
+      "role": "Opera Singer",
+      "group": "compatriot",
+      "publicRole": "A famous opera singer and long-time artistic presence in J. Baroo’s world.",
+      "publicBio": "The Opera Singer is a famous performer and long-time artistic presence in J. Baroo’s world. They belong to the glamorous side of wealth: patronage dinners, private performances, foundation galas, European festivals, and rooms where culture and money pretend they are the same thing.\n\nPublicly, they are dramatic, elegant, and accustomed to being watched. They know how to make an entrance, how to hold silence, and how to make grief look beautiful without making it look false.\n\nTheir personality is theatrical but not foolish. They understand power, especially the kind disguised as admiration. They can flatter, wound, and redirect attention with practised ease. To the family, they are not just a singer J. Baroo admired. They are a reminder of the life J. Baroo had outside the house: patronage, intimacy, vanity, culture, and secrets wrapped in applause.",
+      "personality": "Dramatic, elegant, performative, and dangerous because they understand attention."
+    },
+    {
+      "id": "DIRECTOR",
+      "name": "The Director",
+      "role": "Director / Best Friend",
+      "group": "compatriot",
+      "publicRole": "J. Baroo’s closest business confidant and long-serving Director of Baroo Holdings.",
+      "publicBio": "The Director was J. Baroo’s closest business confidant, long-serving senior figure at Baroo Holdings, and one of the few people outside the family who could speak with authority about both the company and the house.\n\nThey present as polished, controlled, and indispensable. In public, they seem like the stabilising force in the room: courteous to the family, respectful to staff, careful with language, and never openly ambitious. They speak about J. Baroo with the solemn familiarity of someone who sees friendship, company history, and institutional legacy as inseparable.\n\nTheir social style is calm, paternal, and slightly patronising. They rarely raise their voice. They ask measured questions, let others embarrass themselves, and then offer practical solutions. To the guests, they appear to be the obvious adult in the room: part family friend, part executive, part unofficial guardian of the Baroo legacy.",
+      "personality": "Polished, controlled, image-conscious, and publicly stabilising. They rarely appear openly ambitious."
+    },
+    {
+      "id": "PUBLICIST",
+      "name": "The Publicist / Journalist",
+      "role": "Publicist / Journalist",
+      "group": "family",
+      "publicRole": "The communications fixer who manages the Baroo family image.",
+      "publicBio": "The Publicist / Journalist is the person called when a scandal needs to become a misunderstanding, a family dispute needs to become a private matter, or a business embarrassment needs to become “legacy stewardship”. They operate between journalism, public relations, and reputation management, which makes them useful and faintly untrustworthy.\n\nPublicly, they are sharp, articulate, and difficult to fluster. They speak in statements, angles, timing, and exposure risk. They know which phrases calm a room, which details reporters will seize, and which truths can be buried under a better headline.\n\nTheir personality is brisk, observant, and controlled. They are more comfortable managing other people’s emotions than expressing their own. They have a habit of listening as though every sentence may later become evidence. To the guests, they are both necessary and resented. Everyone wants the family image protected, but no one likes being reminded that the image is being managed.",
+      "personality": "Sharp, controlled, reputation-focused, and more comfortable managing others than revealing themself."
+    },
+    {
+      "id": "ANTIQUE",
+      "name": "The Antique Collector",
+      "role": "Antique Collector",
+      "group": "compatriot",
+      "publicRole": "J. Baroo’s antique collector and supplier of rare historical pieces.",
+      "publicBio": "The Antique Collector is J. Baroo’s long-time supplier of rare historical pieces and adviser on the Baroo Collection. They speak of civilisation, rarity, provenance, and beauty with the confidence of someone who has never been troubled by customs forms for very long.\n\nPublicly, they are charming, grand, and faintly absurd. They dress as though every room might contain a portrait of them. They can turn a spoon, a broken idol, or a cracked vase into a story about empire, genius, betrayal, and taste.\n\nTheir personality is arrogant but entertaining. They enjoy being the most colourful person in a dull room and the most cultured person in a rich one. They are excellent at making dubious objects sound important and important people feel briefly clever. To the Baroo circle, they represent J. Baroo’s appetite for history, possession, and spectacle. They are useful, amusing, and risky.",
+      "personality": "Grand, charming, arrogant, theatrical, and skilled at making dubious objects sound important."
+    }
+  ]
+}

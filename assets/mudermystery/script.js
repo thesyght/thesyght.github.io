@@ -1,17 +1,58 @@
 /*
  * Script to power The Black Codicil murder mystery dashboard.
- * Loads JSON data files and renders sections with dynamic behaviour.
+ * Public mode loads only overview + character bios. Host mode unlocks the rest.
  */
 
 (() => {
-  let hostMode = false;
-  let data = {};
+  const HOST_PASSWORD = 'laru';
+  const HOST_ACCESS_KEY = 'murderMysteryHostAccess';
   const dataBase = 'assets/mudermystery/data';
-  const toggleBtn = document.getElementById('toggleMode');
-  const body = document.body;
-  const navLinks = document.querySelectorAll('.nav-link');
+  const CHARACTER_PLACEHOLDER_IMAGE = 'assets/mudermystery/photos/agathaplaceholder.png';
+  const publicSections = new Set(['overview', 'characters']);
+  const hostFiles = [
+    'characters.json',
+    'relationships.json',
+    'acts.json',
+    'locations.json',
+    'plot-hooks.json',
+    'props.json',
+    'speeches.json',
+    'actor-instructions.json',
+    'handouts.json',
+    'host-notes.json'
+  ];
+  const hostKeys = [
+    'characters',
+    'relationships',
+    'acts',
+    'locations',
+    'plotHooks',
+    'props',
+    'speeches',
+    'actors',
+    'handouts',
+    'hostnotes'
+  ];
 
-  // Section elements
+  let hostMode = false;
+  let hostAuthenticated = false;
+  let hostDataLoaded = false;
+  let activeSection = 'overview';
+  let selectedCharacterId = null;
+  let data = {
+    characters: []
+  };
+
+  const body = document.body;
+  const toggleBtn = document.getElementById('toggleMode');
+  const hostStatus = document.getElementById('hostStatus');
+  const hostAccessForm = document.getElementById('hostAccessForm');
+  const hostPasswordInput = document.getElementById('hostPassword');
+  const hostAccessError = document.getElementById('hostAccessError');
+  const cancelHostAccessBtn = document.getElementById('cancelHostAccess');
+  const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+  const characterModeNote = document.getElementById('characterModeNote');
+
   const sections = {
     overview: document.getElementById('overview'),
     characters: document.getElementById('characters'),
@@ -26,228 +67,388 @@
     hostnotes: document.getElementById('hostnotes')
   };
 
-  // Fetch all JSON files
-  async function loadData() {
-    const files = [
-      'characters.json',
-      'relationships.json',
-      'acts.json',
-      'locations.json',
-      'plot-hooks.json',
-      'props.json',
-      'speeches.json',
-      'actor-instructions.json',
-      'handouts.json',
-      'host-notes.json'
-    ];
-    const keys = [
-      'characters', 'relationships', 'acts', 'locations',
-      'plotHooks', 'props', 'speeches', 'actors', 'handouts', 'hostnotes'
-    ];
+  function getStoredHostAccess() {
+    try {
+      return sessionStorage.getItem(HOST_ACCESS_KEY) === 'granted';
+    } catch (error) {
+      return false;
+    }
+  }
 
-    async function fetchJson(file) {
-      const response = await fetch(`${dataBase}/${file}`);
-      if (!response.ok) {
-        throw new Error(`Failed to load ${file}: ${response.status} ${response.statusText}`);
+  function setStoredHostAccess(value) {
+    try {
+      if (value) {
+        sessionStorage.setItem(HOST_ACCESS_KEY, 'granted');
+      } else {
+        sessionStorage.removeItem(HOST_ACCESS_KEY);
       }
-      return response.json();
+    } catch (error) {
+      // Ignore storage failures and continue with in-memory access.
+    }
+  }
+
+  function normaliseDisplayText(text) {
+    return String(text || '')
+      .replace(/\r\n/g, '\n')
+      .replace(/\n[ \t]+/g, '\n')
+      .replace(/[ \t]+\n/g, '\n')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+  }
+
+  async function fetchJson(file) {
+    const response = await fetch(`${dataBase}/${file}`);
+    if (!response.ok) {
+      throw new Error(`Failed to load ${file}: ${response.status} ${response.statusText}`);
+    }
+    return response.json();
+  }
+
+  async function loadPublicData() {
+    const json = await fetchJson('public-characters.json');
+    data.characters = json.characters || [];
+  }
+
+  async function loadHostData() {
+    if (hostDataLoaded) {
+      return;
     }
 
-    const results = await Promise.all(files.map(fetchJson));
-    results.forEach((json, i) => {
-      data[keys[i]] = json[keys[i]] || json[keys[i] + 's'] || json[keys[i]] || Object.values(json)[0];
+    const results = await Promise.all(hostFiles.map(fetchJson));
+    results.forEach((json, index) => {
+      const key = hostKeys[index];
+      data[key] = json[key] || json[`${key}s`] || Object.values(json)[0];
+    });
+    hostDataLoaded = true;
+  }
+
+  function isSectionAccessible(id) {
+    return hostMode || publicSections.has(id);
+  }
+
+  function showSection(id) {
+    activeSection = isSectionAccessible(id) ? id : 'overview';
+    Object.keys(sections).forEach(sectionId => {
+      sections[sectionId].classList.toggle('hidden', sectionId !== activeSection);
+    });
+    navLinks.forEach(link => {
+      const targetId = link.getAttribute('href').slice(1);
+      link.classList.toggle('active', targetId === activeSection);
     });
   }
 
-  // Mode toggling
-  function toggleHostMode() {
-    hostMode = !hostMode;
-    if (hostMode) {
-      body.classList.add('host-mode');
-      toggleBtn.textContent = 'Switch to Player Mode';
-    } else {
-      body.classList.remove('host-mode');
-      toggleBtn.textContent = 'Switch to Host Mode';
+  function syncNavigation() {
+    navLinks.forEach(link => {
+      const targetId = link.getAttribute('href').slice(1);
+      link.parentElement.classList.toggle('hidden-nav', !isSectionAccessible(targetId));
+    });
+
+    if (!isSectionAccessible(activeSection)) {
+      activeSection = 'overview';
     }
-    // re-render sections that depend on mode
-    renderOverview();
-    renderPlotHooks();
-    renderProps();
-    renderActors();
-    renderHostNotes();
+    showSection(activeSection);
   }
 
-  // Navigation handling
+  function syncHostUi() {
+    body.classList.toggle('host-mode', hostMode);
+
+    if (hostMode) {
+      toggleBtn.textContent = 'Switch to Player Mode';
+      hostStatus.textContent = 'Host Mode active. All mystery materials are visible.';
+    } else if (hostAuthenticated) {
+      toggleBtn.textContent = 'Switch to Host Mode';
+      hostStatus.textContent = 'Host access unlocked. Public view is active.';
+    } else {
+      toggleBtn.textContent = 'Enter Host Mode';
+      hostStatus.textContent = 'Host Mode locked. Public overview and bios only.';
+    }
+
+    characterModeNote.textContent = hostMode
+      ? 'Host Mode exposes private motives, relationships, act objectives, clues, and all planning materials.'
+      : 'Public mode shows only the overview and public character bios.';
+  }
+
+  function openHostAccessForm() {
+    hostAccessForm.classList.remove('hidden');
+    hostAccessError.classList.add('hidden');
+    hostPasswordInput.value = '';
+    hostPasswordInput.focus();
+  }
+
+  function closeHostAccessForm() {
+    hostAccessForm.classList.add('hidden');
+    hostAccessError.classList.add('hidden');
+    hostPasswordInput.value = '';
+  }
+
   function setupNavigation() {
     navLinks.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        // update active class
-        navLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-        // show/hide sections
-        Object.keys(sections).forEach(id => {
-          sections[id].classList.add('hidden');
-        });
-        sections[targetId].classList.remove('hidden');
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        showSection(link.getAttribute('href').slice(1));
       });
     });
   }
 
-  // Render Overview
+  async function handleToggleClick() {
+    if (hostMode) {
+      hostMode = false;
+      closeHostAccessForm();
+      syncHostUi();
+      syncNavigation();
+      renderAll();
+      return;
+    }
+
+    if (!hostAuthenticated) {
+      openHostAccessForm();
+      return;
+    }
+
+    await loadHostData();
+    hostMode = true;
+    syncHostUi();
+    syncNavigation();
+    renderAll();
+  }
+
+  async function handleHostAccessSubmit(event) {
+    event.preventDefault();
+    if (hostPasswordInput.value !== HOST_PASSWORD) {
+      hostAccessError.classList.remove('hidden');
+      hostPasswordInput.select();
+      return;
+    }
+
+    hostAuthenticated = true;
+    setStoredHostAccess(true);
+    await loadHostData();
+    hostMode = true;
+    closeHostAccessForm();
+    syncHostUi();
+    syncNavigation();
+    renderAll();
+  }
+
   function renderOverview() {
     const container = document.getElementById('overviewContent');
     const intro = document.createElement('div');
     intro.className = 'card';
+
     const p1 = document.createElement('p');
-    p1.textContent = 'J. Baroo, patriarch of the Baroo family, has died. Ten guests assemble for dinner before the formal reading of his will. The Executor holds a sealed Black Envelope containing a codicil. After dinner, a staged blackout knocks everyone out. When they wake, the Executor is dead, the envelope is missing and the dining wing is locked.';
+    p1.textContent = 'J. Baroo, patriarch of the Baroo family, has died. Ten guests assemble for dinner before the formal reading of his will. The Executor holds a sealed Black Envelope containing a codicil. After dinner, a staged blackout knocks everyone out. When they wake, the Executor is dead, the envelope is missing and the dining wing is locked.';
+
     const p2 = document.createElement('p');
     p2.textContent = 'Players must investigate the murder, search the manor and grounds, decipher the bell signal, and confront one another. The truth will be revealed when the real codicil is found and the murderer is exposed.';
+
     intro.appendChild(p1);
     intro.appendChild(p2);
+
     if (hostMode) {
       const spoiler = document.createElement('div');
       spoiler.className = 'spoiler';
       spoiler.innerHTML = '<strong>Host:</strong> The Director is the killer. He murdered the Executor during the blackout, stole the real envelope, hid it in the Blind Judge statue and planted a fake envelope outside to mislead the guests.';
       intro.appendChild(spoiler);
     }
+
     container.innerHTML = '';
     container.appendChild(intro);
   }
 
-  // Render Characters
   function renderCharacters() {
     const list = document.getElementById('characterList');
     const details = document.getElementById('characterDetails');
+    const characters = data.characters || [];
+
     list.innerHTML = '';
     details.innerHTML = '<p>Select a character to view details.</p>';
-    data.characters.forEach(char => {
-      const card = document.createElement('div');
-      card.className = 'character-card';
-      card.textContent = char.name;
-      card.addEventListener('click', () => {
-        showCharacterDetails(char);
+
+    characters.forEach(character => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = `character-pill${selectedCharacterId === character.id ? ' active' : ''}`;
+      button.textContent = character.name;
+      button.addEventListener('click', () => {
+        selectedCharacterId = character.id;
+        showCharacterDetails(character);
+        list.querySelectorAll('.character-pill').forEach(pill => pill.classList.remove('active'));
+        button.classList.add('active');
       });
-      list.appendChild(card);
+      list.appendChild(button);
     });
 
-    function showCharacterDetails(char) {
+    if (selectedCharacterId) {
+      const selectedCharacter = characters.find(character => character.id === selectedCharacterId);
+      if (selectedCharacter) {
+        showCharacterDetails(selectedCharacter);
+      } else {
+        selectedCharacterId = null;
+      }
+    }
+
+    function showCharacterDetails(character) {
       details.innerHTML = '';
+
       const heading = document.createElement('h3');
-      heading.textContent = char.name;
-      details.appendChild(heading);
-      // tabs
+      heading.textContent = character.name;
+      const roleLine = document.createElement('p');
+      roleLine.className = 'character-role-line';
+      roleLine.textContent = character.role || character.publicRole || '';
+
       const tabBar = document.createElement('div');
       tabBar.className = 'tabs';
-      const tabs = ['Public Profile', 'Private Motives', 'Relationships', 'Act Objectives', 'Clues'];
-      let currentTab = 0;
       const content = document.createElement('div');
       content.className = 'tab-content';
+      const imagePanel = document.createElement('aside');
+      imagePanel.className = 'character-image-panel';
+      const image = document.createElement('img');
+      image.className = 'character-portrait';
+      image.src = CHARACTER_PLACEHOLDER_IMAGE;
+      image.alt = `${character.name} placeholder portrait`;
+      const imageCaption = document.createElement('p');
+      imageCaption.className = 'character-image-caption';
+      imageCaption.textContent = 'Placeholder portrait';
+      imagePanel.appendChild(image);
+      imagePanel.appendChild(imageCaption);
 
-      tabs.forEach((t, idx) => {
-        const btn = document.createElement('button');
-        btn.className = 'tab-btn' + (idx === 0 ? ' active' : '');
-        btn.textContent = t;
-        btn.addEventListener('click', () => {
-          currentTab = idx;
-          tabBar.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
+      const infoPanel = document.createElement('div');
+      infoPanel.className = 'character-info-panel';
+      const infoHeader = document.createElement('div');
+      infoHeader.className = 'character-info-header';
+      infoHeader.appendChild(heading);
+      infoHeader.appendChild(roleLine);
+      infoPanel.appendChild(infoHeader);
+
+      const tabs = hostMode
+        ? ['Public Profile', 'Private Motives', 'Relationships', 'Act Objectives', 'Clues']
+        : ['Public Profile'];
+
+      let currentTab = 0;
+
+      tabs.forEach((tabName, index) => {
+        const button = document.createElement('button');
+        button.className = `tab-btn${index === 0 ? ' active' : ''}`;
+        button.textContent = tabName;
+        button.addEventListener('click', () => {
+          currentTab = index;
+          tabBar.querySelectorAll('.tab-btn').forEach(tabButton => tabButton.classList.remove('active'));
+          button.classList.add('active');
           updateContent();
         });
-        tabBar.appendChild(btn);
+        tabBar.appendChild(button);
       });
-      details.appendChild(tabBar);
-      details.appendChild(content);
+
+      infoPanel.appendChild(tabBar);
+      infoPanel.appendChild(content);
+
+      const layout = document.createElement('div');
+      layout.className = 'character-layout';
+      layout.appendChild(imagePanel);
+      layout.appendChild(infoPanel);
+      details.appendChild(layout);
 
       function updateContent() {
         content.innerHTML = '';
-        const p = document.createElement('p');
+
         if (currentTab === 0) {
-          // Public Profile
-          p.innerHTML = `<strong>Role:</strong> ${char.publicRole}<br><strong>Bio:</strong> ${char.publicBio}<br><strong>Personality:</strong> ${char.personality}`;
-        } else if (currentTab === 1) {
-          // Private Motives
-          p.innerHTML = `<strong>Bio:</strong> ${char.privateBio}<br><strong>Secret pressure:</strong> ${char.secretPressure}<br><strong>Wants:</strong> ${char.wants}<br><strong>Fears:</strong> ${char.fears}<br><strong>Red herring:</strong> ${char.redHerring}`;
-        } else if (currentTab === 2) {
-          // Relationships
-          const out = data.relationships.filter(r => r.from === char.id);
-          const incoming = data.relationships.filter(r => r.to === char.id);
-          const listEl = document.createElement('div');
-          const outList = document.createElement('ul');
-          outList.innerHTML = '<strong>Outgoing:</strong>';
-          out.forEach(rel => {
-            const li = document.createElement('li');
-            const target = data.characters.find(c => c.id === rel.to);
-            li.textContent = `${char.name} → ${target.name}: ${rel.category}`;
-            li.title = rel.text;
-            outList.appendChild(li);
-          });
-          const inList = document.createElement('ul');
-          inList.innerHTML = '<strong>Incoming:</strong>';
-          incoming.forEach(rel => {
-            const source = data.characters.find(c => c.id === rel.from);
-            const li = document.createElement('li');
-            li.textContent = `${source.name} → ${char.name}: ${rel.category}`;
-            li.title = rel.text;
-            inList.appendChild(li);
-          });
-          listEl.appendChild(outList);
-          listEl.appendChild(inList);
-          content.appendChild(listEl);
+          const p = document.createElement('p');
+          p.innerHTML = `<strong>Role:</strong> ${character.publicRole}<br><strong>Bio:</strong> ${normaliseDisplayText(character.publicBio).replace(/\n/g, '<br>')}<br><strong>Personality:</strong> ${character.personality}`;
+          content.appendChild(p);
           return;
-        } else if (currentTab === 3) {
-          // Act Objectives
+        }
+
+        if (currentTab === 1) {
+          const p = document.createElement('p');
+          p.innerHTML = `<strong>Bio:</strong> ${character.privateBio}<br><strong>Secret pressure:</strong> ${character.secretPressure}<br><strong>Wants:</strong> ${character.wants}<br><strong>Fears:</strong> ${character.fears}<br><strong>Red herring:</strong> ${character.redHerring}`;
+          content.appendChild(p);
+          return;
+        }
+
+        if (currentTab === 2) {
+          const wrapper = document.createElement('div');
+          const outgoingList = document.createElement('ul');
+          const incomingList = document.createElement('ul');
+          outgoingList.innerHTML = '<strong>Outgoing:</strong>';
+          incomingList.innerHTML = '<strong>Incoming:</strong>';
+
+          data.relationships
+            .filter(relationship => relationship.from === character.id)
+            .forEach(relationship => {
+              const li = document.createElement('li');
+              const target = data.characters.find(candidate => candidate.id === relationship.to);
+              li.textContent = `${character.name} → ${target ? target.name : relationship.to}: ${relationship.category}`;
+              li.title = relationship.text;
+              outgoingList.appendChild(li);
+            });
+
+          data.relationships
+            .filter(relationship => relationship.to === character.id)
+            .forEach(relationship => {
+              const li = document.createElement('li');
+              const source = data.characters.find(candidate => candidate.id === relationship.from);
+              li.textContent = `${source ? source.name : relationship.from} → ${character.name}: ${relationship.category}`;
+              li.title = relationship.text;
+              incomingList.appendChild(li);
+            });
+
+          wrapper.appendChild(outgoingList);
+          wrapper.appendChild(incomingList);
+          content.appendChild(wrapper);
+          return;
+        }
+
+        if (currentTab === 3) {
           const listEl = document.createElement('ul');
           listEl.innerHTML = '<strong>Objectives by act:</strong>';
-          Object.keys(char.actObjectives).forEach(actId => {
-            const actObj = document.createElement('li');
-            const act = data.acts.find(a => a.id === actId);
-            actObj.textContent = `${act ? act.title : actId}: ${char.actObjectives[actId]}`;
-            listEl.appendChild(actObj);
-          });
-          content.appendChild(listEl);
-          return;
-        } else if (currentTab === 4) {
-          // Clues
-          const listEl = document.createElement('ul');
-          listEl.innerHTML = '<strong>Associated clues:</strong>';
-          char.clues.forEach(c => {
+          Object.keys(character.actObjectives).forEach(actId => {
             const li = document.createElement('li');
-            li.textContent = c;
+            const act = data.acts.find(candidate => candidate.id === actId);
+            li.textContent = `${act ? act.title : actId}: ${character.actObjectives[actId]}`;
             listEl.appendChild(li);
           });
           content.appendChild(listEl);
           return;
         }
-        content.appendChild(p);
+
+        const listEl = document.createElement('ul');
+        listEl.innerHTML = '<strong>Associated clues:</strong>';
+        character.clues.forEach(clue => {
+          const li = document.createElement('li');
+          li.textContent = clue;
+          listEl.appendChild(li);
+        });
+        content.appendChild(listEl);
       }
+
       updateContent();
     }
   }
 
-  // Relationship graph functions
   function renderGraph() {
+    if (!hostMode || !data.relationships) {
+      return;
+    }
+
     const svg = document.getElementById('relationshipGraph');
     const info = document.getElementById('graphInfo');
     const showAllBtn = document.getElementById('showAllRelations');
     const clearBtn = document.getElementById('clearFocus');
 
-    const W = 1800;
-    const H = 1800;
-    const cx = W / 2;
-    const cy = H / 2;
-    const ringR = 675;
-    const nodeR = 88;
-    const chars = data.characters;
+    const width = 1800;
+    const height = 1800;
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const ringRadius = 675;
+    const nodeRadius = 88;
+    const characters = data.characters;
     const relationships = data.relationships;
-    const pos = {};
+    const positions = {};
     let focusId = null;
 
-    // Clean previous content
-    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    while (svg.firstChild) {
+      svg.removeChild(svg.firstChild);
+    }
 
-    // Define markers for arrowheads
     const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
     const categories = ['positive', 'negative', 'aware', 'unknown'];
     const colours = {
@@ -256,359 +457,386 @@
       aware: getComputedStyle(document.documentElement).getPropertyValue('--aware').trim(),
       unknown: getComputedStyle(document.documentElement).getPropertyValue('--unknown').trim()
     };
-    categories.forEach(cat => {
+
+    categories.forEach(category => {
       const marker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
-      marker.setAttribute('id', `arrow-${cat}`);
+      marker.setAttribute('id', `arrow-${category}`);
       marker.setAttribute('markerWidth', '12');
       marker.setAttribute('markerHeight', '12');
       marker.setAttribute('refX', '10');
       marker.setAttribute('refY', '4');
       marker.setAttribute('orient', 'auto');
       marker.setAttribute('markerUnits', 'strokeWidth');
+
       const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       path.setAttribute('d', 'M0,0 L0,8 L11,4 z');
-      path.setAttribute('fill', colours[cat]);
+      path.setAttribute('fill', colours[category]);
       marker.appendChild(path);
       defs.appendChild(marker);
     });
+
     svg.appendChild(defs);
 
-    function polarPoint(i, n) {
-      const angle = -Math.PI / 2 + i * 2 * Math.PI / n;
-      return { x: cx + ringR * Math.cos(angle), y: cy + ringR * Math.sin(angle) };
+    function polarPoint(index, total) {
+      const angle = -Math.PI / 2 + index * 2 * Math.PI / total;
+      return {
+        x: centerX + ringRadius * Math.cos(angle),
+        y: centerY + ringRadius * Math.sin(angle)
+      };
     }
-    chars.forEach((c, i) => {
-      pos[c.id] = polarPoint(i, chars.length);
+
+    characters.forEach((character, index) => {
+      positions[character.id] = polarPoint(index, characters.length);
     });
 
     function edgePath(from, to) {
-      const a = pos[from];
-      const b = pos[to];
-      const i = chars.findIndex(c => c.id === from);
-      const j = chars.findIndex(c => c.id === to);
-      const dx = b.x - a.x;
-      const dy = b.y - a.y;
-      const d = Math.hypot(dx, dy);
-      const ux = dx / d;
-      const uy = dy / d;
-      const start = { x: a.x + ux * (nodeR + 14), y: a.y + uy * (nodeR + 14) };
-      const end = { x: b.x - ux * (nodeR + 22), y: b.y - uy * (nodeR + 22) };
-      const nx = -uy;
-      const ny = ux;
-      const rawGap = Math.abs(i - j);
-      const span = Math.min(rawGap, chars.length - rawGap);
-      const baseBySpan = {1: 92, 2: 128, 3: 164, 4: 200, 5: 236};
+      const startPoint = positions[from];
+      const endPoint = positions[to];
+      const fromIndex = characters.findIndex(character => character.id === from);
+      const toIndex = characters.findIndex(character => character.id === to);
+      const dx = endPoint.x - startPoint.x;
+      const dy = endPoint.y - startPoint.y;
+      const distance = Math.hypot(dx, dy);
+      const unitX = dx / distance;
+      const unitY = dy / distance;
+      const start = {
+        x: startPoint.x + unitX * (nodeRadius + 14),
+        y: startPoint.y + unitY * (nodeRadius + 14)
+      };
+      const end = {
+        x: endPoint.x - unitX * (nodeRadius + 22),
+        y: endPoint.y - unitY * (nodeRadius + 22)
+      };
+      const normalX = -unitY;
+      const normalY = unitX;
+      const rawGap = Math.abs(fromIndex - toIndex);
+      const span = Math.min(rawGap, characters.length - rawGap);
+      const baseBySpan = { 1: 92, 2: 128, 3: 164, 4: 200, 5: 236 };
       const base = baseBySpan[span] || 150;
-      const low = Math.min(i, j);
-      const high = Math.max(i, j);
+      const low = Math.min(fromIndex, toIndex);
+      const high = Math.max(fromIndex, toIndex);
       const nudge = ((low * 37 + high * 19) % 31) - 15;
       const curve = base + nudge;
-      const mx = (start.x + end.x) / 2;
-      const my = (start.y + end.y) / 2;
-      const qx = mx + nx * curve;
-      const qy = my + ny * curve;
-      return `M ${start.x.toFixed(1)} ${start.y.toFixed(1)} Q ${qx.toFixed(1)} ${qy.toFixed(1)} ${end.x.toFixed(1)} ${end.y.toFixed(1)}`;
+      const middleX = (start.x + end.x) / 2;
+      const middleY = (start.y + end.y) / 2;
+      const controlX = middleX + normalX * curve;
+      const controlY = middleY + normalY * curve;
+      return `M ${start.x.toFixed(1)} ${start.y.toFixed(1)} Q ${controlX.toFixed(1)} ${controlY.toFixed(1)} ${end.x.toFixed(1)} ${end.y.toFixed(1)}`;
     }
 
     function nameOf(id) {
-      const c = chars.find(x => x.id === id);
-      return c ? c.name : id;
+      const character = characters.find(candidate => candidate.id === id);
+      return character ? character.name : id;
     }
 
     function draw() {
-      // Remove existing edges and nodes
-      svg.querySelectorAll('.edge, .node, .node-label').forEach(el => el.remove());
-      relationships.forEach(rel => {
+      svg.querySelectorAll('.edge, .node, .node-label').forEach(node => node.remove());
+
+      relationships.forEach(relationship => {
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', edgePath(rel.from, rel.to));
-        path.setAttribute('class', `edge ${rel.category}${focusId && rel.from !== focusId ? ' dimmed' : ''}${focusId && rel.from === focusId ? ' highlight' : ''}`);
+        path.setAttribute('d', edgePath(relationship.from, relationship.to));
+        path.setAttribute('class', `edge ${relationship.category}${focusId && relationship.from !== focusId ? ' dimmed' : ''}${focusId && relationship.from === focusId ? ' highlight' : ''}`);
         path.setAttribute('fill', 'none');
-        path.setAttribute('stroke-width', focusId && rel.from === focusId ? '5.4' : '2.3');
-        path.setAttribute('opacity', focusId && rel.from !== focusId ? '0.08' : '0.62');
-        path.setAttribute('stroke', colours[rel.category]);
-        path.setAttribute('marker-end', `url(#arrow-${rel.category})`);
-        // Tooltip
+        path.setAttribute('stroke-width', focusId && relationship.from === focusId ? '5.4' : '2.3');
+        path.setAttribute('opacity', focusId && relationship.from !== focusId ? '0.08' : '0.62');
+        path.setAttribute('stroke', colours[relationship.category]);
+        path.setAttribute('marker-end', `url(#arrow-${relationship.category})`);
+
         path.addEventListener('mouseenter', () => {
           path.classList.add('highlight');
-          info.innerHTML = `<strong>${nameOf(rel.from)} → ${nameOf(rel.to)}: ${rel.category.charAt(0).toUpperCase() + rel.category.slice(1)}</strong><br>${rel.text}`;
+          info.innerHTML = `<strong>${nameOf(relationship.from)} → ${nameOf(relationship.to)}: ${relationship.category.charAt(0).toUpperCase() + relationship.category.slice(1)}</strong><br>${relationship.text}`;
         });
+
         path.addEventListener('mouseleave', () => {
           path.classList.remove('highlight');
-          info.textContent = focusId ? `Focused on ${nameOf(focusId)} outgoing relationships.` : 'Hover over a line to read the directional relationship. Click a character to focus its outgoing arrows.';
+          info.textContent = focusId
+            ? `Focused on ${nameOf(focusId)} outgoing relationships.`
+            : 'Hover over a line to read the directional relationship. Click a character to focus its outgoing arrows.';
         });
+
         svg.appendChild(path);
       });
-      // Nodes
-      chars.forEach((c, i) => {
-        const p = pos[c.id];
+
+      characters.forEach(character => {
+        const point = positions[character.id];
         const node = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        node.setAttribute('cx', p.x);
-        node.setAttribute('cy', p.y);
-        node.setAttribute('r', nodeR);
-        node.setAttribute('class', `node ${c.group}${focusId === c.id ? ' selected' : ''}`);
+        node.setAttribute('cx', point.x);
+        node.setAttribute('cy', point.y);
+        node.setAttribute('r', nodeRadius);
+        node.setAttribute('class', `node ${character.group}${focusId === character.id ? ' selected' : ''}`);
         node.setAttribute('stroke', '#222');
-        node.setAttribute('stroke-width', focusId === c.id ? '6' : '2');
-        node.setAttribute('fill', c.group === 'family' ? getComputedStyle(document.documentElement).getPropertyValue('--family').trim() : getComputedStyle(document.documentElement).getPropertyValue('--compatriot').trim());
+        node.setAttribute('stroke-width', focusId === character.id ? '6' : '2');
+        node.setAttribute('fill', character.group === 'family'
+          ? getComputedStyle(document.documentElement).getPropertyValue('--family').trim()
+          : getComputedStyle(document.documentElement).getPropertyValue('--compatriot').trim());
         node.addEventListener('click', () => {
-          if (focusId === c.id) {
-            focusId = null;
-          } else {
-            focusId = c.id;
-          }
+          focusId = focusId === character.id ? null : character.id;
           draw();
         });
         svg.appendChild(node);
-        // Label
+
         const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        label.setAttribute('x', p.x);
-        label.setAttribute('y', p.y);
+        label.setAttribute('x', point.x);
+        label.setAttribute('y', point.y);
         label.setAttribute('class', 'node-label');
         label.setAttribute('text-anchor', 'middle');
         label.setAttribute('dominant-baseline', 'middle');
-        const parts = c.name.split(' / ');
-        if (parts.length > 1) {
-          label.textContent = c.name; // one line; fallback if slash
-        } else {
-          label.textContent = c.name;
-        }
+        label.textContent = character.name;
         label.style.pointerEvents = 'none';
         svg.appendChild(label);
       });
     }
+
     draw();
-    // Buttons
-    showAllBtn.addEventListener('click', () => {
+
+    showAllBtn.onclick = () => {
       focusId = null;
       draw();
       info.textContent = 'Showing all directed relationships.';
-    });
-    clearBtn.addEventListener('click', () => {
+    };
+
+    clearBtn.onclick = () => {
       focusId = null;
       draw();
       info.textContent = 'Showing all directed relationships.';
-    });
+    };
   }
 
-  // Relationship matrix
   function renderMatrix() {
+    if (!hostMode || !data.relationships) {
+      return;
+    }
+
     const container = document.getElementById('matrixContainer');
     container.innerHTML = '';
+
     const table = document.createElement('table');
     table.className = 'relation-matrix';
     const headerRow = document.createElement('tr');
-    // top-left empty corner
     const corner = document.createElement('th');
     corner.textContent = '';
     headerRow.appendChild(corner);
-    // column headers
-    data.characters.forEach(c => {
+
+    data.characters.forEach(character => {
       const th = document.createElement('th');
-      th.textContent = c.name.split(' / ')[0];
-      th.title = c.name;
+      th.textContent = character.name.split(' / ')[0];
+      th.title = character.name;
       headerRow.appendChild(th);
     });
     table.appendChild(headerRow);
-    // rows
-    data.characters.forEach(rowChar => {
+
+    data.characters.forEach(rowCharacter => {
       const tr = document.createElement('tr');
       const th = document.createElement('th');
-      th.textContent = rowChar.name.split(' / ')[0];
-      th.title = rowChar.name;
+      th.textContent = rowCharacter.name.split(' / ')[0];
+      th.title = rowCharacter.name;
       tr.appendChild(th);
-      data.characters.forEach(colChar => {
+
+      data.characters.forEach(columnCharacter => {
         const td = document.createElement('td');
-        if (rowChar.id === colChar.id) {
+        if (rowCharacter.id === columnCharacter.id) {
           td.textContent = '–';
           td.className = 'self';
         } else {
-          const rel = data.relationships.find(r => r.from === rowChar.id && r.to === colChar.id);
-          if (rel) {
-            td.classList.add(rel.category);
-            td.textContent = rel.category.charAt(0).toUpperCase();
-            td.title = rel.text;
-          } else {
-            td.textContent = '';
+          const relationship = data.relationships.find(candidate => candidate.from === rowCharacter.id && candidate.to === columnCharacter.id);
+          if (relationship) {
+            td.classList.add(relationship.category);
+            td.textContent = relationship.category.charAt(0).toUpperCase();
+            td.title = relationship.text;
           }
         }
         tr.appendChild(td);
       });
+
       table.appendChild(tr);
     });
+
     container.appendChild(table);
   }
 
-  // Render acts
   function renderActs() {
     const container = document.getElementById('actsList');
     container.innerHTML = '';
+
     data.acts.forEach(act => {
       const card = document.createElement('div');
       card.className = 'card';
+
       const h3 = document.createElement('h3');
       h3.textContent = act.title;
       const p = document.createElement('p');
       p.textContent = act.description;
-      card.appendChild(h3);
-      card.appendChild(p);
       const rooms = document.createElement('p');
       rooms.innerHTML = `<strong>Locations:</strong> ${act.rooms.join(', ')}`;
-      card.appendChild(rooms);
+
       const clues = document.createElement('ul');
       clues.innerHTML = '<strong>Key clues:</strong>';
-      act.keyClues.forEach(c => {
+      act.keyClues.forEach(clue => {
         const li = document.createElement('li');
-        li.textContent = c;
+        li.textContent = clue;
         clues.appendChild(li);
       });
-      card.appendChild(clues);
-      const obj = document.createElement('ul');
-      obj.innerHTML = '<strong>Objectives:</strong>';
-      act.objectives.forEach(o => {
+
+      const objectives = document.createElement('ul');
+      objectives.innerHTML = '<strong>Objectives:</strong>';
+      act.objectives.forEach(objective => {
         const li = document.createElement('li');
-        li.textContent = o;
-        obj.appendChild(li);
+        li.textContent = objective;
+        objectives.appendChild(li);
       });
-      card.appendChild(obj);
+
+      card.appendChild(h3);
+      card.appendChild(p);
+      card.appendChild(rooms);
+      card.appendChild(clues);
+      card.appendChild(objectives);
       container.appendChild(card);
     });
   }
 
-  // Render locations
   function renderLocations() {
     const container = document.getElementById('locationsList');
     container.innerHTML = '';
-    data.locations.forEach(loc => {
+
+    data.locations.forEach(location => {
       const card = document.createElement('div');
       card.className = 'card';
+
       const h3 = document.createElement('h3');
-      h3.textContent = loc.name;
+      h3.textContent = location.name;
       const p = document.createElement('p');
-      p.textContent = loc.description;
-      card.appendChild(h3);
-      card.appendChild(p);
+      p.textContent = location.description;
       const acts = document.createElement('p');
-      acts.innerHTML = `<strong>Accessible in:</strong> ${loc.acts.map(a => {
-        const found = data.acts.find(act => act.id === a);
-        return found ? found.title : a;
+      acts.innerHTML = `<strong>Accessible in:</strong> ${location.acts.map(actId => {
+        const act = data.acts.find(candidate => candidate.id === actId);
+        return act ? act.title : actId;
       }).join(', ')}`;
-      card.appendChild(acts);
       const clues = document.createElement('ul');
       clues.innerHTML = '<strong>Clues:</strong>';
-      loc.clues.forEach(c => {
+      location.clues.forEach(clue => {
         const li = document.createElement('li');
-        li.textContent = c;
+        li.textContent = clue;
         clues.appendChild(li);
       });
-      card.appendChild(clues);
       const actor = document.createElement('p');
-      actor.innerHTML = `<strong>Actor responsible:</strong> ${loc.actor}`;
+      actor.innerHTML = `<strong>Actor responsible:</strong> ${location.actor}`;
+
+      card.appendChild(h3);
+      card.appendChild(p);
+      card.appendChild(acts);
+      card.appendChild(clues);
       card.appendChild(actor);
-      if (loc.relatedCharacters && loc.relatedCharacters.length > 0) {
-        const rel = document.createElement('p');
-        const names = loc.relatedCharacters.map(id => {
-          const ch = data.characters.find(c => c.id === id);
-          return ch ? ch.name : id;
-        });
-        rel.innerHTML = `<strong>Related characters:</strong> ${names.join(', ')}`;
-        card.appendChild(rel);
+
+      if (location.relatedCharacters && location.relatedCharacters.length > 0) {
+        const related = document.createElement('p');
+        related.innerHTML = `<strong>Related characters:</strong> ${location.relatedCharacters.map(id => {
+          const character = data.characters.find(candidate => candidate.id === id);
+          return character ? character.name : id;
+        }).join(', ')}`;
+        card.appendChild(related);
       }
+
       container.appendChild(card);
     });
   }
 
-  // Render plot hooks
   function renderPlotHooks() {
     const container = document.getElementById('plotHooks');
     container.innerHTML = '';
+
     data.plotHooks.forEach(hook => {
       const card = document.createElement('div');
       card.className = 'card';
+
       const h3 = document.createElement('h3');
       h3.textContent = hook.title;
       const p = document.createElement('p');
       p.textContent = hook.description;
+      const acts = document.createElement('p');
+      acts.innerHTML = `<strong>Acts:</strong> ${hook.acts.map(actId => {
+        const act = data.acts.find(candidate => candidate.id === actId);
+        return act ? act.title : actId;
+      }).join(', ')}`;
+
       card.appendChild(h3);
       card.appendChild(p);
-      const acts = document.createElement('p');
-      acts.innerHTML = `<strong>Acts:</strong> ${hook.acts.map(a => {
-        const act = data.acts.find(x => x.id === a);
-        return act ? act.title : a;
-      }).join(', ')}`;
       card.appendChild(acts);
-      if (hook.spoiler && hostMode) {
+
+      if (hook.spoiler) {
         const spoiler = document.createElement('div');
         spoiler.className = 'spoiler';
         spoiler.innerHTML = `<strong>Resolution:</strong> ${hook.resolution}`;
         card.appendChild(spoiler);
       }
+
       container.appendChild(card);
     });
   }
 
-  // Render props
   function renderProps() {
     const container = document.getElementById('propsList');
     container.innerHTML = '';
+
     data.props.forEach(prop => {
       const card = document.createElement('div');
       card.className = 'card';
+
       const h3 = document.createElement('h3');
       h3.textContent = prop.name;
       const p = document.createElement('p');
       p.textContent = prop.description;
+      const location = document.createElement('p');
+      location.innerHTML = `<strong>Location:</strong> ${prop.location}`;
+      const spoiler = document.createElement('div');
+      spoiler.className = 'spoiler';
+      spoiler.innerHTML = `<strong>Host detail:</strong> ${prop.spoilerDetail}`;
+
       card.appendChild(h3);
       card.appendChild(p);
-      const loc = document.createElement('p');
-      loc.innerHTML = `<strong>Location:</strong> ${prop.location}`;
-      card.appendChild(loc);
-      if (hostMode) {
-        const spoiler = document.createElement('div');
-        spoiler.className = 'spoiler';
-        spoiler.innerHTML = `<strong>Host detail:</strong> ${prop.spoilerDetail}`;
-        card.appendChild(spoiler);
-      }
+      card.appendChild(location);
+      card.appendChild(spoiler);
       container.appendChild(card);
     });
   }
 
-  // Render speeches
   function renderSpeeches() {
     const container = document.getElementById('speechesList');
     container.innerHTML = '';
-    data.speeches.forEach(s => {
+
+    data.speeches.forEach(speech => {
       const card = document.createElement('div');
       card.className = 'card';
+
       const h3 = document.createElement('h3');
-      h3.textContent = s.title + (s.role ? ` – ${s.role}` : '');
+      h3.textContent = speech.title + (speech.role ? ` – ${speech.role}` : '');
       const p = document.createElement('p');
-      p.textContent = s.text;
+      p.textContent = speech.text;
+
       card.appendChild(h3);
       card.appendChild(p);
       container.appendChild(card);
     });
   }
 
-  // Render actors (host only)
   function renderActors() {
     const container = document.getElementById('actorsList');
     container.innerHTML = '';
-    if (!hostMode) {
-      container.innerHTML = '<p>This section is visible only to the host.</p>';
-      return;
-    }
-    data.actors.forEach(act => {
+
+    data.actors.forEach(actor => {
       const card = document.createElement('div');
       card.className = 'card';
+
       const h3 = document.createElement('h3');
-      h3.textContent = act.role;
+      h3.textContent = actor.role;
       const p = document.createElement('p');
-      p.textContent = act.description;
+      p.textContent = actor.description;
       const list = document.createElement('ul');
-      act.instructions.forEach(line => {
+      actor.instructions.forEach(instruction => {
         const li = document.createElement('li');
-        li.textContent = line;
+        li.textContent = instruction;
         list.appendChild(li);
       });
+
       card.appendChild(h3);
       card.appendChild(p);
       card.appendChild(list);
@@ -616,51 +844,66 @@
     });
   }
 
-  // Render handouts
   function renderHandouts() {
     const container = document.getElementById('handoutsList');
     container.innerHTML = '';
+
     data.handouts.forEach(handout => {
       const div = document.createElement('div');
       div.className = 'handout';
+
       const h3 = document.createElement('h3');
       h3.textContent = handout.title;
       const p = document.createElement('p');
       p.textContent = handout.content;
+
       div.appendChild(h3);
       div.appendChild(p);
       container.appendChild(div);
     });
   }
 
-  // Render host notes
   function renderHostNotes() {
     const container = document.getElementById('hostNotesList');
     container.innerHTML = '';
-    if (!hostMode) {
-      container.innerHTML = '<p>This section is visible only to the host.</p>';
-      return;
-    }
+
     data.hostnotes.forEach(note => {
       const card = document.createElement('div');
       card.className = 'card';
+
       const h3 = document.createElement('h3');
       h3.textContent = note.title;
       const p = document.createElement('p');
       p.textContent = note.content;
+
       card.appendChild(h3);
       card.appendChild(p);
       container.appendChild(card);
     });
   }
 
-  // Initialise
-  async function init() {
-    await loadData();
-    setupNavigation();
-    toggleBtn.addEventListener('click', toggleHostMode);
+  function clearHostOnlyContent() {
+    document.getElementById('graphContainer').querySelector('svg').innerHTML = '';
+    document.getElementById('matrixContainer').innerHTML = '';
+    document.getElementById('actsList').innerHTML = '';
+    document.getElementById('locationsList').innerHTML = '';
+    document.getElementById('plotHooks').innerHTML = '';
+    document.getElementById('propsList').innerHTML = '';
+    document.getElementById('speechesList').innerHTML = '';
+    document.getElementById('actorsList').innerHTML = '';
+    document.getElementById('handoutsList').innerHTML = '';
+    document.getElementById('hostNotesList').innerHTML = '';
+  }
+
+  function renderAll() {
     renderOverview();
     renderCharacters();
+
+    if (!hostMode) {
+      clearHostOnlyContent();
+      return;
+    }
+
     renderGraph();
     renderMatrix();
     renderActs();
@@ -672,5 +915,25 @@
     renderHandouts();
     renderHostNotes();
   }
+
+  async function init() {
+    await loadPublicData();
+    hostAuthenticated = getStoredHostAccess();
+
+    setupNavigation();
+    toggleBtn.addEventListener('click', handleToggleClick);
+    hostAccessForm.addEventListener('submit', handleHostAccessSubmit);
+    cancelHostAccessBtn.addEventListener('click', closeHostAccessForm);
+
+    if (hostAuthenticated) {
+      await loadHostData();
+      hostMode = true;
+    }
+
+    syncHostUi();
+    syncNavigation();
+    renderAll();
+  }
+
   init();
 })();

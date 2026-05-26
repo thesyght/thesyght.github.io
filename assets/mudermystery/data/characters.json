@@ -1,32 +1,6 @@
 {
   "characters": [
     {
-      "id": "DIRECTOR",
-      "name": "The Director",
-      "role": "Director / Best Friend",
-      "group": "compatriot",
-      "publicRole": "J. Baroo’s closest business confidant and long-serving Director of Baroo Holdings.",
-      "publicBio": "The Director was J. Baroo’s closest business confidant, long-serving senior figure at Baroo Holdings, and one of the few people outside the family who could speak with authority about both the company and the house.\n\nThey present as polished, controlled, and indispensable. In public, they seem like the stabilising force in the room: courteous to the family, respectful to staff, careful with language, and never openly ambitious. They speak about J. Baroo with the solemn familiarity of someone who sees friendship, company history, and institutional legacy as inseparable.\n\nTheir social style is calm, paternal, and slightly patronising. They rarely raise their voice. They ask measured questions, let others embarrass themselves, and then offer practical solutions. To the guests, they appear to be the obvious adult in the room: part family friend, part executive, part unofficial guardian of the Baroo legacy.",
-      "personality": "Polished, controlled, image-conscious, and publicly stabilising. They rarely appear openly ambitious.",
-      "privateBio": "The Director believes they built Baroo Holdings while the Baroo family merely inherited the name. They despise the Kissass Offspring, whom they consider a moron playing at leadership, but they hide this from everyone except J. Baroo. They are suspicious of the Spoilt Offspring because they know the Spoilt Offspring spoke often and privately with J. Baroo near the end.\n\nThey think the Surviving Spouse was sidelined long ago and has little useful to add. They employ the Chef and think of them only as staff. They were told to hide the Father’s Bastard inside the company, and they view that person as a nuisance to the business rather than as family.\n\nThe Director is deeply concerned with the image and brand of Baroo Holdings. They and the Publicist / Journalist both see the Antique Collector as a serious liability because the stolen artefacts risk dragging the company and the family name into scandal. They are also in cahoots with the Opera Singer, with whom they had an affair. Through that affair, they learned the truth about the Father’s Bastard.",
-      "secretPressure": "The real codicil blocks their path to control, while the fake codicil would make them Controller of the Board.",
-      "wants": "Control of Baroo Holdings, authority over the transition, and protection of the company brand.",
-      "fears": "Being excluded from control if the real codicil is read and authenticated.",
-      "redHerring": "Acts calm and helpful early, making them seem less obvious than the louder family suspects.",
-      "actObjectives": {
-        "ACT1": "Play the mentor and stabiliser while the locked-room confusion unfolds.",
-        "ACT2": "Push everyone to accept the fake envelope and stop searching before the real envelope is found.",
-        "ACT3": "Defend the fake codicil as sensible company governance and avoid being tied to the real one."
-      },
-      "clues": [
-        "Aggressive email in the media room revealing contempt for the Kissass Offspring.",
-        "Fake codicil granting transition control to the Director.",
-        "Brand-risk notes linking the Director and the Publicist / Journalist’s concern about the Antique Collector.",
-        "Evidence of prior contact with the Opera Singer about the Father’s Bastard.",
-        "Real envelope hidden at The Blind Judge statue."
-      ]
-    },
-    {
       "id": "SON",
       "name": "The Kissass Offspring",
       "role": "Kissass Offspring",
@@ -169,6 +143,32 @@
         "Opera file in the media room containing private correspondence.",
         "Letters hinting at the Father’s Bastard’s parentage.",
         "Evidence of contact between the Opera Singer and the Director."
+      ]
+    },
+    {
+      "id": "DIRECTOR",
+      "name": "The Director",
+      "role": "Director / Best Friend",
+      "group": "compatriot",
+      "publicRole": "J. Baroo’s closest business confidant and long-serving Director of Baroo Holdings.",
+      "publicBio": "The Director has been part of J. Baroo’s life since childhood. They met as school friends, then grew into his most reliable business confidant. On J. Baroo’s death, The Director was still one of his most trusted figures. They are not a Baroo, but they have been close to the family for so long that most people assume they are effectively an uncle of the house.\n\nThe Director is now in their fifties. They live alone in a well-kept house that is more functional than comfortable. The furniture is superior, the cellar is better, and the dining room looks as though it was designed for guests who rarely come. Their days are ordered: early mornings, a standardised wardrobe, overnight emails answered over breakfast, and a social life built around old friends, private clubs, boardrooms, and networking.\n\nThey are courteous, but dry and a little difficult to read. They do not waste energy on theatrics or obvious displays of power. They prefer to correct people through long pauses and a kind of politeness that leaves others sitting in silence until they work out their own mistake. They are not warm, but they are not unfriendly either. They are practical and straightforward in their intentions, which in Baroo’s world has often mattered more.\n\nThey are not sentimental, though they know how to perform respectability with precision. They enjoy order, good wine, clean paperwork, a job well done without needing praise, and people who do not need a million follow-up questions before getting to work. Their friendships tend to become arrangements, and their arrangements tend to be profitable.",
+      "personality": "Polished, controlled, image-conscious, and publicly stabilising. They rarely appear openly ambitious.",
+      "privateBio": "The Director believes they built Baroo Holdings while the Baroo family merely inherited the name. They despise the Kissass Offspring, whom they consider a moron playing at leadership, but they hide this from everyone except J. Baroo. They are suspicious of the Spoilt Offspring because they know the Spoilt Offspring spoke often and privately with J. Baroo near the end.\n\nThey think the Surviving Spouse was sidelined long ago and has little useful to add. They employ the Chef and think of them only as staff. They were told to hide the Father’s Bastard inside the company, and they view that person as a nuisance to the business rather than as family.\n\nThe Director is deeply concerned with the image and brand of Baroo Holdings. They and the Publicist / Journalist both see the Antique Collector as a serious liability because the stolen artefacts risk dragging the company and the family name into scandal. They are also in cahoots with the Opera Singer, with whom they had an affair. Through that affair, they learned the truth about the Father’s Bastard.",
+      "secretPressure": "The real codicil blocks their path to control, while the fake codicil would make them Controller of the Board.",
+      "wants": "Control of Baroo Holdings, authority over the transition, and protection of the company brand.",
+      "fears": "Being excluded from control if the real codicil is read and authenticated.",
+      "redHerring": "Acts calm and helpful early, making them seem less obvious than the louder family suspects.",
+      "actObjectives": {
+        "ACT1": "Play the mentor and stabiliser while the locked-room confusion unfolds.",
+        "ACT2": "Push everyone to accept the fake envelope and stop searching before the real envelope is found.",
+        "ACT3": "Defend the fake codicil as sensible company governance and avoid being tied to the real one."
+      },
+      "clues": [
+        "Aggressive email in the media room revealing contempt for the Kissass Offspring.",
+        "Fake codicil granting transition control to the Director.",
+        "Brand-risk notes linking the Director and the Publicist / Journalist’s concern about the Antique Collector.",
+        "Evidence of prior contact with the Opera Singer about the Father’s Bastard.",
+        "Real envelope hidden at The Blind Judge statue."
       ]
     },
     {
