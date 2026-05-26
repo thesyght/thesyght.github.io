@@ -164,8 +164,8 @@
     }
 
     characterModeNote.textContent = hostMode
-      ? 'Host Mode exposes private motives, relationships, act objectives, clues, and all planning materials.'
-      : 'Public mode shows only the overview and public character bios.';
+      ? 'These are the characters of our Murder Mystery. For each is an overview, their biography, private motives, relationships, act objectives, clues, and all planning materials.'
+      : 'These are the characters of our Murder Mystery. For each is an overview and their biography.';
   }
 
   function openHostAccessForm() {
@@ -302,12 +302,15 @@
       const imagePanel = document.createElement('aside');
       imagePanel.className = 'character-image-panel';
       const image = document.createElement('img');
+      const hasCustomImage = Boolean(character.imagePath && character.imagePath !== CHARACTER_PLACEHOLDER_IMAGE);
       image.className = 'character-portrait';
-      image.src = CHARACTER_PLACEHOLDER_IMAGE;
-      image.alt = `${character.name} placeholder portrait`;
+      image.src = character.imagePath || CHARACTER_PLACEHOLDER_IMAGE;
+      image.alt = hasCustomImage
+        ? `${character.name} portrait`
+        : `${character.name} placeholder portrait`;
       const imageCaption = document.createElement('p');
       imageCaption.className = 'character-image-caption';
-      imageCaption.textContent = 'Placeholder portrait';
+      imageCaption.textContent = hasCustomImage ? 'Character portrait' : 'Placeholder portrait';
       imagePanel.appendChild(image);
       imagePanel.appendChild(imageCaption);
 

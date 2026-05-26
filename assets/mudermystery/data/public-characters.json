@@ -3,6 +3,7 @@
     {
       "id": "SON",
       "name": "The Kissass Offspring",
+      "imagePath": "assets/mudermystery/photos/agathaplaceholder.png",
       "role": "Kissass Offspring",
       "group": "family",
       "publicRole": "The dutiful Baroo child who has stayed close to the company and expects succession.",
@@ -12,6 +13,7 @@
     {
       "id": "DAUGHTER",
       "name": "The Spoilt Offspring",
+      "imagePath": "assets/mudermystery/photos/agathaplaceholder.png",
       "role": "Spoilt Offspring",
       "group": "family",
       "publicRole": "The polished, internationally educated Baroo child who appears detached from the company.",
@@ -21,6 +23,7 @@
     {
       "id": "WIDOW",
       "name": "The Surviving Spouse",
+      "imagePath": "assets/mudermystery/photos/agathaplaceholder.png",
       "role": "Surviving Spouse",
       "group": "family",
       "publicRole": "J. Baroo’s surviving spouse and guardian of household dignity.",
@@ -30,6 +33,7 @@
     {
       "id": "BASTARD",
       "name": "The Father’s Bastard",
+      "imagePath": "assets/mudermystery/photos/agathaplaceholder.png",
       "role": "Father’s Bastard",
       "group": "family",
       "publicRole": "The possible illegitimate child of J. Baroo, recently brought back into the family orbit.",
@@ -39,6 +43,7 @@
     {
       "id": "DIPLOMAT",
       "name": "The Diplomat",
+      "imagePath": "assets/mudermystery/photos/agathaplaceholder.png",
       "role": "Diplomat",
       "group": "compatriot",
       "publicRole": "A diplomatic figure and old childhood friend of J. Baroo, attending as part of the old Baroo circle.",
@@ -48,6 +53,7 @@
     {
       "id": "OPERA",
       "name": "The Opera Singer",
+      "imagePath": "assets/mudermystery/photos/agathaplaceholder.png",
       "role": "Opera Singer",
       "group": "compatriot",
       "publicRole": "A famous opera singer and long-time artistic presence in J. Baroo’s world.",
@@ -57,6 +63,7 @@
     {
       "id": "DIRECTOR",
       "name": "The Director",
+      "imagePath": "assets/mudermystery/photos/characters/TheDirector.png",
       "role": "Director / Best Friend",
       "group": "compatriot",
       "publicRole": "J. Baroo’s closest business confidant and long-serving Director of Baroo Holdings.",
@@ -66,6 +73,7 @@
     {
       "id": "PUBLICIST",
       "name": "The Publicist / Journalist",
+      "imagePath": "assets/mudermystery/photos/agathaplaceholder.png",
       "role": "Publicist / Journalist",
       "group": "family",
       "publicRole": "The communications fixer who manages the Baroo family image.",
@@ -75,6 +83,7 @@
     {
       "id": "ANTIQUE",
       "name": "The Antique Collector",
+      "imagePath": "assets/mudermystery/photos/agathaplaceholder.png",
       "role": "Antique Collector",
       "group": "compatriot",
       "publicRole": "J. Baroo’s antique collector and supplier of rare historical pieces.",
