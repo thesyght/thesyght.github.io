@@ -3,7 +3,7 @@
     {
       "id": "PROPER_CHILD",
       "name": "The Proper Child",
-      "imagePath": "assets/mudermystery/photos/TheProperChild.png",
+      "imagePath": "assets/mudermystery/photos/characters/TheProperChild.png",
       "role": "Proper Child",
       "group": "family",
       "public": {
@@ -32,7 +32,7 @@
     {
       "id": "AWAY_CHILD",
       "name": "The Away Child",
-      "imagePath": "assets/mudermystery/photos/TheAwayChild.png",
+      "imagePath": "assets/mudermystery/photos/characters/TheAwayChild.png",
       "role": "Away Child",
       "group": "family",
       "public": {
