@@ -10,7 +10,6 @@
   const CHARACTER_PLACEHOLDER_IMAGE = 'assets/mudermystery/photos/agathaplaceholder.png';
   const publicSections = new Set(['overview', 'characters']);
   const hostFiles = [
-    'characters.json',
     'relationships.json',
     'acts.json',
     'locations.json',
@@ -22,7 +21,6 @@
     'host-notes.json'
   ];
   const hostKeys = [
-    'characters',
     'relationships',
     'acts',
     'locations',
@@ -104,15 +102,29 @@
     return response.json();
   }
 
+  function toPublicCharacter(character) {
+    return {
+      id: character.id,
+      name: character.name,
+      imagePath: character.imagePath,
+      role: character.role,
+      group: character.group,
+      public: character.public || {}
+    };
+  }
+
   async function loadPublicData() {
-    const json = await fetchJson('public-characters.json');
-    data.characters = json.characters || [];
+    const json = await fetchJson('characters.json');
+    data.characters = (json.characters || []).map(toPublicCharacter);
   }
 
   async function loadHostData() {
     if (hostDataLoaded) {
       return;
     }
+
+    const characterJson = await fetchJson('characters.json');
+    data.characters = characterJson.characters || [];
 
     const results = await Promise.all(hostFiles.map(fetchJson));
     results.forEach((json, index) => {
@@ -297,7 +309,7 @@
       heading.textContent = character.name;
       const roleLine = document.createElement('p');
       roleLine.className = 'character-role-line';
-      roleLine.textContent = character.role || character.publicRole || '';
+      roleLine.textContent = character.role || character.public?.role || '';
 
       const tabBar = document.createElement('div');
       tabBar.className = 'tabs';
@@ -359,14 +371,14 @@
 
         if (currentTab === 0) {
           const p = document.createElement('p');
-          p.innerHTML = `<strong>Role:</strong> ${character.publicRole}<br><strong>Bio:</strong> ${normaliseDisplayText(character.publicBio).replace(/\n/g, '<br>')}<br><strong>Personality:</strong> ${character.personality}`;
+          p.innerHTML = `<strong>Role:</strong> ${character.public?.role || ''}<br><strong>Bio:</strong> ${normaliseDisplayText(character.public?.bio).replace(/\n/g, '<br>')}<br><strong>Personality:</strong> ${character.public?.personality || ''}`;
           content.appendChild(p);
           return;
         }
 
         if (currentTab === 1) {
           const p = document.createElement('p');
-          p.innerHTML = `<strong>Bio:</strong> ${character.privateBio}<br><strong>Secret pressure:</strong> ${character.secretPressure}<br><strong>Wants:</strong> ${character.wants}<br><strong>Fears:</strong> ${character.fears}<br><strong>Red herring:</strong> ${character.redHerring}`;
+          p.innerHTML = `<strong>Bio:</strong> ${character.private?.bio || ''}<br><strong>Secret pressure:</strong> ${character.private?.secretPressure || ''}<br><strong>Wants:</strong> ${character.private?.wants || ''}<br><strong>Fears:</strong> ${character.private?.fears || ''}<br><strong>Red herring:</strong> ${character.private?.redHerring || ''}`;
           content.appendChild(p);
           return;
         }
@@ -407,10 +419,10 @@
         if (currentTab === 3) {
           const listEl = document.createElement('ul');
           listEl.innerHTML = '<strong>Objectives by act:</strong>';
-          Object.keys(character.actObjectives).forEach(actId => {
+          Object.keys(character.private?.actObjectives || {}).forEach(actId => {
             const li = document.createElement('li');
             const act = data.acts.find(candidate => candidate.id === actId);
-            li.textContent = `${act ? act.title : actId}: ${character.actObjectives[actId]}`;
+            li.textContent = `${act ? act.title : actId}: ${character.private.actObjectives[actId]}`;
             listEl.appendChild(li);
           });
           content.appendChild(listEl);
@@ -419,7 +431,7 @@
 
         const listEl = document.createElement('ul');
         listEl.innerHTML = '<strong>Associated clues:</strong>';
-        character.clues.forEach(clue => {
+        (character.private?.clues || []).forEach(clue => {
           const li = document.createElement('li');
           li.textContent = clue;
           listEl.appendChild(li);
