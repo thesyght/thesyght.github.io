@@ -178,7 +178,7 @@
     {
       "id": "DIRECTOR",
       "name": "The Director",
-      "imagePath": "assets/mudermystery/photos/agathaplaceholder.png",
+      "imagePath": "assets/mudermystery/photos/characters/TheDirector.png",
       "role": "Director / Best Friend",
       "group": "compatriot",
       "public": {
