@@ -1,7 +1,7 @@
 {
   "characters": [
     {
-      "id": "SON",
+      "id": "PROPER_CHILD",
       "name": "The Kissass Offspring",
       "imagePath": "assets/mudermystery/photos/agathaplaceholder.png",
       "role": "Kissass Offspring",
@@ -11,7 +11,7 @@
       "personality": "Hardworking, brittle, status-conscious, consultant-coded, and desperate to be recognised as the competent heir."
     },
     {
-      "id": "DAUGHTER",
+      "id": "AWAY_CHILD",
       "name": "The Spoilt Offspring",
       "imagePath": "assets/mudermystery/photos/agathaplaceholder.png",
       "role": "Spoilt Offspring",

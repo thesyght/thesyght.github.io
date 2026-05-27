@@ -12,7 +12,7 @@
         "Wax smear or ribbon near the terrace window."
       ],
       "actor": "The Maid",
-      "relatedCharacters": ["SON", "DAUGHTER", "WIDOW", "PUBLICIST", "BASTARD", "DIRECTOR", "PHIL", "MINISTER", "ANTIQUE", "OPERA"]
+      "relatedCharacters": ["PROPER_CHILD", "AWAY_CHILD", "WIDOW", "PUBLICIST", "BASTARD", "DIRECTOR", "PHIL", "MINISTER", "ANTIQUE", "OPERA"]
     },
     {
       "id": "MEDIA",
@@ -32,7 +32,7 @@
         "Archive transfer letter for the Daughter."
       ],
       "actor": "The Maid",
-      "relatedCharacters": ["SON", "DIRECTOR", "WIDOW", "PUBLICIST", "BASTARD", "PHIL", "MINISTER", "ANTIQUE", "OPERA", "DAUGHTER"]
+      "relatedCharacters": ["PROPER_CHILD", "DIRECTOR", "WIDOW", "PUBLICIST", "BASTARD", "PHIL", "MINISTER", "ANTIQUE", "OPERA", "AWAY_CHILD"]
     },
     {
       "id": "KITCHEN",
@@ -46,7 +46,7 @@
         "Tea service items indicating one ring for drinks."
       ],
       "actor": "The Maid",
-      "relatedCharacters": ["SON", "DAUGHTER", "DIRECTOR", "WIDOW"]
+      "relatedCharacters": ["PROPER_CHILD", "AWAY_CHILD", "DIRECTOR", "WIDOW"]
     },
     {
       "id": "TERRACE",
@@ -151,7 +151,7 @@
         "Police report consolidating evidence from Acts 1 and 2."
       ],
       "actor": "The Police",
-      "relatedCharacters": ["SON", "DAUGHTER", "WIDOW", "PUBLICIST", "BASTARD", "DIRECTOR", "PHIL", "MINISTER", "ANTIQUE", "OPERA"]
+      "relatedCharacters": ["PROPER_CHILD", "AWAY_CHILD", "WIDOW", "PUBLICIST", "BASTARD", "DIRECTOR", "PHIL", "MINISTER", "ANTIQUE", "OPERA"]
     }
   ]
 }

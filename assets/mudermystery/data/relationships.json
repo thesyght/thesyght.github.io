@@ -2,13 +2,13 @@
   "relationships": [
     {
       "from": "DIRECTOR",
-      "to": "SON",
+      "to": "PROPER_CHILD",
       "category": "negative",
       "text": "Pretends to mentor The Kissass Offspring, but privately despises them and thinks they are a moron unfit to lead."
     },
     {
       "from": "DIRECTOR",
-      "to": "DAUGHTER",
+      "to": "AWAY_CHILD",
       "category": "negative",
       "text": "Is suspicious of The Spoilt Offspring because they know The Spoilt Offspring spoke often and privately with J. Baroo near the end."
     },
@@ -49,97 +49,97 @@
       "text": "Hates The Antique Collector for risking the company brand through stolen artefacts and provenance scandals."
     },
     {
-      "from": "SON",
+      "from": "PROPER_CHILD",
       "to": "DIRECTOR",
       "category": "positive",
       "text": "Believes The Director is their mentor and safest ally in succession."
     },
     {
-      "from": "SON",
-      "to": "DAUGHTER",
+      "from": "PROPER_CHILD",
+      "to": "AWAY_CHILD",
       "category": "negative",
       "text": "Despises The Spoilt Offspring, seeing them as a brat, a drain, and someone who never worked for anything."
     },
     {
-      "from": "SON",
+      "from": "PROPER_CHILD",
       "to": "WIDOW",
       "category": "positive",
       "text": "Loves The Surviving Spouse and believes they need protection from the world."
     },
     {
-      "from": "SON",
+      "from": "PROPER_CHILD",
       "to": "BASTARD",
       "category": "aware",
       "text": "Does not know The Father's Bastard is family; sees them as an irritating colleague whom J. Baroo inexplicably kept around the house and company."
     },
     {
-      "from": "SON",
+      "from": "PROPER_CHILD",
       "to": "DIPLOMAT",
       "category": "positive",
       "text": "Knows little about The Diplomat, but feels the urge to impress them because they were one of J. Baroo's old friends."
     },
     {
-      "from": "SON",
+      "from": "PROPER_CHILD",
       "to": "OPERA",
       "category": "positive",
       "text": "Has a crush on The Opera Singer but does not understand why they were so close to J. Baroo."
     },
     {
-      "from": "SON",
+      "from": "PROPER_CHILD",
       "to": "PUBLICIST",
       "category": "negative",
       "text": "Looks down on The Publicist / Journalist because they are lower on the company payroll, despite relying on their image work."
     },
     {
-      "from": "SON",
+      "from": "PROPER_CHILD",
       "to": "ANTIQUE",
       "category": "positive",
       "text": "Is charmed by The Antique Collector and the impressive objects and stories they bring."
     },
     {
-      "from": "DAUGHTER",
+      "from": "AWAY_CHILD",
       "to": "DIRECTOR",
       "category": "positive",
       "text": "Respects The Director and thinks of them as a mentor."
     },
     {
-      "from": "DAUGHTER",
-      "to": "SON",
+      "from": "AWAY_CHILD",
+      "to": "PROPER_CHILD",
       "category": "negative",
       "text": "Thinks The Kissass Offspring is a fool, simple, and painfully over-serious."
     },
     {
-      "from": "DAUGHTER",
+      "from": "AWAY_CHILD",
       "to": "WIDOW",
       "category": "positive",
       "text": "Pities and loves The Surviving Spouse, while recognising their vulnerability."
     },
     {
-      "from": "DAUGHTER",
+      "from": "AWAY_CHILD",
       "to": "BASTARD",
       "category": "negative",
       "text": "Has figured out The Father's Bastard's identity and considers them an embarrassment."
     },
     {
-      "from": "DAUGHTER",
+      "from": "AWAY_CHILD",
       "to": "DIPLOMAT",
       "category": "positive",
       "text": "Is fond of The Diplomat because they have often caught up together overseas over the years."
     },
     {
-      "from": "DAUGHTER",
+      "from": "AWAY_CHILD",
       "to": "OPERA",
       "category": "negative",
       "text": "Dislikes The Opera Singer intensely and sees them as a threat to the family's dignity."
     },
     {
-      "from": "DAUGHTER",
+      "from": "AWAY_CHILD",
       "to": "PUBLICIST",
       "category": "positive",
       "text": "Likes The Publicist / Journalist and thinks they are good for the company and useful in hiding problems with the Historical Foundation."
     },
     {
-      "from": "DAUGHTER",
+      "from": "AWAY_CHILD",
       "to": "ANTIQUE",
       "category": "positive",
       "text": "Knows about The Antique Collector's thefts and has personally profited from selling stolen artefacts with them."
@@ -152,13 +152,13 @@
     },
     {
       "from": "WIDOW",
-      "to": "SON",
+      "to": "PROPER_CHILD",
       "category": "positive",
       "text": "Loves The Kissass Offspring but thinks they need protection from their own idiocy."
     },
     {
       "from": "WIDOW",
-      "to": "DAUGHTER",
+      "to": "AWAY_CHILD",
       "category": "positive",
       "text": "Loves The Spoilt Offspring, but is slightly scared by the ruthlessness they have seen beneath the charm."
     },
@@ -200,13 +200,13 @@
     },
     {
       "from": "BASTARD",
-      "to": "SON",
+      "to": "PROPER_CHILD",
       "category": "positive",
       "text": "Thinks The Kissass Offspring is an idiot, but basically a good person, and wants to be friends despite the difficulty."
     },
     {
       "from": "BASTARD",
-      "to": "DAUGHTER",
+      "to": "AWAY_CHILD",
       "category": "negative",
       "text": "Thinks The Spoilt Offspring is spoilt and tries to placate them, but is definitely not their friend."
     },
@@ -248,13 +248,13 @@
     },
     {
       "from": "DIPLOMAT",
-      "to": "SON",
+      "to": "PROPER_CHILD",
       "category": "negative",
       "text": "Is patronising towards The Kissass Offspring, seeing them as spoonfed, sheltered, and short on real experience."
     },
     {
       "from": "DIPLOMAT",
-      "to": "DAUGHTER",
+      "to": "AWAY_CHILD",
       "category": "positive",
       "text": "Is fond of The Spoilt Offspring because they often crossed paths overseas while growing up."
     },
@@ -296,13 +296,13 @@
     },
     {
       "from": "OPERA",
-      "to": "SON",
+      "to": "PROPER_CHILD",
       "category": "negative",
       "text": "Thinks The Kissass Offspring is an idiot."
     },
     {
       "from": "OPERA",
-      "to": "DAUGHTER",
+      "to": "AWAY_CHILD",
       "category": "negative",
       "text": "Hates The Spoilt Offspring."
     },
@@ -344,13 +344,13 @@
     },
     {
       "from": "PUBLICIST",
-      "to": "SON",
+      "to": "PROPER_CHILD",
       "category": "negative",
       "text": "Thinks The Kissass Offspring is an idiot."
     },
     {
       "from": "PUBLICIST",
-      "to": "DAUGHTER",
+      "to": "AWAY_CHILD",
       "category": "aware",
       "text": "Believes The Spoilt Offspring is exactly what they appear to be and is not concerned unless they damage the brand."
     },
@@ -392,13 +392,13 @@
     },
     {
       "from": "ANTIQUE",
-      "to": "SON",
+      "to": "PROPER_CHILD",
       "category": "negative",
       "text": "Thinks The Kissass Offspring is a rube, easily charmed by grand stories and impressive objects."
     },
     {
       "from": "ANTIQUE",
-      "to": "DAUGHTER",
+      "to": "AWAY_CHILD",
       "category": "positive",
       "text": "Has worked with The Spoilt Offspring to sell stolen artefacts."
     },

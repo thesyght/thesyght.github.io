@@ -168,12 +168,13 @@ body {
 
 /* Character list and details */
 .character-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
   justify-content: center;
   gap: 12px 14px;
-  max-width: 980px;
-  margin: 0 auto 24px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 24px auto 0;
 }
 .character-pill {
   background: #fff;
@@ -218,9 +219,9 @@ body {
 .character-portrait {
   display: block;
   width: 100%;
-  min-height: 520px;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  height: 520px;
+  object-fit: contain;
+  object-position: center;
   border-radius: 14px;
   background: #ede7dc;
 }
@@ -407,12 +408,14 @@ body {
     margin-left: 0;
   }
   .character-list {
-    max-width: 100%;
+    grid-template-columns: repeat(2, minmax(0, max-content));
+    width: auto;
   }
   .character-layout {
     grid-template-columns: 1fr;
   }
   .character-portrait {
-    min-height: 0;
+    height: auto;
+    aspect-ratio: 4 / 5;
   }
 }

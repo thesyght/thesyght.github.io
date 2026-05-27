@@ -256,9 +256,13 @@
   }
 
   function renderCharacters() {
+    const section = document.getElementById('characters');
     const list = document.getElementById('characterList');
     const details = document.getElementById('characterDetails');
     const characters = data.characters || [];
+
+    section.appendChild(details);
+    section.appendChild(list);
 
     list.innerHTML = '';
     details.innerHTML = '<p>Select a character to view details.</p>';
