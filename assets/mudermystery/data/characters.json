@@ -31,7 +31,7 @@
     },
     {
       "id": "AWAY_CHILD",
-      "name": "Cosmopolitan",
+      "name": "The Cosmopolitan Child",
       "imagePath": "assets/mudermystery/photos/characters/TheAwayChild.png",
       "role": "Cosmopolitan Child",
       "group": "family",
@@ -89,13 +89,13 @@
     },
     {
       "id": "BASTARD",
-      "name": "The Father's Bastard",
-      "imagePath": "assets/mudermystery/photos/agathaplaceholder.png",
-      "role": "Father's Bastard",
+      "name": "The Bastard",
+      "imagePath": "assets/mudermystery/photos/characters/TheBasterd.png",
+      "role": "Bastard",
       "group": "family",
       "public": {
         "role": "The possible illegitimate child of J. Baroo, recently brought back into the family orbit.",
-        "bio": "The Father's Bastard occupies the most uncomfortable position in the room: present often enough to be known, but not accepted enough to be safe. Around Baroo Holdings, they are treated by some as a colleague, by others as a dependant, and by the family as a question nobody quite wants answered out loud.\n\nPublicly, they are guarded, watchful, and quick to notice when conversations change as they enter the room. They are not naturally grand, and they lack the ease that comes from being raised inside the Baroo name.\n\nTheir personality combines defensiveness with a stubborn need to belong. They want to be treated normally, but the more people avoid saying why they are really there, the more obvious the tension becomes. To the room, they are either an embarrassment, an inconvenience, a possible claimant, or a person who should have been acknowledged long ago.",
+        "bio": "The Bastard is the unrecognised Baroo child. They appeared around the edge of the Baroo household when they were young, never formally introduced in the way the recognised children were, but never kept so far away that people couldn't see they weren't in some way part of the family. Especially given the amount of arrangements made around and for them. Those who know enough, know not to pry.\n\nIt has been two years since they finished high school and went straight to the Australian Defence Force Academy in Canberra. This was, within the family and the wider Baroo circle, received as a sensible and good choice. It gives them a clear path forward, a uniform, a timetable, and a reason to leave the city. For the Family it was convienent, and the fact that The Basterd had come up with the idea themselves was an added bonus.\n\nThey grew up at a boarding school in the city, close enough to the Baroo world to be collected from it when necessary, but with no need to host them at the main household. They were known as a capable student rather than a brilliant one. They played sport, kept their room neat, turned up on time, and did well in environments where the rules were written down. Teachers tended to like them. Other students found them easy enough to include, partly because they were just always eager to be involved, and partly because they were genuinely good fun to have around. They are good in groups, particularly groups with structure: school houses, teams, cadet programmes, training sessions, mess dinners, anything with a roster and a purpose. They are not a loner, though they are often seen arriving alone and leaving without anyone making a fuss. \n\nThe Widow was the adult most often seen in connection with them. They appeared at school tours, medical appointments, apartment inspections, and formal school events. The Widow never presented them as a child of the house, but nor did they treat them like a stranger or a baby sitter. Their relationship between them has always been described carefully by people who know the family: close, practical, private, and difficult to define due to a lack of details. The relationship between J. Baroo and the Basterd was non-existent.\n\nThe Bastard is now at the age where most people in their position would either push for recognition or loudly reject the need for it. They have done neither. If asked directly in public, they are respectful of the Baroo family and careful around the recognised children. They are polite when talking about J. Baroo, but kind of in a stilted, formal way. They do not use their association to the name aggressively, but they also do not correct people who would associate them more closely than they feel they deserve.\n\nPeople tend to describe them as decent, but not as polished in the Baroo style as the other known family members. They aren't fashionable, commercially minded, or imperious. They are decent, steady, well brought up, even if nobody quite agrees by whom. While they might not as a younger person know they do it, there is a certain eagerness in them does expose them. They stand that straighter than they need to, answer faster and with longer explainations than most would, and seem most comfortable when there is something they can do, rather than say.",
         "personality": "Guarded, watchful, defensive, and quietly desperate for normal treatment."
       },
       "private": {
