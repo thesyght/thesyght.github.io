@@ -273,8 +273,8 @@
     const details = document.getElementById('characterDetails');
     const characters = data.characters || [];
 
-    section.appendChild(details);
     section.appendChild(list);
+    section.appendChild(details);
 
     list.innerHTML = '';
     details.innerHTML = '<p>Select a character to view details.</p>';
@@ -339,8 +339,8 @@
       infoPanel.appendChild(infoHeader);
 
       const tabs = hostMode
-        ? ['Public Profile', 'Private Motives', 'Relationships', 'Act Objectives', 'Clues']
-        : ['Public Profile'];
+        ? ['Biography', 'Private Motives', 'Relationships', 'Act Objectives', 'Clues']
+        : ['Biography'];
 
       let currentTab = 0;
 
@@ -370,9 +370,32 @@
         content.innerHTML = '';
 
         if (currentTab === 0) {
-          const p = document.createElement('p');
-          p.innerHTML = `<strong>Role:</strong> ${character.public?.role || ''}<br><strong>Bio:</strong> ${normaliseDisplayText(character.public?.bio).replace(/\n/g, '<br>')}<br><strong>Personality:</strong> ${character.public?.personality || ''}`;
-          content.appendChild(p);
+          const profileSections = [
+            {
+              title: 'Role',
+              body: character.public?.role || ''
+            },
+            {
+              title: 'Bio',
+              body: normaliseDisplayText(character.public?.bio).replace(/\n/g, '<br>')
+            },
+            {
+              title: 'Personality',
+              body: character.public?.personality || ''
+            }
+          ];
+
+          profileSections.forEach(section => {
+            const card = document.createElement('section');
+            card.className = 'profile-box';
+            const heading = document.createElement('h4');
+            heading.textContent = section.title;
+            const body = document.createElement('p');
+            body.innerHTML = section.body;
+            card.appendChild(heading);
+            card.appendChild(body);
+            content.appendChild(card);
+          });
           return;
         }
 

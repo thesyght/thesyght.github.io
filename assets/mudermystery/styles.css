@@ -269,6 +269,26 @@ body {
   background: #fff;
   border-radius: 4px;
 }
+.profile-box {
+  border: 1px solid #ddd6c8;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #fcfaf5;
+}
+.profile-box + .profile-box {
+  margin-top: 12px;
+}
+.profile-box h4 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6c6255;
+}
+.profile-box p {
+  margin: 0;
+  line-height: 1.55;
+}
 
 /* Relationship graph */
 .graph-container {
