@@ -8,6 +8,7 @@
   const HOST_ACCESS_KEY = 'murderMysteryHostAccess';
   const dataBase = 'assets/mudermystery/data';
   const CHARACTER_PLACEHOLDER_IMAGE = 'assets/mudermystery/photos/agathaplaceholder.png';
+  const PRIVATE_CHARACTER_FILE = 'private-characters.json';
   const publicSections = new Set(['overview', 'characters']);
   const hostFiles = [
     'relationships.json',
@@ -114,20 +115,17 @@
     return response.json();
   }
 
-  function toPublicCharacter(character) {
-    return {
-      id: character.id,
-      name: character.name,
-      imagePath: character.imagePath,
-      role: character.role,
-      group: character.group,
-      public: character.public || {}
-    };
-  }
-
   async function loadPublicData() {
     const json = await fetchJson('characters.json');
-    data.characters = (json.characters || []).map(toPublicCharacter);
+    data.characters = json.characters || [];
+  }
+
+  function mergePrivateCharacters(publicCharacters, privateCharacters) {
+    const privateById = new Map((privateCharacters || []).map(character => [character.id, character.private || {}]));
+    return publicCharacters.map(character => ({
+      ...character,
+      private: privateById.get(character.id) || {}
+    }));
   }
 
   async function loadHostData() {
@@ -135,8 +133,8 @@
       return;
     }
 
-    const characterJson = await fetchJson('characters.json');
-    data.characters = characterJson.characters || [];
+    const privateCharacterJson = await fetchJson(PRIVATE_CHARACTER_FILE);
+    data.characters = mergePrivateCharacters(data.characters, privateCharacterJson.characters || []);
 
     const results = await Promise.all(hostFiles.map(fetchJson));
     results.forEach((json, index) => {
@@ -260,20 +258,25 @@
     intro.className = 'card';
 
     const p1 = document.createElement('p');
-    p1.textContent = 'J. Baroo, patriarch of the Baroo family, has died. Ten guests assemble for dinner before the formal reading of his will. The Executor holds a sealed Black Envelope containing a codicil. After dinner, a staged blackout knocks everyone out. When they wake, the Executor is dead, the envelope is missing and the dining wing is locked.';
+    p1.textContent = 'J. Baroo is dead. A sudden heart attack has left his family, friends and business partners all grieve for the loss.';
 
     const p2 = document.createElement('p');
-    p2.textContent = 'Players must investigate the murder, search the manor and grounds, decipher the bell signal, and confront one another. The truth will be revealed when the real codicil is found and the murderer is exposed.';
+    p2.textContent = 'In his death the patriarch of the Baroo family has left behind a grand fortune, a powerhouse company, a collection of antiques and art, and finally a final set of instructions that has drawn nine guests to the Baroo estate. Some are family. Some are old friends. Some are business associates. All have a direct connection to Baroo, and all have a reason to care what happens this night.';
+
+    const p3 = document.createElement('p');
+    p3.textContent = 'Before the formal reading of the will, the guests have been invited to dinner. The Executor is expected to present Baroo’s final arrangements later that evening, including a sealed Black Envelope that has only recently been added to the will. The Executor has been told that it contains a codicil that will reshape the will in its entirety.';
+
+    const p4 = document.createElement('p');
+    p4.textContent = 'Around the table will be old loyalties, recent grudges, unfinished business, and people who know more about one another than even the person in question knows. Gathered in that one room will be every problem that J. Baroo was thinking about when he drew up the changes to his will, and likely the problems he was thinking about on the night he died.';
+
+    const p5 = document.createElement('p');
+    p5.textContent = 'The evening begins with dinner. What follows will decide who inherits, and who is left wanting.';
 
     intro.appendChild(p1);
     intro.appendChild(p2);
-
-    if (hostMode) {
-      const spoiler = document.createElement('div');
-      spoiler.className = 'spoiler';
-      spoiler.innerHTML = '<strong>Host:</strong> The Director is the killer. He murdered the Executor during the blackout, stole the real envelope, hid it in the Blind Judge statue and planted a fake envelope outside to mislead the guests.';
-      intro.appendChild(spoiler);
-    }
+    intro.appendChild(p3);
+    intro.appendChild(p4);
+    intro.appendChild(p5);
 
     container.innerHTML = '';
     container.appendChild(intro);
