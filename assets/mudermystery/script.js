@@ -258,7 +258,7 @@
     intro.className = 'card';
 
     const p1 = document.createElement('p');
-    p1.textContent = 'J. Baroo is dead. A sudden heart attack has left his family, friends and business partners all grieve for the loss.';
+    p1.textContent = 'J. Baroo is dead. A sudden heart attack has left his family, friends and business partners all to grieve for the loss.';
 
     const p2 = document.createElement('p');
     p2.textContent = 'In his death the patriarch of the Baroo family has left behind a grand fortune, a powerhouse company, a collection of antiques and art, and finally a final set of instructions that has drawn nine guests to the Baroo estate. Some are family. Some are old friends. Some are business associates. All have a direct connection to Baroo, and all have a reason to care what happens this night.';
