@@ -4,7 +4,7 @@
  */
 
 (() => {
-  const HOST_PASSWORD = 'laru';
+  const HOST_PASSWORD_HASH = 'db8d94d3987fe273056a88cd53a45198aa2eb4683e1477af139fe5f5239d16f3';
   const HOST_ACCESS_KEY = 'murderMysteryHostAccess';
   const dataBase = 'assets/mudermystery/data';
   const CHARACTER_PLACEHOLDER_IMAGE = 'assets/mudermystery/photos/agathaplaceholder.png';
@@ -92,6 +92,18 @@
       .replace(/[ \t]+\n/g, '\n')
       .replace(/\n{3,}/g, '\n\n')
       .trim();
+  }
+
+  async function sha256Hex(value) {
+    const bytes = new TextEncoder().encode(value);
+    const digest = await crypto.subtle.digest('SHA-256', bytes);
+    return Array.from(new Uint8Array(digest))
+      .map(byte => byte.toString(16).padStart(2, '0'))
+      .join('');
+  }
+
+  async function isValidHostPassword(value) {
+    return (await sha256Hex(value)) === HOST_PASSWORD_HASH;
   }
 
   async function fetchJson(file) {
@@ -226,7 +238,7 @@
 
   async function handleHostAccessSubmit(event) {
     event.preventDefault();
-    if (hostPasswordInput.value !== HOST_PASSWORD) {
+    if (!(await isValidHostPassword(hostPasswordInput.value))) {
       hostAccessError.classList.remove('hidden');
       hostPasswordInput.select();
       return;
