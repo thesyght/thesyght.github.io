@@ -208,8 +208,8 @@
     },
     {
       "id": "PUBLICIST",
-      "name": "The Publicist / Journalist",
-      "imagePath": "assets/mudermystery/photos/agathaplaceholder.png",
+      "name": "The Publicist",
+      "imagePath": "assets/mudermystery/photos/characters/ThePublicist.png",
       "role": "Publicist / Journalist",
       "group": "family",
       "public": {
