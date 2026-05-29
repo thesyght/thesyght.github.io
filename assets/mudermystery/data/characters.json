@@ -119,7 +119,7 @@
     {
       "id": "DIPLOMAT",
       "name": "The Diplomat",
-      "imagePath": "assets/mudermystery/photos/character/TheDiplomat.png",
+      "imagePath": "assets/mudermystery/photos/characters/TheDiplomat.png",
       "role": "Diplomat",
       "group": "compatriot",
       "public": {
@@ -149,7 +149,7 @@
     {
       "id": "OPERA",
       "name": "The Opera Singer",
-      "imagePath": "assets/mudermystery/photos/character/TheOperaSinger.png",
+      "imagePath": "assets/mudermystery/photos/characters/TheOperaSinger.png",
       "role": "Opera Singer",
       "group": "compatriot",
       "public": {
@@ -238,13 +238,13 @@
     },
     {
       "id": "ANTIQUE",
-      "name": "The Antique Collector",
-      "imagePath": "assets/mudermystery/photos/agathaplaceholder.png",
+      "name": "The Antiquarian",
+      "imagePath": "assets/mudermystery/photos/characters/TheAntiqueCollector.png",
       "role": "Antique Collector",
       "group": "compatriot",
       "public": {
         "role": "J. Baroo's antique collector and supplier of rare historical pieces.",
-        "bio": "The Antique Collector is J. Baroo's long-time supplier of rare historical pieces and adviser on the Baroo Collection. They speak of civilisation, rarity, provenance, and beauty with the confidence of someone who has never been troubled by customs forms for very long.\n\nPublicly, they are charming, grand, and faintly absurd. They dress as though every room might contain a portrait of them. They can turn a spoon, a broken idol, or a cracked vase into a story about empire, genius, betrayal, and taste.\n\nTheir personality is arrogant but entertaining. They enjoy being the most colourful person in a dull room and the most cultured person in a rich one. They are excellent at making dubious objects sound important and important people feel briefly clever. To the Baroo circle, they represent J. Baroo's appetite for history, possession, and spectacle. They are useful, amusing, and risky.",
+        "bio": "The Antiquarian is a private dealer, collector, and occasional adviser on historical objects. Their exact background is usually described in vague terms: foreign, well-born, educated somewhere respectable, and connected to families that used to have more money than they do now and would like to offload some of their assets for cash. They are not quite old enough to be an old man of the trade, but not young enough to be treated as new. People usually place them somewhere in their late thirties or early forties.\n\nThey come from old money that has risen and collapsed more than once. At different points they have been broke, comfortable, nearly rich, and broke again, though never in a way that made them look ordinary. They have the manners of someone raised around money and the habits of someone who has had to find it again. J. Baroo’s fortune and network were widely understood to be important to their next return to riches, though The Antiquarian would never have described the relationship so volgurely.\n\nThey are not a museum person in any formal sense. They are more likely to be found at private auctions not on official schedules, estate sales, sealed collection viewings, back rooms, and foreign markets. They are famous enough that museums know of them, but usually through back doors, private calls, and unspoken rules not to talk about provenance. They are useful when an object needs to be found, valued, moved, or explained without too much public attention.\n\nTheir speciality is the romance of old empires: Roman fragments, Byzantine religious pieces, Eastern European treasures, Crimean and Gothic material, icons, coins, reliquaries, and objects attached to ruined courts and forgotten rulers. They do love history and speak about these things with real knowledge and real feeling. The problem is that they also love money and the idea of owning something nobody else could possible make legitament claim to.\n\nThe Antiquarian has a rugged, almost unclean charm. Their style has something of an arms merchant who does business out of a good hotel: worn jackets, good miltary boots, expensive shirts treated badly, old signet rings from dead dynastys, scars from close encounters, and all topped with smirk on their face. They are charming, practical, and good at making questionable things sound like adventure. The law does not interest them much except as a thing that needs to be accounted for.\n\nThey were closely tied to the Baroo Collection, though the exact terms were never made clear. Some pieces were sourced through them. Some were stored, attributed, or discussed through them. Some, according to people who know the market, may have belonged to them and were only being temporarily kept by the Baroo Estate. Their connection to Baroo gave them liquid capital, access to legitamancy, and the promise of a return to respect. It also tied them to the family in a way not many would be able to account for, but could summise if they did the account.",
         "personality": "Grand, charming, arrogant, theatrical, and skilled at making dubious objects sound important."
       },
       "private": {
