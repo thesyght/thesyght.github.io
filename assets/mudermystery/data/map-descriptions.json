@@ -1,0 +1,134 @@
+{
+  "rooms": [
+    {
+      "id": "main-house",
+      "name": "Main House",
+      "description": "The formal heart of the Baroo Estate, containing the family bedrooms, principal reception rooms, kitchen and banquet hall."
+    },
+    {
+      "id": "baroos-room",
+      "name": "Baroo's Room",
+      "description": "J. Baroo's private room, kept much as they left it. Personal papers, old possessions and evidence of their final days may remain inside."
+    },
+    {
+      "id": "parlour",
+      "name": "Parlour",
+      "description": "A comfortable but formal reception room used for drinks, family conversations and private meetings away from the larger gatherings."
+    },
+    {
+      "id": "west-bathroom",
+      "name": "West Bathroom",
+      "description": "A small bathroom serving the western bedrooms and parlour, tucked into one of the quieter corners of the house."
+    },
+    {
+      "id": "acacia-bedroom",
+      "name": "Acacia Bedroom",
+      "description": "A traditional guest bedroom near the estate kitchen, suited to a long-standing visitor or member of the wider Baroo circle."
+    },
+    {
+      "id": "estate-kitchen",
+      "name": "Estate Kitchen",
+      "description": "The main working kitchen of the estate, used to prepare formal meals and store the household's serving equipment, provisions and wine."
+    },
+    {
+      "id": "waiting-room",
+      "name": "Waiting Room",
+      "description": "A modest sitting room between the kitchen and banquet hall where guests or staff can wait before being admitted to dinner."
+    },
+    {
+      "id": "banquet-hall",
+      "name": "Banquet Hall",
+      "description": "The estate's grand dining room, used for the evening meal and the formal gathering before the reading of J. Baroo's will."
+    },
+    {
+      "id": "central-bathroom",
+      "name": "Central Bathroom",
+      "description": "A centrally located bathroom shared by the parlour, Banksia Bedroom and the main internal corridor."
+    },
+    {
+      "id": "banksia-bedroom",
+      "name": "Banksia Bedroom",
+      "description": "A centrally positioned guest bedroom with convenient access to the parlour, bathroom and eastern side of the house."
+    },
+    {
+      "id": "morning-room",
+      "name": "Morning Room",
+      "description": "A bright informal sitting room used for breakfast, correspondence, reading and quieter daytime conversations."
+    },
+    {
+      "id": "eucalyptus-bedroom",
+      "name": "Eucalyptus Bedroom",
+      "description": "A secluded guest bedroom on the eastern side of the main corridor, opening towards the verandah."
+    },
+    {
+      "id": "east-bathroom",
+      "name": "East Bathroom",
+      "description": "A narrow bathroom serving the eastern bedrooms and verandah side of the house."
+    },
+    {
+      "id": "widows-suite",
+      "name": "Widow's Suite",
+      "description": "The Surviving Spouse's large private suite, separated from the other bedrooms and opening directly onto the East Verandah."
+    },
+    {
+      "id": "east-verandah",
+      "name": "East Verandah",
+      "description": "A covered outdoor passage running along the eastern side of the house, connecting several rooms with the gardens."
+    },
+    {
+      "id": "front-verandah",
+      "name": "Front Verandah",
+      "description": "The broad entrance verandah overlooking the driveway and grounds, where guests arrive and move between the house and estate."
+    },
+    {
+      "id": "baroos-retreat",
+      "name": "Baroo's Retreat",
+      "description": "A private room away from the main household where J. Baroo could work, rest or meet someone without attracting attention."
+    },
+    {
+      "id": "cottage-kitchen",
+      "name": "Cottage Kitchen",
+      "description": "A smaller kitchen serving the cottage, suitable for private meals, tea and guests staying away from the main house."
+    },
+    {
+      "id": "washroom",
+      "name": "Washroom",
+      "description": "A compact utility and bathroom space shared by the cottage occupants."
+    },
+    {
+      "id": "lounge",
+      "name": "Lounge",
+      "description": "The cottage's principal sitting room, more relaxed and intimate than the formal reception rooms of the main house."
+    },
+    {
+      "id": "cottage-verandah",
+      "name": "Cottage Verandah",
+      "description": "A sheltered verandah overlooking the nearby garden, connecting the retreat and cottage rooms with the grounds."
+    },
+    {
+      "id": "garden-room",
+      "name": "Garden Room",
+      "description": "A detached garden pavilion used for private conversations, reading or escaping the activity of the main house."
+    },
+    {
+      "id": "conservatory-garden",
+      "name": "Conservatory Garden",
+      "description": "A cultivated garden beside the cottage, with dense plantings, formal paths and several places where a small object could be concealed."
+    },
+    {
+      "id": "estate-grove",
+      "name": "Estate Grove",
+      "description": "The largest wooded section of the property, with winding paths, mature trees and poor sightlines between the house and lake."
+    },
+    {
+      "id": "lake",
+      "name": "Lake",
+      "description": "A broad ornamental lake at the southern end of the estate, isolated from the house and partially screened by trees."
+    },
+    {
+      "id": "driveway-garden",
+      "name": "Driveway Garden",
+      "description": "A landscaped garden lining the approach to the main house, giving arriving guests their first view of the Baroo Estate."
+    }
+  ]
+}

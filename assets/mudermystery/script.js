@@ -36,7 +36,7 @@
     },
     {
       id: 'west-bathroom',
-      label: 'Bathroom',
+      label: 'Bathroom 1',
       title: 'West Bathroom',
       x: 8.7,
       y: 29.4,
@@ -44,9 +44,9 @@
     },
     {
       id: 'acacia-bedroom',
-      label: 'Bedroom',
+      label: 'Acacia Bedroom',
       title: 'Acacia Bedroom',
-      x: 15.2,
+      x: 15.5,
       y: 33.5,
       images: [`${mapImageBase}/Bedrooms/AcaciaBedroom.png`]
     },
@@ -73,18 +73,18 @@
     },
     {
       id: 'central-bathroom',
-      label: 'Bathroom',
+      label: 'Bathroom 2',
       title: 'Central Bathroom',
       x: 33.7,
-      y: 28.9,
+      y: 28.6,
       images: [`${mapImageBase}/Bathrooms/Bathroom_02.png`]
     },
     {
       id: 'banksia-bedroom',
-      label: 'Bedroom',
+      label: 'Banksia Bedroom',
       title: 'Banksia Bedroom',
-      x: 34.5,
-      y: 34.4,
+      x: 30.5,
+      y: 53.6,
       images: [`${mapImageBase}/Bedrooms/BanksiaBedroom.png`]
     },
     {
@@ -96,15 +96,15 @@
     },
     {
       id: 'eucalyptus-bedroom',
-      label: 'Bedroom',
+      label: 'Eucalyptus Bedroom',
       title: 'Eucalyptus Bedroom',
-      x: 30.3,
-      y: 53.7,
+      x: 33.1,
+      y: 34.4,
       images: [`${mapImageBase}/Bedrooms/EucalyptusBedroom.png`]
     },
     {
       id: 'east-bathroom',
-      label: 'Bathroom',
+      label: 'Bathroom 3',
       title: 'East Bathroom',
       x: 41.2,
       y: 26.5,
@@ -233,8 +233,11 @@
   let hostDataLoaded = false;
   let activeSection = 'overview';
   let selectedCharacterId = null;
+  let selectedMapTargetId = mapTargets[0].id;
+  let mapHotspotsVisible = true;
   let data = {
-    characters: []
+    characters: [],
+    mapDescriptions: []
   };
 
   const body = document.body;
@@ -312,8 +315,12 @@
   }
 
   async function loadPublicData() {
-    const json = await fetchJson('characters.json');
-    data.characters = json.characters || [];
+    const [characterJson, mapDescriptionJson] = await Promise.all([
+      fetchJson('characters.json'),
+      fetchJson('map-descriptions.json')
+    ]);
+    data.characters = characterJson.characters || [];
+    data.mapDescriptions = mapDescriptionJson.rooms || [];
   }
 
   function mergePrivateCharacters(publicCharacters, privateCharacters) {
@@ -681,11 +688,33 @@
     const container = document.getElementById('mapContent');
     container.innerHTML = '';
 
+    const selectedTarget = mapTargets.find(target => target.id === selectedMapTargetId) || mapTargets[0];
+    selectedMapTargetId = selectedTarget.id;
+
+    const layout = document.createElement('div');
+    layout.className = 'map-layout';
+
+    const leftPanel = document.createElement('div');
+    leftPanel.className = 'map-left-panel';
+
+    const controls = document.createElement('div');
+    controls.className = 'map-controls';
+
+    const hotspotToggle = document.createElement('button');
+    hotspotToggle.type = 'button';
+    hotspotToggle.className = 'control-btn';
+    hotspotToggle.textContent = mapHotspotsVisible ? 'Hide hotspots' : 'Show hotspots';
+    hotspotToggle.addEventListener('click', () => {
+      mapHotspotsVisible = !mapHotspotsVisible;
+      renderMap();
+    });
+    controls.appendChild(hotspotToggle);
+
     const shell = document.createElement('div');
     shell.className = 'estate-map-shell';
 
     const stage = document.createElement('div');
-    stage.className = 'estate-map-stage';
+    stage.className = `estate-map-stage${mapHotspotsVisible ? '' : ' hotspots-hidden'}`;
 
     const mapImage = document.createElement('img');
     mapImage.className = 'estate-map-image';
@@ -703,48 +732,49 @@
       button.textContent = target.label;
       button.title = `Open gallery for ${galleryTitle}`;
       button.setAttribute('aria-label', `Open gallery for ${galleryTitle}`);
-      button.addEventListener('click', () => openMapGallery(target));
+      button.classList.toggle('active', target.id === selectedMapTargetId);
+      button.addEventListener('click', () => {
+        selectedMapTargetId = target.id;
+        renderMap();
+      });
       stage.appendChild(button);
     });
 
     shell.appendChild(stage);
-    container.appendChild(shell);
+    leftPanel.appendChild(controls);
+    leftPanel.appendChild(shell);
+
+    const rightPanel = document.createElement('div');
+    rightPanel.className = 'map-right-panel';
+    rightPanel.appendChild(renderMapGalleryPanel(selectedTarget));
+    rightPanel.appendChild(renderMapTextPanel(selectedTarget));
+
+    layout.appendChild(leftPanel);
+    layout.appendChild(rightPanel);
+    container.appendChild(layout);
   }
 
-  function openMapGallery(target) {
-    const galleryTitle = target.title || target.label;
-    closeMapGallery();
+  function getMapRoomDetails(target) {
+    return data.mapDescriptions.find(room => room.id === target.id) || {};
+  }
 
-    const modal = document.createElement('div');
-    modal.className = 'map-gallery-modal';
-    modal.setAttribute('role', 'dialog');
-    modal.setAttribute('aria-modal', 'true');
-    modal.setAttribute('aria-labelledby', 'mapGalleryTitle');
+  function getMapRoomName(target) {
+    const details = getMapRoomDetails(target);
+    return details.name || target.title || target.label;
+  }
 
-    const backdrop = document.createElement('button');
-    backdrop.type = 'button';
-    backdrop.className = 'map-gallery-backdrop';
-    backdrop.setAttribute('aria-label', 'Close map gallery');
-    backdrop.addEventListener('click', closeMapGallery);
-
-    const panel = document.createElement('div');
-    panel.className = 'map-gallery-panel';
+  function renderMapGalleryPanel(target) {
+    const galleryTitle = getMapRoomName(target);
+    const panel = document.createElement('section');
+    panel.className = 'map-side-card map-gallery-card';
 
     const header = document.createElement('div');
     header.className = 'map-gallery-header';
 
     const title = document.createElement('h3');
-    title.id = 'mapGalleryTitle';
     title.textContent = galleryTitle;
 
-    const closeButton = document.createElement('button');
-    closeButton.type = 'button';
-    closeButton.className = 'map-gallery-close';
-    closeButton.textContent = 'Close';
-    closeButton.addEventListener('click', closeMapGallery);
-
     header.appendChild(title);
-    header.appendChild(closeButton);
     panel.appendChild(header);
 
     const gallery = document.createElement('div');
@@ -776,26 +806,34 @@
     }
 
     panel.appendChild(gallery);
-    modal.appendChild(backdrop);
-    modal.appendChild(panel);
-    document.body.appendChild(modal);
-    closeButton.focus();
-
-    document.addEventListener('keydown', handleMapGalleryKeydown);
+    return panel;
   }
 
-  function closeMapGallery() {
-    const modal = document.querySelector('.map-gallery-modal');
-    if (modal) {
-      modal.remove();
-    }
-    document.removeEventListener('keydown', handleMapGalleryKeydown);
-  }
+  function renderMapTextPanel(target) {
+    const details = getMapRoomDetails(target);
+    const galleryTitle = getMapRoomName(target);
+    const panel = document.createElement('section');
+    panel.className = 'map-side-card map-description-card';
 
-  function handleMapGalleryKeydown(event) {
-    if (event.key === 'Escape') {
-      closeMapGallery();
-    }
+    const tabs = document.createElement('div');
+    tabs.className = 'tabs';
+
+    const descriptionTab = document.createElement('button');
+    descriptionTab.type = 'button';
+    descriptionTab.className = 'tab-btn active';
+    descriptionTab.textContent = 'Description';
+    tabs.appendChild(descriptionTab);
+
+    const content = document.createElement('div');
+    content.className = 'tab-content';
+
+    const description = document.createElement('p');
+    description.textContent = details.description || `${galleryTitle} is a selectable area on the Baroo Estate map. Select another hotspot to update this gallery and description panel.`;
+    content.appendChild(description);
+
+    panel.appendChild(tabs);
+    panel.appendChild(content);
+    return panel;
   }
 
   function renderGraph() {
