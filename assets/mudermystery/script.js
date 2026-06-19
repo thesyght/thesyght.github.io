@@ -90,8 +90,8 @@
     {
       id: 'morning-room',
       label: 'Morning Room',
-      x: 31.4,
-      y: 45.4,
+      x: 30.8,
+      y: 43.5,
       images: [`${mapImageBase}/Morning Room/MorningRoom.png`]
     },
     {
@@ -233,6 +233,7 @@
   let hostDataLoaded = false;
   let activeSection = 'overview';
   let selectedCharacterId = null;
+  let mapHotspotsQuiet = false;
   let data = {
     characters: []
   };
@@ -681,11 +682,26 @@
     const container = document.getElementById('mapContent');
     container.innerHTML = '';
 
+    const controls = document.createElement('div');
+    controls.className = 'map-controls';
+
+    const hotspotToggle = document.createElement('button');
+    hotspotToggle.type = 'button';
+    hotspotToggle.className = 'control-btn';
+    hotspotToggle.textContent = mapHotspotsQuiet
+      ? 'Show hotspot labels'
+      : 'Hide hotspot labels';
+    hotspotToggle.addEventListener('click', () => {
+      mapHotspotsQuiet = !mapHotspotsQuiet;
+      renderMap();
+    });
+    controls.appendChild(hotspotToggle);
+
     const shell = document.createElement('div');
     shell.className = 'estate-map-shell';
 
     const stage = document.createElement('div');
-    stage.className = 'estate-map-stage';
+    stage.className = `estate-map-stage${mapHotspotsQuiet ? ' hotspots-quiet' : ''}`;
 
     const mapImage = document.createElement('img');
     mapImage.className = 'estate-map-image';
@@ -708,6 +724,7 @@
     });
 
     shell.appendChild(stage);
+    container.appendChild(controls);
     container.appendChild(shell);
   }
 

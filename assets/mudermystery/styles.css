@@ -167,6 +167,11 @@ body {
 }
 
 /* Estate map */
+.map-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 10px;
+}
 .estate-map-shell {
   width: 100%;
   overflow-x: auto;
@@ -207,6 +212,21 @@ body {
   background: rgba(247, 237, 200, 0.96);
   color: #142231;
   outline: none;
+}
+.estate-map-stage.hotspots-quiet .map-hotspot {
+  border-color: transparent;
+  background: transparent;
+  color: transparent;
+  box-shadow: none;
+}
+.estate-map-stage.hotspots-quiet .map-hotspot:hover {
+  border-color: transparent;
+  background: transparent;
+  color: transparent;
+}
+.estate-map-stage.hotspots-quiet .map-hotspot:focus-visible {
+  outline: 2px solid rgba(247, 237, 200, 0.85);
+  outline-offset: 2px;
 }
 .map-gallery-modal {
   position: fixed;
