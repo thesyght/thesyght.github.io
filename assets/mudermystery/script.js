@@ -9,7 +9,202 @@
   const dataBase = 'assets/mudermystery/data';
   const CHARACTER_PLACEHOLDER_IMAGE = 'assets/mudermystery/photos/agathaplaceholder.png';
   const PRIVATE_CHARACTER_FILE = 'private-characters.json';
-  const publicSections = new Set(['overview', 'characters']);
+  const ESTATE_MAP_IMAGE = 'assets/mudermystery/Map/MapImages/EstateMap.jpeg';
+  const mapImageBase = 'assets/mudermystery/Map/MapImages';
+  const publicSections = new Set(['overview', 'characters', 'map']);
+  const mapTargets = [
+    {
+      id: 'main-house',
+      label: 'Main House',
+      x: 17.5,
+      y: 17.7,
+      images: [`${mapImageBase}/Outside/MAINHOUSE.png`]
+    },
+    {
+      id: 'baroos-room',
+      label: "Baroo's Room",
+      x: 40.5,
+      y: 13.8,
+      images: [`${mapImageBase}/Baroos Room/BaroosRoom.png`]
+    },
+    {
+      id: 'parlour',
+      label: 'Parlour',
+      x: 21.8,
+      y: 27,
+      images: [`${mapImageBase}/Parlour/Parlour.png`]
+    },
+    {
+      id: 'west-bathroom',
+      label: 'Bathroom',
+      title: 'West Bathroom',
+      x: 8.7,
+      y: 29.4,
+      images: [`${mapImageBase}/Bathrooms/Bathroom_01.png`]
+    },
+    {
+      id: 'acacia-bedroom',
+      label: 'Bedroom',
+      title: 'Acacia Bedroom',
+      x: 15.2,
+      y: 33.5,
+      images: [`${mapImageBase}/Bedrooms/AcaciaBedroom.png`]
+    },
+    {
+      id: 'estate-kitchen',
+      label: 'Estate Kitchen',
+      x: 15.3,
+      y: 38.4,
+      images: [`${mapImageBase}/Kitchen/EstateKitchen.png`]
+    },
+    {
+      id: 'waiting-room',
+      label: 'Waiting Room',
+      x: 14.8,
+      y: 43.1,
+      images: []
+    },
+    {
+      id: 'banquet-hall',
+      label: 'Banquet Hall',
+      x: 15.4,
+      y: 52.1,
+      images: [`${mapImageBase}/Banquet Hall/BanquetHall.png`]
+    },
+    {
+      id: 'central-bathroom',
+      label: 'Bathroom',
+      title: 'Central Bathroom',
+      x: 33.7,
+      y: 28.9,
+      images: [`${mapImageBase}/Bathrooms/Bathroom_02.png`]
+    },
+    {
+      id: 'banksia-bedroom',
+      label: 'Bedroom',
+      title: 'Banksia Bedroom',
+      x: 34.5,
+      y: 34.4,
+      images: [`${mapImageBase}/Bedrooms/BanksiaBedroom.png`]
+    },
+    {
+      id: 'morning-room',
+      label: 'Morning Room',
+      x: 31.4,
+      y: 45.4,
+      images: [`${mapImageBase}/Morning Room/MorningRoom.png`]
+    },
+    {
+      id: 'eucalyptus-bedroom',
+      label: 'Bedroom',
+      title: 'Eucalyptus Bedroom',
+      x: 30.3,
+      y: 53.7,
+      images: [`${mapImageBase}/Bedrooms/EucalyptusBedroom.png`]
+    },
+    {
+      id: 'east-bathroom',
+      label: 'Bathroom',
+      title: 'East Bathroom',
+      x: 41.2,
+      y: 26.5,
+      images: [`${mapImageBase}/Bathrooms/Bathroom_03.png`]
+    },
+    {
+      id: 'widows-suite',
+      label: "Widow's Suite",
+      x: 54,
+      y: 27.2,
+      images: [`${mapImageBase}/Bedrooms/WidowsSuite.png`]
+    },
+    {
+      id: 'east-verandah',
+      label: 'Verandah',
+      title: 'East Verandah',
+      x: 50.8,
+      y: 33.1,
+      images: [`${mapImageBase}/Outside/Varandah_eastside.png`]
+    },
+    {
+      id: 'front-verandah',
+      label: 'Verandah',
+      title: 'Front Verandah',
+      x: 23.5,
+      y: 59.1,
+      images: [`${mapImageBase}/Outside/Verandah_FrontDoor.png`, `${mapImageBase}/Outside/Varandah_02.png`]
+    },
+    {
+      id: 'baroos-retreat',
+      label: "Baroo's Retreat",
+      x: 72,
+      y: 17.2,
+      images: [`${mapImageBase}/Bedrooms/BaroosRetreat.png`]
+    },
+    {
+      id: 'cottage-kitchen',
+      label: 'Cottage Kitchen',
+      x: 81.2,
+      y: 17.5,
+      images: []
+    },
+    {
+      id: 'washroom',
+      label: 'Washroom',
+      x: 89.6,
+      y: 18.3,
+      images: []
+    },
+    {
+      id: 'lounge',
+      label: 'Lounge',
+      x: 93.4,
+      y: 15.2,
+      images: []
+    },
+    {
+      id: 'cottage-verandah',
+      label: 'Verandah',
+      title: 'Cottage Verandah',
+      x: 75.3,
+      y: 22.5,
+      images: [`${mapImageBase}/Outside/Varandah_cottage.png`]
+    },
+    {
+      id: 'garden-room',
+      label: 'Garden Room',
+      x: 90.8,
+      y: 29.8,
+      images: [`${mapImageBase}/Bedrooms/GardenRoom.png`]
+    },
+    {
+      id: 'conservatory-garden',
+      label: 'Conservatory Garden',
+      x: 89,
+      y: 40.9,
+      images: []
+    },
+    {
+      id: 'estate-grove',
+      label: 'Estate Grove',
+      x: 65.2,
+      y: 62,
+      images: []
+    },
+    {
+      id: 'lake',
+      label: 'Lake',
+      x: 58.3,
+      y: 78,
+      images: [`${mapImageBase}/Outside/POND.png`]
+    },
+    {
+      id: 'driveway-garden',
+      label: 'Driveway Garden',
+      x: 13,
+      y: 79.6,
+      images: []
+    }
+  ];
   const hostFiles = [
     'relationships.json',
     'acts.json',
@@ -55,6 +250,7 @@
   const sections = {
     overview: document.getElementById('overview'),
     characters: document.getElementById('characters'),
+    map: document.getElementById('map'),
     relationships: document.getElementById('relationships'),
     acts: document.getElementById('acts'),
     locations: document.getElementById('locations'),
@@ -478,6 +674,127 @@
       }
 
       updateContent();
+    }
+  }
+
+  function renderMap() {
+    const container = document.getElementById('mapContent');
+    container.innerHTML = '';
+
+    const shell = document.createElement('div');
+    shell.className = 'estate-map-shell';
+
+    const stage = document.createElement('div');
+    stage.className = 'estate-map-stage';
+
+    const mapImage = document.createElement('img');
+    mapImage.className = 'estate-map-image';
+    mapImage.src = ESTATE_MAP_IMAGE;
+    mapImage.alt = 'Illustrated map of Baroo Estate with labelled rooms and estate areas.';
+    stage.appendChild(mapImage);
+
+    mapTargets.forEach(target => {
+      const galleryTitle = target.title || target.label;
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'map-hotspot';
+      button.style.left = `${target.x}%`;
+      button.style.top = `${target.y}%`;
+      button.textContent = target.label;
+      button.title = `Open gallery for ${galleryTitle}`;
+      button.setAttribute('aria-label', `Open gallery for ${galleryTitle}`);
+      button.addEventListener('click', () => openMapGallery(target));
+      stage.appendChild(button);
+    });
+
+    shell.appendChild(stage);
+    container.appendChild(shell);
+  }
+
+  function openMapGallery(target) {
+    const galleryTitle = target.title || target.label;
+    closeMapGallery();
+
+    const modal = document.createElement('div');
+    modal.className = 'map-gallery-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'mapGalleryTitle');
+
+    const backdrop = document.createElement('button');
+    backdrop.type = 'button';
+    backdrop.className = 'map-gallery-backdrop';
+    backdrop.setAttribute('aria-label', 'Close map gallery');
+    backdrop.addEventListener('click', closeMapGallery);
+
+    const panel = document.createElement('div');
+    panel.className = 'map-gallery-panel';
+
+    const header = document.createElement('div');
+    header.className = 'map-gallery-header';
+
+    const title = document.createElement('h3');
+    title.id = 'mapGalleryTitle';
+    title.textContent = galleryTitle;
+
+    const closeButton = document.createElement('button');
+    closeButton.type = 'button';
+    closeButton.className = 'map-gallery-close';
+    closeButton.textContent = 'Close';
+    closeButton.addEventListener('click', closeMapGallery);
+
+    header.appendChild(title);
+    header.appendChild(closeButton);
+    panel.appendChild(header);
+
+    const gallery = document.createElement('div');
+    gallery.className = 'map-gallery-grid';
+
+    if (target.images.length > 0) {
+      target.images.forEach((imagePath, index) => {
+        const figure = document.createElement('figure');
+        figure.className = 'map-gallery-item';
+
+        const image = document.createElement('img');
+        image.src = imagePath;
+        image.alt = `${galleryTitle} gallery image ${index + 1}`;
+
+        const caption = document.createElement('figcaption');
+        caption.textContent = target.images.length > 1
+          ? `${galleryTitle} view ${index + 1}`
+          : galleryTitle;
+
+        figure.appendChild(image);
+        figure.appendChild(caption);
+        gallery.appendChild(figure);
+      });
+    } else {
+      const empty = document.createElement('p');
+      empty.className = 'map-gallery-empty';
+      empty.textContent = 'No gallery image has been added for this area yet.';
+      gallery.appendChild(empty);
+    }
+
+    panel.appendChild(gallery);
+    modal.appendChild(backdrop);
+    modal.appendChild(panel);
+    document.body.appendChild(modal);
+    closeButton.focus();
+
+    document.addEventListener('keydown', handleMapGalleryKeydown);
+  }
+
+  function closeMapGallery() {
+    const modal = document.querySelector('.map-gallery-modal');
+    if (modal) {
+      modal.remove();
+    }
+    document.removeEventListener('keydown', handleMapGalleryKeydown);
+  }
+
+  function handleMapGalleryKeydown(event) {
+    if (event.key === 'Escape') {
+      closeMapGallery();
     }
   }
 
@@ -955,6 +1272,7 @@
   function renderAll() {
     renderOverview();
     renderCharacters();
+    renderMap();
 
     if (!hostMode) {
       clearHostOnlyContent();
