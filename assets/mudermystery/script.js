@@ -10,6 +10,7 @@
   const CHARACTER_PLACEHOLDER_IMAGE = 'assets/mudermystery/photos/agathaplaceholder.png';
   const PRIVATE_CHARACTER_FILE = 'private-characters.json';
   const ESTATE_MAP_IMAGE = 'assets/mudermystery/Map/MapImages/EstateMap.jpeg';
+  const MAP_POPOUT_ICON = 'assets/mudermystery/Map/popout-icon.svg';
   const mapImageBase = 'assets/mudermystery/Map/MapImages';
   const publicSections = new Set(['overview', 'characters', 'map']);
   const mapTargets = [
@@ -236,6 +237,7 @@
   let selectedMapTargetId = mapTargets[0].id;
   let mapHotspotsVisible = true;
   let mapPopoutOpen = false;
+  let mapPopoutZoom = 1;
   let data = {
     characters: [],
     mapDescriptions: []
@@ -726,6 +728,7 @@
     stage.appendChild(mapImage);
 
     if (popout) {
+      stage.style.width = `${mapPopoutZoom * 100}%`;
       return stage;
     }
 
@@ -750,7 +753,11 @@
     popoutButton.className = 'map-overlay-btn map-popout-btn';
     popoutButton.setAttribute('aria-label', 'Pop out estate map');
     popoutButton.title = 'Pop out estate map';
-    popoutButton.innerHTML = '<span aria-hidden="true">↖</span><span aria-hidden="true">↘</span>';
+    const popoutIcon = document.createElement('img');
+    popoutIcon.src = MAP_POPOUT_ICON;
+    popoutIcon.alt = '';
+    popoutIcon.setAttribute('aria-hidden', 'true');
+    popoutButton.appendChild(popoutIcon);
     popoutButton.addEventListener('click', openMapPopout);
     controls.appendChild(popoutButton);
 
@@ -782,6 +789,7 @@
 
   function openMapPopout() {
     mapPopoutOpen = true;
+    mapPopoutZoom = 1;
     renderMapPopout();
     document.addEventListener('keydown', handleMapPopoutKeydown);
   }
@@ -813,11 +821,49 @@
     closeButton.textContent = 'Close';
     closeButton.addEventListener('click', closeMapPopout);
 
-    panel.appendChild(createMapStage({ popout: true }));
+    const zoomControls = createMapZoomControls();
+    const scrollArea = document.createElement('div');
+    scrollArea.className = 'map-popout-scroll';
+    scrollArea.appendChild(createMapStage({ popout: true }));
+
+    panel.appendChild(scrollArea);
+    panel.appendChild(zoomControls);
     panel.appendChild(closeButton);
     modal.appendChild(backdrop);
     modal.appendChild(panel);
     document.body.appendChild(modal);
+  }
+
+  function createMapZoomControls() {
+    const controls = document.createElement('div');
+    controls.className = 'map-popout-zoom-controls';
+
+    const zoomOut = document.createElement('button');
+    zoomOut.type = 'button';
+    zoomOut.textContent = '−';
+    zoomOut.setAttribute('aria-label', 'Zoom map out');
+    zoomOut.disabled = mapPopoutZoom <= 1;
+    zoomOut.addEventListener('click', () => setMapPopoutZoom(mapPopoutZoom - 0.25));
+
+    const zoomLevel = document.createElement('span');
+    zoomLevel.textContent = `${Math.round(mapPopoutZoom * 100)}%`;
+
+    const zoomIn = document.createElement('button');
+    zoomIn.type = 'button';
+    zoomIn.textContent = '+';
+    zoomIn.setAttribute('aria-label', 'Zoom map in');
+    zoomIn.disabled = mapPopoutZoom >= 3;
+    zoomIn.addEventListener('click', () => setMapPopoutZoom(mapPopoutZoom + 0.25));
+
+    controls.appendChild(zoomOut);
+    controls.appendChild(zoomLevel);
+    controls.appendChild(zoomIn);
+    return controls;
+  }
+
+  function setMapPopoutZoom(value) {
+    mapPopoutZoom = Math.min(3, Math.max(1, value));
+    renderMapPopout();
   }
 
   function closeMapPopout() {

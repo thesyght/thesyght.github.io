@@ -236,13 +236,16 @@ body {
 }
 .map-popout-btn {
   display: inline-grid;
-  grid-template-columns: auto auto;
-  gap: 1px;
   place-items: center;
   width: 38px;
   height: 38px;
   padding: 0;
-  font-size: 16px;
+}
+.map-popout-btn img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  filter: invert(1);
 }
 .map-hotspot {
   position: absolute;
@@ -380,21 +383,29 @@ body {
   z-index: 1;
   display: grid;
   place-items: center;
-  width: calc(100vw - 256px);
-  height: calc(100vh - 36px);
+  width: calc(75vw - 192px);
+  height: calc(75vh - 27px);
   max-width: 100%;
   max-height: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  background: rgba(14, 27, 39, 0.68);
+}
+.map-popout-scroll {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 .popout-map-stage {
   width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
+  max-width: none;
+  height: auto;
+  display: block;
 }
 .popout-map-stage .estate-map-image {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
+  object-fit: initial;
 }
 .map-popout-close {
   position: absolute;
@@ -415,6 +426,41 @@ body {
   background: rgba(247, 237, 200, 0.95);
   color: #142231;
   outline: none;
+}
+.map-popout-zoom-controls {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border: 1px solid rgba(247, 237, 200, 0.45);
+  border-radius: 999px;
+  background: rgba(14, 27, 39, 0.78);
+  color: #f7edc8;
+}
+.map-popout-zoom-controls button {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(247, 237, 200, 0.92);
+  color: #142231;
+  cursor: pointer;
+  font: inherit;
+  font-size: 18px;
+  line-height: 1;
+}
+.map-popout-zoom-controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.map-popout-zoom-controls span {
+  min-width: 44px;
+  text-align: center;
+  font-size: 12px;
 }
 
 /* Character list and details */
