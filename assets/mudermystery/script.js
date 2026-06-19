@@ -235,6 +235,7 @@
   let selectedCharacterId = null;
   let selectedMapTargetId = mapTargets[0].id;
   let mapHotspotsVisible = true;
+  let mapPopoutOpen = false;
   let data = {
     characters: [],
     mapDescriptions: []
@@ -697,30 +698,61 @@
     const leftPanel = document.createElement('div');
     leftPanel.className = 'map-left-panel';
 
-    const controls = document.createElement('div');
-    controls.className = 'map-controls';
-
-    const hotspotToggle = document.createElement('button');
-    hotspotToggle.type = 'button';
-    hotspotToggle.className = 'control-btn';
-    hotspotToggle.textContent = mapHotspotsVisible ? 'Hide hotspots' : 'Show hotspots';
-    hotspotToggle.addEventListener('click', () => {
-      mapHotspotsVisible = !mapHotspotsVisible;
-      renderMap();
-    });
-    controls.appendChild(hotspotToggle);
-
     const shell = document.createElement('div');
     shell.className = 'estate-map-shell';
+    const stage = createMapStage();
 
+    shell.appendChild(stage);
+    leftPanel.appendChild(shell);
+
+    const rightPanel = document.createElement('div');
+    rightPanel.className = 'map-right-panel';
+    rightPanel.appendChild(renderMapGalleryPanel(selectedTarget));
+    rightPanel.appendChild(renderMapTextPanel(selectedTarget));
+
+    layout.appendChild(leftPanel);
+    layout.appendChild(rightPanel);
+    container.appendChild(layout);
+  }
+
+  function createMapStage({ popout = false } = {}) {
     const stage = document.createElement('div');
-    stage.className = `estate-map-stage${mapHotspotsVisible ? '' : ' hotspots-hidden'}`;
+    stage.className = `estate-map-stage${mapHotspotsVisible ? '' : ' hotspots-hidden'}${popout ? ' popout-map-stage' : ''}`;
 
     const mapImage = document.createElement('img');
     mapImage.className = 'estate-map-image';
     mapImage.src = ESTATE_MAP_IMAGE;
     mapImage.alt = 'Illustrated map of Baroo Estate with labelled rooms and estate areas.';
     stage.appendChild(mapImage);
+
+    const controls = document.createElement('div');
+    controls.className = 'map-overlay-controls';
+
+    const hotspotToggle = document.createElement('button');
+    hotspotToggle.type = 'button';
+    hotspotToggle.className = 'map-overlay-btn';
+    hotspotToggle.textContent = mapHotspotsVisible ? 'Hide hotspots' : 'Show hotspots';
+    hotspotToggle.addEventListener('click', () => {
+      mapHotspotsVisible = !mapHotspotsVisible;
+      renderMap();
+      if (mapPopoutOpen) {
+        renderMapPopout();
+      }
+    });
+    controls.appendChild(hotspotToggle);
+
+    if (!popout) {
+      const popoutButton = document.createElement('button');
+      popoutButton.type = 'button';
+      popoutButton.className = 'map-overlay-btn map-popout-btn';
+      popoutButton.setAttribute('aria-label', 'Pop out estate map');
+      popoutButton.title = 'Pop out estate map';
+      popoutButton.innerHTML = '<span aria-hidden="true">↖</span><span aria-hidden="true">↘</span>';
+      popoutButton.addEventListener('click', openMapPopout);
+      controls.appendChild(popoutButton);
+    }
+
+    stage.appendChild(controls);
 
     mapTargets.forEach(target => {
       const galleryTitle = target.title || target.label;
@@ -736,22 +768,69 @@
       button.addEventListener('click', () => {
         selectedMapTargetId = target.id;
         renderMap();
+        if (mapPopoutOpen) {
+          renderMapPopout();
+        }
       });
       stage.appendChild(button);
     });
 
-    shell.appendChild(stage);
-    leftPanel.appendChild(controls);
-    leftPanel.appendChild(shell);
+    return stage;
+  }
 
-    const rightPanel = document.createElement('div');
-    rightPanel.className = 'map-right-panel';
-    rightPanel.appendChild(renderMapGalleryPanel(selectedTarget));
-    rightPanel.appendChild(renderMapTextPanel(selectedTarget));
+  function openMapPopout() {
+    mapPopoutOpen = true;
+    renderMapPopout();
+    document.addEventListener('keydown', handleMapPopoutKeydown);
+  }
 
-    layout.appendChild(leftPanel);
-    layout.appendChild(rightPanel);
-    container.appendChild(layout);
+  function renderMapPopout() {
+    const existing = document.querySelector('.map-popout-modal');
+    if (existing) {
+      existing.remove();
+    }
+
+    const modal = document.createElement('div');
+    modal.className = 'map-popout-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Expanded estate map');
+
+    const backdrop = document.createElement('button');
+    backdrop.type = 'button';
+    backdrop.className = 'map-popout-backdrop';
+    backdrop.setAttribute('aria-label', 'Close expanded estate map');
+    backdrop.addEventListener('click', closeMapPopout);
+
+    const panel = document.createElement('div');
+    panel.className = 'map-popout-panel';
+
+    const closeButton = document.createElement('button');
+    closeButton.type = 'button';
+    closeButton.className = 'map-popout-close';
+    closeButton.textContent = 'Close';
+    closeButton.addEventListener('click', closeMapPopout);
+
+    panel.appendChild(createMapStage({ popout: true }));
+    panel.appendChild(closeButton);
+    modal.appendChild(backdrop);
+    modal.appendChild(panel);
+    document.body.appendChild(modal);
+  }
+
+  function closeMapPopout() {
+    mapPopoutOpen = false;
+    const modal = document.querySelector('.map-popout-modal');
+    if (modal) {
+      modal.remove();
+    }
+    document.removeEventListener('keydown', handleMapPopoutKeydown);
+  }
+
+  function handleMapPopoutKeydown(event) {
+    if (event.key === 'Escape') {
+      closeMapPopout();
+    }
   }
 
   function getMapRoomDetails(target) {

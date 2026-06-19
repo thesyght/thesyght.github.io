@@ -185,11 +185,6 @@ body {
   gap: 16px;
   align-content: start;
 }
-.map-controls {
-  display: flex;
-  justify-content: flex-start;
-  margin: 0 0 10px;
-}
 .estate-map-shell {
   width: 100%;
   overflow-x: auto;
@@ -209,6 +204,45 @@ body {
   display: block;
   width: 100%;
   height: auto;
+}
+.map-overlay-controls {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+.map-overlay-btn {
+  border: 1px solid rgba(247, 237, 200, 0.55);
+  border-radius: 999px;
+  background: rgba(14, 27, 39, 0.76);
+  color: #f7edc8;
+  padding: 7px 11px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(4px);
+}
+.map-overlay-btn:hover,
+.map-overlay-btn:focus-visible {
+  background: rgba(247, 237, 200, 0.95);
+  color: #142231;
+  outline: none;
+}
+.map-popout-btn {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  gap: 1px;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  font-size: 16px;
 }
 .map-hotspot {
   position: absolute;
@@ -325,6 +359,54 @@ body {
 .map-description-card p {
   margin: 0;
   line-height: 1.55;
+}
+.map-popout-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+.map-popout-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(7, 12, 18, 0.82);
+  cursor: pointer;
+}
+.map-popout-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: min(100%, 66.5vh);
+  max-width: calc(100vw - 36px);
+  max-height: calc(100vh - 36px);
+}
+.popout-map-stage {
+  width: min(100%, 66.5vh);
+  max-height: calc(100vh - 36px);
+}
+.map-popout-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  border: 1px solid rgba(247, 237, 200, 0.55);
+  border-radius: 999px;
+  background: rgba(14, 27, 39, 0.78);
+  color: #f7edc8;
+  padding: 8px 12px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+.map-popout-close:hover,
+.map-popout-close:focus-visible {
+  background: rgba(247, 237, 200, 0.95);
+  color: #142231;
+  outline: none;
 }
 
 /* Character list and details */
