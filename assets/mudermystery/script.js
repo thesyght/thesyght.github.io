@@ -725,6 +725,10 @@
     mapImage.alt = 'Illustrated map of Baroo Estate with labelled rooms and estate areas.';
     stage.appendChild(mapImage);
 
+    if (popout) {
+      return stage;
+    }
+
     const controls = document.createElement('div');
     controls.className = 'map-overlay-controls';
 
@@ -741,16 +745,14 @@
     });
     controls.appendChild(hotspotToggle);
 
-    if (!popout) {
-      const popoutButton = document.createElement('button');
-      popoutButton.type = 'button';
-      popoutButton.className = 'map-overlay-btn map-popout-btn';
-      popoutButton.setAttribute('aria-label', 'Pop out estate map');
-      popoutButton.title = 'Pop out estate map';
-      popoutButton.innerHTML = '<span aria-hidden="true">↖</span><span aria-hidden="true">↘</span>';
-      popoutButton.addEventListener('click', openMapPopout);
-      controls.appendChild(popoutButton);
-    }
+    const popoutButton = document.createElement('button');
+    popoutButton.type = 'button';
+    popoutButton.className = 'map-overlay-btn map-popout-btn';
+    popoutButton.setAttribute('aria-label', 'Pop out estate map');
+    popoutButton.title = 'Pop out estate map';
+    popoutButton.innerHTML = '<span aria-hidden="true">↖</span><span aria-hidden="true">↘</span>';
+    popoutButton.addEventListener('click', openMapPopout);
+    controls.appendChild(popoutButton);
 
     stage.appendChild(controls);
 
