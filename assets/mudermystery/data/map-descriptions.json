@@ -83,7 +83,7 @@
     {
       "id": "baroos-retreat",
       "name": "Baroo's Retreat",
-      "description": "A private room away from the main household where J. Baroo could work, rest or meet someone without attracting attention."
+      "description": "A private room away from the main household where J. Baroo could work, rest or exist without the pressures of the main house."
     },
     {
       "id": "cottage-kitchen",
@@ -113,7 +113,7 @@
     {
       "id": "conservatory-garden",
       "name": "Conservatory Garden",
-      "description": "A cultivated garden beside the cottage, with dense plantings, formal paths and several places where a small object could be concealed."
+      "description": "A cultivated garden beside the cottage, with dense plantings, formal paths and several places where a conversation could be had in private."
     },
     {
       "id": "estate-grove",
