@@ -363,6 +363,34 @@ body {
   margin: 0;
   line-height: 1.55;
 }
+.host-map-note-section,
+.host-map-clue-section {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd2bf;
+}
+.host-map-note-section h4,
+.host-map-clue-section h4 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6c6255;
+}
+.host-map-note-list,
+.host-map-clue-list {
+  margin: 0;
+  padding-left: 22px;
+}
+.host-map-note-list li,
+.host-map-clue-list li {
+  margin: 0 0 10px;
+  line-height: 1.55;
+}
+.host-map-note-list li:last-child,
+.host-map-clue-list li:last-child {
+  margin-bottom: 0;
+}
 .map-popout-modal {
   position: fixed;
   inset: 0;
@@ -590,6 +618,28 @@ body {
 .profile-box p {
   margin: 0;
   line-height: 1.55;
+}
+.character-brief-list {
+  margin: 0;
+  padding-left: 22px;
+}
+.character-brief-list li {
+  margin: 0 0 10px;
+  line-height: 1.55;
+}
+.character-brief-list li:last-child {
+  margin-bottom: 0;
+}
+.touchstone-list {
+  margin: 0;
+  padding-left: 22px;
+}
+.touchstone-list li {
+  margin: 0 0 10px;
+  line-height: 1.55;
+}
+.touchstone-list li:last-child {
+  margin-bottom: 0;
 }
 
 /* Relationship graph */

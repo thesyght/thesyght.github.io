@@ -8,6 +8,17 @@
         "wants": "Control of Baroo Holdings and recognition as the child who stayed and worked.",
         "fears": "Being reduced to a board seat while the Director controls the transition.",
         "redHerring": "Loudest apparent motive makes them an early suspect.",
+        "touchstones": [
+          "He believes he was raised to inherit the company and preserve the Baroo legacy.",
+          "His recent performance has been uneven, but he believes he can make it right and that others will not think poorly of it, at least for now.",
+          "He was desperate for his father to recognise his effort, discipline, and suitability.",
+          "His father's distance meant he never received the confirmation he needed.",
+          "Without knowing it, he now looks to The Director as the de facto leader of the company, seeking the approval his father never gave him.",
+          "His confidence comes from his status and depends on appearing superior to everyone around him.",
+          "He belittles others when they make him feel uncertain or overlooked.",
+          "He hopes, most importantly, that the contents of the will prove his father saw him as the rightful successor.",
+          "His worst fear is not being rejected by his father or anyone else, but being considered unremarkable and failing to meet his father's standard."
+        ],
         "actObjectives": {
           "ACT1": "Assert authority and treat the murder as a governance crisis.",
           "ACT2": "Try to lead the search while becoming increasingly unsettled by the fake codicil.",

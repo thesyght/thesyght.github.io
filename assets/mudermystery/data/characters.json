@@ -2,7 +2,7 @@
   "characters": [
     {
       "id": "PROPER_CHILD",
-      "name": "The Proper Child",
+      "name": "Baron Edward Baroo",
       "imagePath": "assets/mudermystery/photos/characters/TheProperChild.png",
       "role": "Proper Child",
       "group": "family",
@@ -14,7 +14,7 @@
     },
     {
       "id": "AWAY_CHILD",
-      "name": "The Cosmopolitan Child",
+      "name": "Charli Baroo",
       "imagePath": "assets/mudermystery/photos/characters/TheAwayChild.png",
       "role": "Cosmopolitan Child",
       "group": "family",
@@ -26,7 +26,7 @@
     },
     {
       "id": "WIDOW",
-      "name": "The Widow",
+      "name": "Camilla Baroo",
       "imagePath": "assets/mudermystery/photos/characters/TheWidow.png",
       "role": "Widow",
       "group": "family",
@@ -38,7 +38,7 @@
     },
     {
       "id": "BASTARD",
-      "name": "The Bastard",
+      "name": "Sam",
       "imagePath": "assets/mudermystery/photos/characters/TheBasterd.png",
       "role": "Bastard",
       "group": "family",
@@ -50,7 +50,7 @@
     },
     {
       "id": "DIPLOMAT",
-      "name": "The Diplomat",
+      "name": "Ivan Abramovich",
       "imagePath": "assets/mudermystery/photos/characters/TheDiplomat.png",
       "role": "Diplomat",
       "group": "compatriot",
@@ -62,7 +62,7 @@
     },
     {
       "id": "OPERA",
-      "name": "The Opera Singer",
+      "name": "Ophelia Rose",
       "imagePath": "assets/mudermystery/photos/characters/TheOperaSinger.png",
       "role": "Opera Singer",
       "group": "compatriot",
@@ -74,7 +74,7 @@
     },
     {
       "id": "DIRECTOR",
-      "name": "The Director",
+      "name": "Cornelius Cutis",
       "imagePath": "assets/mudermystery/photos/characters/TheDirector.png",
       "role": "Director / Best Friend",
       "group": "compatriot",
@@ -86,7 +86,7 @@
     },
     {
       "id": "PUBLICIST",
-      "name": "The Publicist",
+      "name": "Rex Pressman",
       "imagePath": "assets/mudermystery/photos/characters/ThePublicist.png",
       "role": "Publicist / Journalist",
       "group": "family",
@@ -98,7 +98,7 @@
     },
     {
       "id": "ANTIQUE",
-      "name": "The Antiquarian",
+      "name": "Augusta Bruce",
       "imagePath": "assets/mudermystery/photos/characters/TheAntiqueCollector.png",
       "role": "Antique Collector",
       "group": "compatriot",

@@ -1,0 +1,506 @@
+{
+  "characterBriefs": {
+    "DIRECTOR": {
+      "title": "The Director (Cornelius Cutis)",
+      "sections": [
+        {
+          "title": "Who you are",
+          "bullets": [
+            "You are Cornelius Cutis, known as The Director. Your exact formal title has not been established.",
+            "You were J. Baroo's old friend and closest business confidant, involved for years in keeping the Baroo company, household and reputation functioning.",
+            "Baroo trusted you with sensitive company governance, family and Collection matters, although you were willing to challenge him directly.",
+            "Your overriding concern is preserving the Baroo structure. You believe it needs firm, centralised control to survive."
+          ]
+        },
+        {
+          "title": "Baron Edward Baroo",
+          "bullets": [
+            "You believe Baron has become a serious threat to Baroo Holdings through reckless ventures, misuse of company resources and promises made using the Baroo name.",
+            "You calculated roughly $7 million in exposure and eventually advised J. Baroo to remove Baron from all executive authority.",
+            "J. resisted because he had spent twenty years preparing Baron to succeed him and did not want to publicly admit that this had failed.",
+            "Baron does not know your true position. You have privately assured him that you support him, will protect his position and will handle his father and the Board.",
+            "Your reasoning is that Baron needs to remain calm and contained while the company is protected. What you cannot afford is Baron discovering that you were simultaneously recommending his removal."
+          ]
+        },
+        {
+          "title": "The Collection and artefacts",
+          "bullets": [
+            "You originally dealt with the Baroo Collection administratively, including insurance, custody, storage, event movements and proper accounting.",
+            "J. later told you that the Ash Crown records were irreconcilable: estate records, a Vienna workshop and a photograph of Ophelia wearing it could not all be true.",
+            "J. concluded that the Baroo name had been used to manufacture a respectable history for disputed objects.",
+            "He ordered you to secure the questionable artefacts and organise genuinely independent provenance and legal reviews.",
+            "You know J. specifically did not trust Augusta, Charli, Ivan or the Publicist to control that review.",
+            "You are not established as having participated in the original artefact wrongdoing, and you do not know the full extent of what Augusta, Charli and Ivan actually did."
+          ]
+        },
+        {
+          "title": "The Widow, Sam and Ophelia",
+          "bullets": [
+            "You want to minimise any exposure of Sam's true connection to J. Baroo and prevent the “Bastard” issue becoming a public family scandal.",
+            "Your preferred solution is to keep Sam on their existing path through ADFA, without any dramatic change in status that would invite questions about why Baroo is providing for them.",
+            "You want Camilla, the Widow, kept cooperative rather than encouraged to make Sam's position an issue. Your preferred arrangement is to give her custody of Sam and a substantial bonus or allowance to manage the situation quietly.",
+            "You also want to avoid giving Ophelia Rose any confirmation of her connection to Sam. Your preferred treatment is simply a conventional will package thanking her as a friend of J. Baroo, with nothing that would encourage her to investigate further.",
+            "The actual will is much more dangerous from your perspective. It formally recognises Sam, gives Camilla custody, apologises directly to Ophelia and gives Ophelia a small land title connected to a theatre in Sydney.",
+            "You recognise that these provisions, particularly when considered together, risk confirming relationships and family history that you would much rather leave ambiguous.",
+            "Your reasoning is consistent with your broader approach: provide for everyone sufficiently to prevent grievance, but avoid dramatic inheritances, admissions or written acknowledgements that expose the underlying family scandal."
+          ]
+        },
+        {
+          "title": "Going into the night",
+          "bullets": [
+            "J. Baroo is dead and you are attending the dinner and will reading at Baroo Manor.",
+            "You know a dangerous Black Codicil exists and believe uncontrolled disclosure could expose several Baroo scandals at once and destabilise the company, family and wider institution.",
+            "You want the company protected from Baron, the Collection scandal contained and properly dealt with, and authority kept centralised.",
+            "Your clearest personal secret is your double position with Baron: he believes you are his ally, while you privately tried to have him stripped of executive power.",
+            "Your basic reasoning is institutional rather than personal: individual embarrassment, family conflict and even difficult concealments are secondary to preventing the entire Baroo structure from collapsing."
+          ]
+        }
+      ]
+    },
+    "OPERA": {
+      "title": "Ophelia Rose",
+      "sections": [
+        {
+          "title": "Your history with J. Baroo",
+          "bullets": [
+            "You are Ophelia Rose, a successful opera singer and an old friend of J. Baroo.",
+            "You and J. had an affair during his previous marriage.",
+            "The affair created a lasting and complicated connection between you, J. and the Baroo family.",
+            "Sam is central to the consequences of that affair and to the history that J. never properly acknowledged publicly.",
+            "Camilla has since taken on the practical role of caring for Sam, allowing the underlying family situation to remain largely unspoken.",
+            "J. continued to support Sam financially without publicly resolving the question of Sam's place in the family.",
+            "You have carried resentment towards J. for leaving that situation unresolved and for failing to give you the acknowledgement or apology you believed was owed.",
+            "You therefore have a very personal interest in what J. chose to put in his will about you, Sam and Camilla."
+          ]
+        },
+        {
+          "title": "Your life as an opera singer",
+          "bullets": [
+            "Your own identity is firmly established outside the Baroo family. You have built a career as an opera singer and move comfortably through the international cultural and social circles around the Baroos.",
+            "You have performed as part of Baroo Cultural Exchange events, including the Vienna event.",
+            "At Vienna, you wore the Ash Crown as part of that world of performances, private events and prestigious objects.",
+            "You know you wore the Crown. You are not, however, one of the people managing its provenance, ownership paperwork or international movements.",
+            "This means you have become visibly connected to an artefact scandal whose underlying mechanics you do not fully understand."
+          ]
+        },
+        {
+          "title": "Sam and Camilla",
+          "bullets": [
+            "Sam matters to you for deeply personal reasons. Your interest in them is not simply that of another family friend.",
+            "Much of Sam's practical upbringing and care has fallen to Camilla, and that arrangement has allowed Sam's real place within the Baroo story to remain largely unspoken.",
+            "J. has financially supported Sam without giving the situation the kind of public acknowledgement that would force everyone to confront what Sam represents.",
+            "You have lived with that ambiguity rather than having a clean public explanation of where Sam belongs.",
+            "You therefore have a particular reason to pay attention to anything J. may have written about Sam before his death."
+          ]
+        },
+        {
+          "title": "What you expect from the will",
+          "bullets": [
+            "You have no reason to expect J.'s will to suddenly expose the private history surrounding you and Sam.",
+            "A conventional bequest to you, framed as thanks to an old friend, would not be surprising and would reveal nothing.",
+            "You do not know what J.'s actual arrangements say about you, Sam or Camilla."
+          ]
+        },
+        {
+          "title": "What you carry into the night",
+          "bullets": [
+            "J. Baroo was not simply a wealthy acquaintance. He was someone with whom you shared a long and unresolved personal history.",
+            "Sam is at the centre of the part of that history that has never been properly acknowledged.",
+            "Camilla's role in Sam's life has allowed the practical situation to continue without forcing the underlying question into the open.",
+            "You have your own successful life and career and do not need to be treated merely as an appendage of the Baroo family.",
+            "You do, however, care very much about what J. chose to say about you and Sam when he finally put his affairs in writing.",
+            "You arrive expecting a will reading, without knowing what J. ultimately chose to acknowledge or provide."
+          ]
+        }
+      ]
+    },
+    "BASTARD": {
+      "title": "Sam (The Bastard)",
+      "sections": [
+        {
+          "title": "Who you are",
+          "bullets": [
+            "You are Sam, known within the mystery as “The Bastard”.",
+            "You are young and currently on a path through ADFA, with your education, training and future largely organised around that direction.",
+            "J. Baroo has quietly provided financial support for you for some time.",
+            "That support has not always come directly from him. Camilla, his widow, has often paid expenses on your behalf.",
+            "You have therefore grown up with a continuous connection to the Baroo household without occupying the same clear position as J.'s acknowledged children.",
+            "This connection is strongest with Camilla, whom you see as a de facto parental figure."
+          ]
+        },
+        {
+          "title": "J. Baroo, Ophelia and Camilla",
+          "bullets": [
+            "Your existence has not been explained by anyone; you have always known not to ask too many questions.",
+            "Your existence has never been comfortably or publicly incorporated into the Baroo family.",
+            "J. has supported you financially, but he has avoided giving you the same openly acknowledged status as his other children.",
+            "You do not know your biological mother.",
+            "Camilla has taken on much of the practical parental responsibility for you and has acted as the person dealing with your day-to-day needs and expenses.",
+            "This has created an unusual situation in which your biological connection to J. and some unknown woman exists alongside Camilla's practical and familial role in your life.",
+            "Your position has always seemed to depend upon a degree of discretion from you. Whether true or not, it has felt like a silent threat at times."
+          ]
+        },
+        {
+          "title": "Your future",
+          "bullets": [
+            "Your expected future is ADFA. That path gives you a respectable, independent direction away from the internal politics of the Baroo family.",
+            "You understood this to be desirable to J. Baroo, and likely to his other children, because it simplified the situation.",
+            "There has been no expectation that you will suddenly enter Baroo Holdings, compete with J.'s acknowledged children or become a public claimant to the family fortune. The others have never felt threatened by you, just slightly uncomfortable.",
+            "You have nevertheless depended to some extent on arrangements made by J. and Camilla, so his death creates genuine uncertainty about what happens next.",
+            "You have also grown up and now feel capable of asking hard questions."
+          ]
+        },
+        {
+          "title": "Going into the night",
+          "bullets": [
+            "J. Baroo is dead and you are attending the gathering surrounding his will.",
+            "You know that your relationship with the Baroo family is unusual and that J. has supported you, but you have never occupied the secure position of an acknowledged Baroo heir.",
+            "Your immediate concern is what J.'s death means for your future, your support and your place within the family.",
+            "You have reason to pay particular attention to anything the will says about you or Camilla, as she is your provider for the most part."
+          ]
+        }
+      ]
+    },
+    "WIDOW": {
+      "title": "Camilla Baroo",
+      "sections": [
+        {
+          "title": "Who you are",
+          "bullets": [
+            "You are Camilla Baroo, J. Baroo's widow.",
+            "You married Baroo more than ten years ago.",
+            "You have spent years inside the Baroo family and household, with all of the tensions that come with J.'s children, money and complicated personal history.",
+            "You are accustomed to dealing with problems practically rather than waiting for J. to resolve them himself.",
+            "This has been particularly true with Sam."
+          ]
+        },
+        {
+          "title": "Sam",
+          "bullets": [
+            "Sam has occupied an unusual place around the Baroo family for years.",
+            "You have become Sam's de facto parental figure and are the person they rely upon most consistently.",
+            "You have often paid Sam's expenses yourself when J.'s arrangements were delayed or inadequate.",
+            "You have pushed repeatedly for J. to financially support Sam, but stopped short of pushing him to give Sam the same straightforward position within the family as his acknowledged children, as you knew this would have been a bit too far for J.",
+            "You have pressed J. to put proper arrangements for Sam in writing rather than continuing with the existing informal system.",
+            "Sam's intended path through ADFA has helped keep the situation relatively uncomplicated, giving them a future independent of Baroo Holdings and the inheritance politics surrounding J.'s children.",
+            "Whatever the rest of the family thinks about Sam, your concern is much more practical: Sam needs stability, support and someone who will actually take responsibility for them."
+          ]
+        },
+        {
+          "title": "J. Baroo and the family",
+          "bullets": [
+            "You know J. had a habit of leaving difficult family matters unresolved when resolving them would force uncomfortable admissions or decisions.",
+            "Sam is one of the clearest examples of this.",
+            "This means that you have also had a somewhat unresolved relationship with the other children, who did not need you when you arrived and especially do not now that they are adults.",
+            "The acknowledged Baroo children have never treated Sam as a serious rival for their position, although Sam's presence has created discomfort within the family.",
+            "You understand that J.'s death could upset arrangements that previously depended simply on his money and continued authority."
+          ]
+        },
+        {
+          "title": "Going into the night",
+          "bullets": [
+            "J. is dead and you are attending the gathering surrounding his will.",
+            "Your principal concern is what now happens to Sam and whether J. finally made proper provision for them.",
+            "You have already spent years acting as Sam's practical parent and do not want their future left uncertain because J. failed to make clear arrangements.",
+            "You are also conscious that anything J. has written about Sam could force the wider family to confront a situation they have previously been able to leave deliberately vague.",
+            "You do not know what J.'s will actually says."
+          ]
+        }
+      ]
+    },
+    "PROPER_CHILD": {
+      "title": "Baron Edward Baroo",
+      "sections": [
+        {
+          "title": "Who you are",
+          "bullets": [
+            "You are Baron Edward Baroo, J. Baroo's son and the child most closely associated with the future of Baroo Holdings.",
+            "Your father has spent much of your life preparing you to eventually take greater responsibility for the family company.",
+            "You have therefore grown up with a strong expectation that Baroo Holdings, and eventually leadership of it, forms part of your future.",
+            "You have pursued a number of your own ventures alongside your role within the company, with mixed success."
+          ]
+        },
+        {
+          "title": "J. Baroo and Baroo Holdings",
+          "bullets": [
+            "Your recent ventures have created increasingly serious financial and governance problems.",
+            "You have used Baroo Holdings staff, capital—more often as collateral—its network and the Baroo name to support ventures that you regard as part of your broader business activity.",
+            "Others within the company have increasingly treated these activities as unauthorised or financially dangerous.",
+            "Your spending and executive authority have recently been restricted while your activities are reviewed.",
+            "You know your father has become increasingly concerned about your judgement and the financial exposure surrounding your ventures.",
+            "You nevertheless believe that you have spent years being prepared to succeed him and that this cannot simply be discarded because several ventures have gone badly. You took some risks, and they did not pay off.",
+            "Before his death, you had begun to seriously worry that your father intended to cut you out of the position you believed had effectively been promised to you."
+          ]
+        },
+        {
+          "title": "The Director, Cornelius Cutis",
+          "bullets": [
+            "Cornelius has been an important senior adviser and mentor to you during the dispute with your father.",
+            "You have repeatedly turned to him when Finance, creditors or your father have challenged your authority.",
+            "You believe you have his support. He has told you himself that he will protect your position and that you should allow him to deal with your father and the Board during this trying time."
+          ]
+        },
+        {
+          "title": "Charli",
+          "bullets": [
+            "Charli is your sibling, but the two of you have followed very different paths within the Baroo family.",
+            "While you have been prepared for responsibility within Baroo Holdings, Charli's interests and activities have centred much more on the international, social and cultural side of the Baroo world.",
+            "You view her more as a flippant and unserious layabout, with hobbies and distractions instead of a real career.",
+            "You are aware of Charli's involvement with the Baroo Collection and Cultural Exchange, although you are not privy to the full details of those activities.",
+            "You have little care for that side of things and would not mind if it were wholly given to Charli as her own pet project to keep her busy and away from the real business.",
+            "Despite your father's death, you do not believe your position is at risk from Charli."
+          ]
+        },
+        {
+          "title": "Sam",
+          "bullets": [
+            "Sam has been around the Baroo family for years but has never occupied the same clear position as you or your acknowledged siblings. You do not know the full story behind Sam's relationship to your father.",
+            "Camilla has taken on much of the practical responsibility for Sam, while your father has provided financial support in the background.",
+            "You know Sam is important enough to your father and Camilla to be supported, but the family has never been given a straightforward explanation of exactly where Sam fits.",
+            "Sam's presence has caused some discomfort, but you have never regarded them as a serious rival to your own position within the Baroo family or Baroo Holdings.",
+            "As far as you know, Sam is continuing towards a future through ADFA rather than seeking a role in the family company, and that is all you care about."
+          ]
+        },
+        {
+          "title": "Your position going into the night",
+          "bullets": [
+            "J. Baroo is dead and you are attending the gathering surrounding his will.",
+            "Your father's death has made the succession question immediate rather than theoretical.",
+            "You have creditors and financial problems already pressing on you, making what happens to your position and inheritance particularly important.",
+            "You are concerned that your father may have updated his final arrangements to reflect only your recent business failures.",
+            "You still regard yourself as the natural person to inherit significant responsibility within the Baroo structure after years of preparation.",
+            "You are also conscious that the will may redefine not only your own position, but those of Charli, your other siblings and Sam."
+          ]
+        }
+      ]
+    },
+    "AWAY_CHILD": {
+      "title": "Charli Baroo",
+      "sections": [
+        {
+          "title": "Who you are",
+          "bullets": [
+            "You are Charli Baroo, one of J. Baroo's children.",
+            "Your world is international and social, involving travel, private cultural events, collectors and benefactors, and most importantly centring the Baroo Cultural Exchange.",
+            "You have had considerable freedom to use the Baroo name, connections and Collection as part of that world.",
+            "You care little for the main aspects of Baroo Holdings and the Estate."
+          ]
+        },
+        {
+          "title": "J. Baroo and the Collection",
+          "bullets": [
+            "Your father has historically allowed you considerable latitude with the Cultural Exchange and Collection, but recently he has become much more interested in exactly where objects have been, who authorised their movement and what paperwork exists.",
+            "Your office has been asked for ownership records, movement authorities and explanations for payments connected to Collection objects.",
+            "Some of that paperwork is incomplete, inconsistent or difficult to reconcile.",
+            "You know this is not untidy administration. You have helped arrange the international movements, private events and collector introductions involving Baroo objects.",
+            "You know that some of the Collection's movements and histories would be extremely uncomfortable if examined too closely. Particular objects in there push reason when even a cursory examination is made.",
+            "Before his death, your father had begun treating the Collection problem seriously rather than as something that could simply be tidied up internally. You know he made some move on the most problematic pieces."
+          ]
+        },
+        {
+          "title": "Augusta and Ivan",
+          "bullets": [
+            "Augusta has provided the archaeological expertise, identification and provenance work behind many of the objects moving through your world.",
+            "You have relied on her expertise, but the relationship has become increasingly difficult as she has grown nervous about how her work has been used and about movements she says she did not authorise.",
+            "You know some of Augusta's preliminary work has been treated more definitively than she intended.",
+            "Ivan Abramovich has been useful when Collection matters have encountered customs, border, diplomatic or other official difficulties.",
+            "You and Ivan have discussed managing problems around Augusta and the Collection.",
+            "You know there is substantially more at stake in the Collection problem than an embarrassing filing error. You always knew."
+          ]
+        },
+        {
+          "title": "Baron",
+          "bullets": [
+            "Baron is your brother, but the two of you have built very different lives.",
+            "He has spent years being prepared for Baroo Holdings and regards the company as his natural domain.",
+            "You have concentrated on the international, cultural and social side of the Baroo world instead.",
+            "You have heard that some of his recent ventures have caused problems, but the extent of this is unknown to you.",
+            "His corporate difficulties are not your principal concern. Your problem is the Collection."
+          ]
+        },
+        {
+          "title": "Sam and Camilla",
+          "bullets": [
+            "Sam has been around the family for years without ever having the same clearly defined position as you and your siblings.",
+            "You know your father has supported Sam and that Camilla has taken much of the practical responsibility for them.",
+            "You do not know the full explanation for Sam's place in the family.",
+            "As far as you are concerned, Sam has their own future through ADFA and has never had a meaningful impact on your own place in the family.",
+            "Your relationship with Camilla is principally that of your father's wife and a longstanding member of the household rather than a replacement mother."
+          ]
+        },
+        {
+          "title": "Going into the night",
+          "bullets": [
+            "Your father is dead and you are attending the gathering surrounding his will.",
+            "You know he died while becoming increasingly serious about the Collection and demanding records that could expose how some objects have actually been handled.",
+            "You have reason to be concerned about what documents he recovered, what conclusions he reached and what instructions he may have left behind.",
+            "You want to protect yourself and the Cultural Exchange from being made the centre of a public artefact scandal.",
+            "Augusta's increasing anxiety is a problem; you do not know how she will act when pressured.",
+            "Ivan is valuable because he understands the wider problem and has helped manage difficult situations before.",
+            "You do not know what your father's will says or how far he chose to take the Collection issue before he died."
+          ]
+        }
+      ]
+    },
+    "ANTIQUE": {
+      "title": "Augusta Bruce",
+      "sections": [
+        {
+          "title": "Who you are",
+          "bullets": [
+            "You are Augusta Bruce, an archaeologist and antiquarian.",
+            "Your professional life centres on archaeology, historical objects, identification and provenance.",
+            "Within the Baroo world, you have become the person whose expertise gives objects scholarly descriptions, histories and valuations.",
+            "This has drawn you deeply into the Baroo Collection and, increasingly, into problems surrounding how those objects have been acquired and moved.",
+            "You are driven by a long, but troubled, family history in the industry. You are very aware of the need to protect your reputation."
+          ]
+        },
+        {
+          "title": "J. Baroo and the Collection",
+          "bullets": [
+            "You have identified and researched a number of objects for the Baroo Collection, including some prominent pieces such as the Ash Crown.",
+            "Some of the objects have questionable or incomplete histories. You have nevertheless provided preliminary provenance work, descriptions and valuations that have subsequently travelled with them.",
+            "You know that some of your work has been presented more definitively than you intended. Preliminary research has been circulated as though it were final certification.",
+            "You did not proactively correct any of these issues.",
+            "You have had to specifically deny having certified certain objects or movement requests in the past, but they appeared to go through anyway. You do not know why this was, but you did not really make an effort to investigate either.",
+            "You are very worried now that, with some troubling recent developments, any serious review of the Collection may expose both genuine irregularities and occasions where your own professional work has been used to support things you would struggle to defend publicly."
+          ]
+        },
+        {
+          "title": "Charli",
+          "bullets": [
+            "Charli is heavily involved in the international movement and social presentation of the Collection through the Baroo Cultural Exchange.",
+            "You have worked closely with her because your archaeological expertise and her international events and connections complement one another.",
+            "Increasingly, however, you have become concerned about what happens to objects and paperwork after they leave your hands.",
+            "You know Charli has considerably more involvement in the practical movement of these objects than you do.",
+            "You have been becoming less willing to accept responsibility for decisions made without your express knowledge and consent."
+          ]
+        },
+        {
+          "title": "Ivan Abramovich",
+          "bullets": [
+            "Ivan has been involved around you and the Collection for years, particularly when archaeological objects have encountered customs, border, police or cultural-property complications.",
+            "His diplomatic connections have repeatedly made difficult situations easier to manage.",
+            "Your history with Ivan stretches back and early on involved a serious incident at an archaeological excavation in France in 2012.",
+            "During that excavation, you argued with technician Marc Leclerc over the removal of a sealed archaeological crate. Leclerc later fell after a safety brace had been removed. The circumstances were serious enough to attract police attention, and you were a prime suspect. Ivan became involved around both your ability to leave and the sealed crate."
+          ]
+        },
+        {
+          "title": "Your position going into the night",
+          "bullets": [
+            "J. Baroo is dead and you are attending the gathering surrounding his will.",
+            "You know that shortly before his death he had stopped treating the Collection problems as routine administration and suspect he had begun actively investigating them, but this was never told to you directly.",
+            "You are increasingly frightened that you may be blamed for movements, provenance claims and transactions that went beyond what you actually authorised. You know that some of your own involvement will be difficult to explain cleanly once outsiders begin examining the Collection.",
+            "If the others attempt to make you the convenient expert responsible for everything, you are prepared to defend your reputation.",
+            "Being invited to the will reading was unexpected, and you suspect it is related to the recent Collection drama.",
+            "Your immediate concern is therefore not the ordinary Baroo business or Baron's succession problems. It is discovering how much J. Baroo uncovered about the Collection, what records still exist and whether Charli, Ivan or anyone else intends to leave you carrying the blame."
+          ]
+        }
+      ]
+    },
+    "DIPLOMAT": {
+      "title": "Ivan Abramovich",
+      "sections": [
+        {
+          "title": "Who you are",
+          "bullets": [
+            "You are Ivan Abramovich, a diplomat with longstanding connections to the Baroo circle and its international Collection activities.",
+            "Over the years you have intervened more than once when Collection matters threatened to become official problems. Your diplomatic position, contacts and familiarity with government systems have made you particularly useful when artefacts encounter customs, border, police or cultural-property complications.",
+            "This has increasingly blurred the boundary between legitimate diplomatic assistance and using your position to protect private interests.",
+            "Your use of official contacts for private Collection matters has already attracted scrutiny and restrictions. You have every reason to avoid further attention."
+          ]
+        },
+        {
+          "title": "Augusta",
+          "bullets": [
+            "You have known Augusta for years and have repeatedly helped her when her archaeological work has run into legal or official trouble.",
+            "The most serious incident occurred at an excavation in France in 2012. Augusta had argued with technician Marc Leclerc over the removal of a sealed archaeological crate. Leclerc subsequently fell after a safety brace had been removed, leaving Augusta under serious suspicion. You intervened around Augusta's ability to leave France and the release of the sealed crate.",
+            "That history creates a significant connection between the two of you which neither of you would benefit from having closely examined.",
+            "More recently, Augusta has become increasingly nervous about the Collection, particularly about provenance work being used beyond what she says she authorised. She is right to be worried: the powers that be and the momentum of the work have sometimes stretched her word to cover aspects that may not be quite true.",
+            "You are concerned that under enough pressure Augusta may begin explaining exactly how objects moved and who intervened when difficulties arose, which would be greatly problematic for her, but also for you and Charli."
+          ]
+        },
+        {
+          "title": "Charli and the Collection",
+          "bullets": [
+            "Charli has been one of your principal connections to the practical international side of the Baroo Collection. You were introduced when she first moved to Europe for her undergraduate studies and found her a bright spark to begin with.",
+            "Her Cultural Exchange provides the events, travel, collectors and social settings through which many Baroo objects have moved.",
+            "You have helped when those movements encountered official complications.",
+            "You understand that the Collection problem is not simply bad paperwork. There are objects whose movements, ownership histories and official treatment would be extremely difficult to explain under independent scrutiny.",
+            "You and Charli have discussed how to manage the growing problems surrounding Augusta and the Collection. You therefore have a strong interest in ensuring that Charli remains in control of herself and her title, and that Augusta does not panic."
+          ]
+        },
+        {
+          "title": "J. Baroo",
+          "bullets": [
+            "J. Baroo's name and Collection have provided respectability around many of the international activities you have assisted with.",
+            "You are one of J. Baroo's longest friends alongside The Director, Cornelius Cutis, and The Opera Singer, Ophelia Rose.",
+            "More recently, however, J. began taking an active interest in aspects of the Collection.",
+            "You are aware that this creates a serious risk. A genuine examination of the Collection could expose not only questionable provenance and movements, but your own repeated interventions.",
+            "J.'s death does not make that problem disappear. Whatever records, instructions or discoveries he left behind may now become more dangerous because you no longer know how they will be handled."
+          ]
+        },
+        {
+          "title": "Going into the night",
+          "bullets": [
+            "J. Baroo is dead and you are attending the gathering surrounding his will.",
+            "You suspect that, while you are a long-term friend, your invitation to the will reading is more closely related to the Collection itself.",
+            "Your principal concern is the Collection and how much of its history J. uncovered before his death.",
+            "You need Charli to remain composed and Augusta to avoid making accusations or disclosures that draw attention to past movements and your interventions.",
+            "Your diplomatic career gives you considerably more to lose than embarrassment within the Baroo family. Evidence that you repeatedly used official influence to resolve private Collection problems could become a professional scandal."
+          ]
+        }
+      ]
+    },
+    "PUBLICIST": {
+      "title": "Rex Pressman",
+      "sections": [
+        {
+          "title": "Who you are",
+          "bullets": [
+            "You are Rex Pressman, the Publicist.",
+            "You have spent years around J. Baroo and the Baroo family, dealing with the public-facing consequences of their wealth, business interests, personalities and scandals.",
+            "Your value is in controlling how a story develops before somebody else controls it for you."
+          ]
+        },
+        {
+          "title": "J. Baroo",
+          "bullets": [
+            "You have handled publicity and reputation matters connected to J. Baroo and his wider interests.",
+            "J. has trusted you with sensitive matters, but that trust has limits. He has always kept you a little in the dark until sometimes it has been too late.",
+            "You know that before his death, J. had become increasingly concerned about matters surrounding the Baroo Collection. He did not necessarily provide you with many details; you know that The Director, Cornelius Cutis, The Administrator and The Executor were handling it more personally.",
+            "You do know there are reputational problems developing around the Collection and that some form of response may eventually be required."
+          ]
+        },
+        {
+          "title": "The will and Baroo Holdings",
+          "bullets": [
+            "J.'s death creates an immediate publicity problem. His inheritance arrangements and the future control of Baroo Holdings have obvious consequences for how the family is perceived.",
+            "Baron has long been positioned as J.'s likely successor within Baroo Holdings, but his recent business problems and restrictions have made that succession increasingly uncertain. You need to know whether J.'s final arrangements confirm Baron, limit his authority or place control somewhere else entirely. You know that The Director is likely to have been deeply involved in that final decision, but he has not let on what the future looks like.",
+            "Before the gathering, you have been trying to obtain information about the final will arrangements and the position regarding company control.",
+            "You have repeatedly been referred back to The Executor rather than being given the information you want. You therefore arrive without knowing what the will contains.",
+            "The lack of disclosure is problematic to your role, but also worrisome as you were expecting confirmation of advancement of your own role to an executive-level status."
+          ]
+        },
+        {
+          "title": "The family, Sam and Camilla",
+          "bullets": [
+            "You know the Baroo family well enough to understand that its respectable public image conceals significant tension, particularly around inheritance, succession and J.'s relationships with his children.",
+            "Sam is an especially sensitive issue. You know they occupy an unusual position around the family and have been quietly supported by J. without being treated publicly like one of his recognised children.",
+            "Camilla has taken much of the practical responsibility for Sam and has often acted as the person keeping that arrangement functioning.",
+            "From a publicity perspective, the existing arrangement is manageable: Sam continues towards ADFA, Camilla looks after them, and there is little reason for outsiders to question why they are connected to the Baroo household.",
+            "What would be dangerous is anything that suddenly formalises Sam's status, substantially alters their inheritance, or invites questions about why J. had been supporting them. You worry that Camilla has pushed for something of that kind in the will and that J. has agreed to it."
+          ]
+        },
+        {
+          "title": "Going into the night",
+          "bullets": [
+            "J. Baroo is dead and you are attending the gathering surrounding his will.",
+            "You want to know what the will says, who will control Baroo Holdings and whether anything in J.'s final arrangements is likely to create a public scandal.",
+            "You are particularly alert to information regarding your own future status, but also any indication of the future of Baroo Holdings or The Collection."
+          ]
+        }
+      ]
+    }
+  }
+}

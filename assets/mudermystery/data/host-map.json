@@ -1,0 +1,313 @@
+{
+  "hostMapLocations": [
+    {
+      "id": "parlour",
+      "name": "Parlour",
+      "mapTargetId": "parlour",
+      "notes": [
+        "Paperwork was commonly dropped off here for Baroo, including company matters, creditors, Collection movements and private correspondence.",
+        "He liked important emails and correspondence printed rather than read on a screen.",
+        "He was not especially concerned about privacy once papers were inside the house."
+      ],
+      "clues": [
+        {
+          "id": "13",
+          "name": "Many Emails from the Director to the Estates accountant \"The Accountant\", J.Baroo or \"The Administrator\"."
+        },
+        {
+          "id": "14",
+          "name": "A series of emails and lawyer notices to the Proper Child."
+        },
+        {
+          "id": "16",
+          "name": "A series of Itinaries, Transport certicates, communications and certifacts of authority all relating to the artifact collection"
+        },
+        {
+          "id": "26",
+          "name": "Erratic Emails from the Antiqutarian to J.Baroo regarding the Collection"
+        }
+      ]
+    },
+    {
+      "id": "morning-room",
+      "name": "Morning Room",
+      "mapTargetId": "morning-room",
+      "notes": [
+        "Baroo liked to sit and read in different parts of the house, especially here.",
+        "He had a habit of carrying paperwork with him and leaving it wherever he had been reading.",
+        "Newspapers, articles and other material people thought he should see often ended up here."
+      ],
+      "clues": [
+        {
+          "id": "12",
+          "name": "Newsarticles and Tabloids relating to the Publicist"
+        },
+        {
+          "id": "15",
+          "name": "A short academic paper regarding the murder weapon written by the Antqiutarian"
+        },
+        {
+          "id": "23",
+          "name": "A series of emails back and forth from The Proper Child and The Director giving Baron his full support"
+        }
+      ]
+    },
+    {
+      "id": "media-room",
+      "name": "Media Room",
+      "mapTargetId": "waiting-room",
+      "notes": [
+        "Often used as overflow for family and household accounts.",
+        "Invoices, expenses, estate records and other routine financial paperwork tended to accumulate here.",
+        "The Executor's briefcase is personal to the Executor, not part of the household records."
+      ],
+      "clues": [
+        {
+          "id": "7",
+          "name": "The Family Accounts, and Invoices"
+        },
+        {
+          "id": "8",
+          "name": "Baron's Debt Collection notices and Email to the Executor"
+        },
+        {
+          "id": "9",
+          "name": "Email from the Widow to the Executor"
+        },
+        {
+          "id": "10",
+          "name": "Email from the Publicisit to the Exectutor"
+        }
+      ]
+    },
+    {
+      "id": "dining-room",
+      "name": "Dining Room",
+      "mapTargetId": "banquet-hall",
+      "notes": [
+        "The west window latch had already been causing problems and had been marked for inspection.",
+        "The dining-room service bell had been missing its clanger for some time.",
+        "Cornelius had asked staff to find the original clanger rather than replace the whole bell.",
+        "Any unusual canisters or equipment found here are not part of the normal dining-room setup."
+      ],
+      "clues": [
+        {
+          "id": "4",
+          "name": "Poison Gas Canister"
+        },
+        {
+          "id": "5",
+          "name": "Broken Window"
+        },
+        {
+          "id": "6-1",
+          "name": "Bell missing Clanger"
+        }
+      ]
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "mapTargetId": "estate-kitchen",
+      "notes": [
+        "The old cookbook has been kept in the kitchen for years.",
+        "Staff would know generally what belongs in the kitchen and what does not.",
+        "The Housekeeper does not recall anyone intentionally removing recipes from the cookbook."
+      ],
+      "clues": [
+        {
+          "id": "6-2",
+          "name": "Missing Clanger"
+        },
+        {
+          "id": "11",
+          "name": "The Cook Book"
+        }
+      ]
+    },
+    {
+      "id": "baroo-office",
+      "name": "J. Baroo's Office",
+      "mapTargetId": "baroos-room",
+      "notes": [
+        "This was where Baroo concentrated most of his serious business and investigative work.",
+        "In the months before his death he became increasingly insistent on seeing original records rather than summaries.",
+        "He had old correspondence, recovered emails, official files and underlying documentation brought to him.",
+        "Once he decided something concerned his family or business, he tended to investigate it thoroughly."
+      ],
+      "clues": [
+        {
+          "id": "21",
+          "name": "Emails from widow to J.B"
+        },
+        {
+          "id": "22",
+          "name": "A series of emails back and forth from J. Baroo and The Director asking to remove the Proper Child from the company"
+        },
+        {
+          "id": "27",
+          "name": "A dossier on the Antiqutarian"
+        },
+        {
+          "id": "31",
+          "name": "FOI request getting Letters from Australian Diplomatic Office to Ivan"
+        }
+      ]
+    },
+    {
+      "id": "baroo-bedroom",
+      "name": "J. Baroo's Bedroom",
+      "mapTargetId": "baroos-retreat",
+      "notes": [
+        "Baroo frequently read and worked in his bedroom as well as his office.",
+        "Papers and books often migrated upstairs and were later carried back down by staff.",
+        "Private letters were sometimes kept here rather than in the office.",
+        "Not every loose paper or object in the room necessarily originated with Baroo."
+      ],
+      "clues": [
+        {
+          "id": "17",
+          "name": "A book on cryptography "
+        },
+        {
+          "id": "18",
+          "name": "A coded diary and a pair of sissors"
+        },
+        {
+          "id": "19",
+          "name": "A rod with a piece of two sided tape on one end"
+        },
+        {
+          "id": "30",
+          "name": "A scrunched reciept for SKU: 3215412831"
+        },
+        {
+          "id": "33",
+          "name": "A letter from J. Baroo to the Director regarding artifacts"
+        }
+      ]
+    },
+    {
+      "id": "widow-bedroom",
+      "name": "Widow's Bedroom",
+      "mapTargetId": "widows-suite",
+      "notes": [
+        "Camilla kept certain newspapers, magazines and articles involving people she knew.",
+        "She did not keep everything, so anything retained was generally something she had chosen to keep.",
+        "Staff would not normally question her about why she retained particular articles."
+      ],
+      "clues": [
+        {
+          "id": "20",
+          "name": "A Magainze interview with the Opera Singer"
+        }
+      ]
+    },
+    {
+      "id": "baron-room",
+      "name": "Baron's Room",
+      "mapTargetId": "acacia-bedroom",
+      "notes": [
+        "Baron preferred personal correspondence, appointments and legal material delivered directly to his room.",
+        "Solicitor and creditor correspondence had increasingly been arriving for him.",
+        "His specialist knife collection is normally kept here.",
+        "The knife collection had recently been sent away for cleaning and sharpening, arranged by Charli."
+      ],
+      "clues": [
+        {
+          "id": "24",
+          "name": "A confirmation email for anger management therapy for Baron"
+        },
+        {
+          "id": "25",
+          "name": "A confirmation note for a clean and sharpening of a specialist knife collection"
+        }
+      ]
+    },
+    {
+      "id": "charli-room",
+      "name": "Charli's Room",
+      "mapTargetId": "eucalyptus-bedroom",
+      "notes": [
+        "Charli regularly returned from overseas with cases, parcels, invitations and Cultural Exchange paperwork.",
+        "Private correspondence and travel-related material was normally left in her room.",
+        "Staff were generally instructed not to interfere with her personal cases or belongings.",
+        "Given how frequently she travelled, staff would not know the origin of every item in the room."
+      ],
+      "clues": [
+        {
+          "id": "28",
+          "name": "A letter from dead dad to restore family name"
+        },
+        {
+          "id": "29",
+          "name": "Forgery Kit (Used)"
+        },
+        {
+          "id": "32",
+          "name": "Separate Email from Ivan to Charli"
+        }
+      ]
+    },
+    {
+      "id": "outside-dining-room",
+      "name": "Outside the Dining Room",
+      "mapTargetId": "front-verandah",
+      "notes": [
+        "There is no ordinary reason to enter or leave the house through the dining-room window.",
+        "Proper access to the grounds is elsewhere.",
+        "The Housekeeper recognises the ITM-31 inventory tag as belonging to Camilla's personal property.",
+        "Cornelius had specifically instructed that Camilla's personal possessions be separated from Collection material."
+      ],
+      "clues": [
+        {
+          "id": "2",
+          "name": "Fake Black Cocadil"
+        },
+        {
+          "id": "3",
+          "name": "Murder Weapon - Letter Opener"
+        }
+      ]
+    },
+    {
+      "id": "under-bridge",
+      "name": "Under the Bridge",
+      "mapTargetId": "lake",
+      "x": 65,
+      "y": 78,
+      "notes": [
+        "Collection objects should never normally be stored outside or left unsecured.",
+        "Properly moved Collection property should have custody and movement records.",
+        "The Housekeeper may recognise some objects as Collection pieces but would not know who placed the suitcase there."
+      ],
+      "clues": [
+        {
+          "id": "34",
+          "name": "A suit case full of the irregular artifacts including the ash crown."
+        },
+        {
+          "id": "35",
+          "name": "A lock that uses letters"
+        }
+      ]
+    },
+    {
+      "id": "garden-statues",
+      "name": "Garden Statues",
+      "mapTargetId": "conservatory-garden",
+      "notes": [
+        "The statues have been on the property for years.",
+        "Baroo occasionally used objects around the house and garden for private jokes, memory aids and little puzzles.",
+        "The coloured stones are additions rather than original parts of the sculptures.",
+        "The Housekeeper would not know what Baroo intended the stones to mean."
+      ],
+      "clues": [
+        {
+          "id": "36",
+          "name": "4 gems"
+        }
+      ]
+    }
+  ]
+}

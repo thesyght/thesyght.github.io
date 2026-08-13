@@ -207,6 +207,8 @@
     }
   ];
   const hostFiles = [
+    'character-briefs.json',
+    'host-map.json',
     'relationships.json',
     'acts.json',
     'locations.json',
@@ -218,6 +220,8 @@
     'host-notes.json'
   ];
   const hostKeys = [
+    'characterBriefs',
+    'hostMapLocations',
     'relationships',
     'acts',
     'locations',
@@ -240,7 +244,8 @@
   let mapPopoutZoom = 1;
   let data = {
     characters: [],
-    mapDescriptions: []
+    mapDescriptions: [],
+    hostMapLocations: []
   };
 
   const body = document.body;
@@ -252,6 +257,7 @@
   const cancelHostAccessBtn = document.getElementById('cancelHostAccess');
   const navLinks = Array.from(document.querySelectorAll('.nav-link'));
   const characterModeNote = document.getElementById('characterModeNote');
+  const mapModeNote = document.getElementById('mapModeNote');
 
   const sections = {
     overview: document.getElementById('overview'),
@@ -392,8 +398,12 @@
     }
 
     characterModeNote.textContent = hostMode
-      ? 'These are the characters of our Murder Mystery. For each is an overview, their biography, private motives, relationships, act objectives, clues, and all planning materials.'
+      ? 'These are the characters of our Murder Mystery. For each is an overview, their biography, character brief, private motives, relationships, act objectives, clues, and all planning materials.'
       : 'These are the characters of our Murder Mystery. For each is an overview and their biography.';
+
+    mapModeNote.textContent = hostMode
+      ? 'Host map: select a hotspot to view its gallery, description and house-specific host notes.'
+      : 'Select a hotspot to view that room or estate area\'s gallery and description.';
   }
 
   function openHostAccessForm() {
@@ -560,7 +570,7 @@
       infoPanel.appendChild(infoHeader);
 
       const tabs = hostMode
-        ? ['Biography', 'Private Motives', 'Relationships', 'Act Objectives', 'Clues']
+        ? ['Biography', 'Character Brief', 'Touchstones', 'Private Motives', 'Relationships', 'Act Objectives', 'Clues']
         : ['Biography'];
 
       let currentTab = 0;
@@ -589,8 +599,9 @@
 
       function updateContent() {
         content.innerHTML = '';
+        const activeTab = tabs[currentTab];
 
-        if (currentTab === 0) {
+        if (activeTab === 'Biography') {
           const profileSections = [
             {
               title: 'Role',
@@ -620,14 +631,69 @@
           return;
         }
 
-        if (currentTab === 1) {
+        if (activeTab === 'Character Brief') {
+          const brief = data.characterBriefs?.[character.id];
+          if (!brief?.sections?.length) {
+            const p = document.createElement('p');
+            p.textContent = 'No character brief recorded yet.';
+            content.appendChild(p);
+            return;
+          }
+
+          const briefWrapper = document.createElement('article');
+          briefWrapper.className = 'character-brief';
+
+          brief.sections.forEach(briefSection => {
+            const section = document.createElement('section');
+            section.className = 'profile-box character-brief-section';
+            const heading = document.createElement('h4');
+            heading.textContent = briefSection.title;
+            const list = document.createElement('ul');
+            list.className = 'character-brief-list';
+
+            (briefSection.bullets || []).forEach(bullet => {
+              const item = document.createElement('li');
+              item.textContent = bullet;
+              list.appendChild(item);
+            });
+
+            section.appendChild(heading);
+            section.appendChild(list);
+            briefWrapper.appendChild(section);
+          });
+
+          content.appendChild(briefWrapper);
+          return;
+        }
+
+        if (activeTab === 'Touchstones') {
+          const touchstones = character.private?.touchstones || [];
+          if (!touchstones.length) {
+            const p = document.createElement('p');
+            p.textContent = 'No touchstones recorded yet.';
+            content.appendChild(p);
+            return;
+          }
+
+          const listEl = document.createElement('ul');
+          listEl.className = 'touchstone-list';
+          touchstones.forEach(touchstone => {
+            const li = document.createElement('li');
+            li.textContent = touchstone;
+            listEl.appendChild(li);
+          });
+          content.appendChild(listEl);
+          return;
+        }
+
+        if (activeTab === 'Private Motives') {
           const p = document.createElement('p');
           p.innerHTML = `<strong>Bio:</strong> ${character.private?.bio || ''}<br><strong>Secret pressure:</strong> ${character.private?.secretPressure || ''}<br><strong>Wants:</strong> ${character.private?.wants || ''}<br><strong>Fears:</strong> ${character.private?.fears || ''}<br><strong>Red herring:</strong> ${character.private?.redHerring || ''}`;
           content.appendChild(p);
           return;
         }
 
-        if (currentTab === 2) {
+        if (activeTab === 'Relationships') {
           const wrapper = document.createElement('div');
           const outgoingList = document.createElement('ul');
           const incomingList = document.createElement('ul');
@@ -660,7 +726,7 @@
           return;
         }
 
-        if (currentTab === 3) {
+        if (activeTab === 'Act Objectives') {
           const listEl = document.createElement('ul');
           listEl.innerHTML = '<strong>Objectives by act:</strong>';
           Object.keys(character.private?.actObjectives || {}).forEach(actId => {
@@ -687,11 +753,36 @@
     }
   }
 
+  function getActiveMapTargets() {
+    if (!hostMode || !data.hostMapLocations?.length) {
+      return mapTargets;
+    }
+
+    return data.hostMapLocations
+      .map(location => {
+        const sourceTarget = mapTargets.find(target => target.id === location.mapTargetId) || {};
+        return {
+          ...sourceTarget,
+          id: location.id,
+          label: location.name,
+          title: location.name,
+          x: Number.isFinite(location.x) ? location.x : sourceTarget.x,
+          y: Number.isFinite(location.y) ? location.y : sourceTarget.y,
+          images: location.images || sourceTarget.images || [],
+          mapTargetId: location.mapTargetId || location.id,
+          hostNotes: location.notes || [],
+          hostClues: location.clues || []
+        };
+      })
+      .filter(target => Number.isFinite(target.x) && Number.isFinite(target.y));
+  }
+
   function renderMap() {
     const container = document.getElementById('mapContent');
     container.innerHTML = '';
 
-    const selectedTarget = mapTargets.find(target => target.id === selectedMapTargetId) || mapTargets[0];
+    const activeMapTargets = getActiveMapTargets();
+    const selectedTarget = activeMapTargets.find(target => target.id === selectedMapTargetId) || activeMapTargets[0];
     selectedMapTargetId = selectedTarget.id;
 
     const layout = document.createElement('div');
@@ -763,7 +854,7 @@
 
     stage.appendChild(controls);
 
-    mapTargets.forEach(target => {
+    getActiveMapTargets().forEach(target => {
       const galleryTitle = target.title || target.label;
       const button = document.createElement('button');
       button.type = 'button';
@@ -882,12 +973,13 @@
   }
 
   function getMapRoomDetails(target) {
-    return data.mapDescriptions.find(room => room.id === target.id) || {};
+    const sourceId = target.mapTargetId || target.id;
+    return data.mapDescriptions.find(room => room.id === sourceId) || {};
   }
 
   function getMapRoomName(target) {
     const details = getMapRoomDetails(target);
-    return details.name || target.title || target.label;
+    return target.title || details.name || target.label;
   }
 
   function renderMapGalleryPanel(target) {
@@ -957,6 +1049,44 @@
     const description = document.createElement('p');
     description.textContent = details.description || `${galleryTitle} is a selectable area on the Baroo Estate map. Select another hotspot to update this gallery and description panel.`;
     content.appendChild(description);
+
+    if (hostMode && target.hostNotes?.length) {
+      const hostNotes = document.createElement('section');
+      hostNotes.className = 'host-map-note-section';
+      const hostHeading = document.createElement('h4');
+      hostHeading.textContent = 'Host Notes';
+      const hostList = document.createElement('ul');
+      hostList.className = 'host-map-note-list';
+
+      target.hostNotes.forEach(note => {
+        const item = document.createElement('li');
+        item.textContent = note;
+        hostList.appendChild(item);
+      });
+
+      hostNotes.appendChild(hostHeading);
+      hostNotes.appendChild(hostList);
+      content.appendChild(hostNotes);
+    }
+
+    if (hostMode && target.hostClues?.length) {
+      const hostClues = document.createElement('section');
+      hostClues.className = 'host-map-clue-section';
+      const clueHeading = document.createElement('h4');
+      clueHeading.textContent = 'Clues in this room';
+      const clueList = document.createElement('ul');
+      clueList.className = 'host-map-clue-list';
+
+      target.hostClues.forEach(clue => {
+        const item = document.createElement('li');
+        item.textContent = `${clue.id} — ${clue.name}`;
+        clueList.appendChild(item);
+      });
+
+      hostClues.appendChild(clueHeading);
+      hostClues.appendChild(clueList);
+      content.appendChild(hostClues);
+    }
 
     panel.appendChild(tabs);
     panel.appendChild(content);
