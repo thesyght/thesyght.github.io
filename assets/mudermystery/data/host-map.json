@@ -128,7 +128,7 @@
     {
       "id": "baroo-office",
       "name": "J. Baroo's Office",
-      "mapTargetId": "baroos-room",
+      "mapTargetId": "baroos-retreat",
       "notes": [
         "This was where Baroo concentrated most of his serious business and investigative work.",
         "In the months before his death he became increasingly insistent on seeing original records rather than summaries.",
@@ -157,12 +157,10 @@
     {
       "id": "baroo-bedroom",
       "name": "J. Baroo's Bedroom",
-      "mapTargetId": "baroos-retreat",
+      "mapTargetId": "baroos-room",
       "notes": [
-        "Baroo frequently read and worked in his bedroom as well as his office.",
-        "Papers and books often migrated upstairs and were later carried back down by staff.",
-        "Private letters were sometimes kept here rather than in the office.",
-        "Not every loose paper or object in the room necessarily originated with Baroo."
+        "It is now used as the primary guest room.",
+        "Most of you who do not have rooms of your own here stay in this room."
       ],
       "clues": [
         {
@@ -186,6 +184,15 @@
           "name": "A letter from J. Baroo to the Director regarding artifacts"
         }
       ]
+    },
+    {
+      "id": "banksia-room",
+      "name": "Banksia Room",
+      "mapTargetId": "banksia-bedroom",
+      "notes": [
+        "This is Sam's room."
+      ],
+      "clues": []
     },
     {
       "id": "widow-bedroom",
